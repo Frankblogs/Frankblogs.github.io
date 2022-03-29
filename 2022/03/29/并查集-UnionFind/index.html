@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>并查集(UnionFind) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="并查集（UnionFind） 如在网络中两个节点是否连接，在回答两个节点是否连接中可以用复杂度更高的路径问题思路，但有时只是需要判断两个节点是否连接，无需回答额外的问题，因此出现并查集，并查集只回答是否连接，并不关心如何连接，路径如何。  并查集基本功能 对两个数据合并 判断是否连接   例： 用数组实现子节点指向父节点的树，因此组成森林，int[i]为节点元素的父节点，i为节点元素。  初始化森">
+  <meta name="description" content="并查集（UnionFind） 并查集基本功能       并查集（UnionFind） 如在网络中两个节点是否连接，在回答两个节点是否连接中可以用复杂度更高的路径问题思路，但有时只是需要判断两个节点是否连接，无需回答额外的问题，因此出现并查集，并查集只回答是否连接，并不关心如何连接，路径如何。  并查集基本功能 对两个数据合并 判断是否连接   例： 用数组实现子节点指向父节点的树，因此组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="并查集(UnionFind)">
 <meta property="og:url" content="http://example.com/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="并查集（UnionFind） 如在网络中两个节点是否连接，在回答两个节点是否连接中可以用复杂度更高的路径问题思路，但有时只是需要判断两个节点是否连接，无需回答额外的问题，因此出现并查集，并查集只回答是否连接，并不关心如何连接，路径如何。  并查集基本功能 对两个数据合并 判断是否连接   例： 用数组实现子节点指向父节点的树，因此组成森林，int[i]为节点元素的父节点，i为节点元素。  初始化森">
+<meta property="og:description" content="并查集（UnionFind） 并查集基本功能       并查集（UnionFind） 如在网络中两个节点是否连接，在回答两个节点是否连接中可以用复杂度更高的路径问题思路，但有时只是需要判断两个节点是否连接，无需回答额外的问题，因此出现并查集，并查集只回答是否连接，并不关心如何连接，路径如何。  并查集基本功能 对两个数据合并 判断是否连接   例： 用数组实现子节点指向父节点的树，因此组">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320224115655.png">
 <meta property="og:image" content="http://example.com/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232137564.png">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://example.com/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232314846.png">
 <meta property="og:image" content="http://example.com/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320225934111.png">
 <meta property="article:published_time" content="2022-03-29T05:28:32.000Z">
-<meta property="article:modified_time" content="2022-03-29T05:29:05.549Z">
+<meta property="article:modified_time" content="2022-03-29T15:42:11.549Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320224115655.png">
@@ -172,10 +172,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="并查集（UnionFind）"><a href="#并查集（UnionFind）" class="headerlink" title="并查集（UnionFind）"></a>并查集（UnionFind）</h1><ul>
+        <hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86unionfind">并查集（UnionFind）</a><ul>
+<li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD">并查集基本功能</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<hr>
+<h1><span id="并查集unionfind">并查集（UnionFind）</span></h1><ul>
 <li>如在网络中两个节点是否连接，在回答两个节点是否连接中可以用复杂度更高的路径问题思路，但有时只是需要判断两个节点是否连接，无需回答额外的问题，因此出现并查集，并查集只回答是否连接，并不关心如何连接，路径如何。</li>
 </ul>
-<h2 id="并查集基本功能"><a href="#并查集基本功能" class="headerlink" title="并查集基本功能"></a>并查集基本功能</h2><ul>
+<h2><span id="并查集基本功能">并查集基本功能</span></h2><ul>
 <li>对两个数据合并</li>
 <li>判断是否连接</li>
 <li><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320224115655.png" alt="image-20220320224115655"></li>
@@ -336,7 +348,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86%EF%BC%88UnionFind%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">并查集（UnionFind）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.</span> <span class="toc-text">并查集基本功能</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">并查集（UnionFind）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">并查集基本功能</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
