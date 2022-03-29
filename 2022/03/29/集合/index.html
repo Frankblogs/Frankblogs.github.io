@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>集合 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="集合特点 存储的元素只会存储一次，不会出现重复的元素  Java的集合主要有List , Set, Map  其中 List , Set 继承至Collection接口，Map为独立接口 List下有ArrayList，LinkedList，Vector Set下有HashSet，LinkedHashSet，TreeSet Map下有HashMap，LinkedHashMap， TreeMap，H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合">
+<meta property="og:url" content="http://example.com/2022/03/29/%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="集合特点 存储的元素只会存储一次，不会出现重复的元素  Java的集合主要有List , Set, Map  其中 List , Set 继承至Collection接口，Map为独立接口 List下有ArrayList，LinkedList，Vector Set下有HashSet，LinkedHashSet，TreeSet Map下有HashMap，LinkedHashMap， TreeMap，H">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-29T05:33:46.000Z">
+<meta property="article:modified_time" content="2022-03-29T05:33:57.685Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -142,98 +146,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-递归" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-集合" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/%E9%80%92%E5%BD%92/">递归</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/29/%E9%80%92%E5%BD%92/" class="archive-article-date">
-  	<time datetime="2022-03-29T05:34:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><ul>
-<li><p>本质上，将原来的问题，转化为更小的同一问题，一直缩减问题的规模，直至最基本的问题出现</p>
-</li>
-<li><p>例：数组求和</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Sum(arr[<span class="number">0.</span>...n-<span class="number">1</span>])=arr[<span class="number">0</span>]+Sum(arr[<span class="number">1.</span>..n-<span class="number">1</span>]) 更小的同一问题</span><br><span class="line">				  =arr[<span class="number">0</span>]+a[<span class="number">1</span>]+Sum(arr[<span class="number">2.</span>..n-<span class="number">1</span>])更小的同一问题</span><br><span class="line">    			  ......</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>递归问题的基本原则分两部分<ol>
-<li>通过编写逻辑求解最基本问题</li>
-<li>把原问题转化成更小的问题</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Sum</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span>[] arr)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sum(arr,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> l)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l== arr.length)&#123;            <span class="comment">//求解最基本问题</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[l]+sum(arr,l+<span class="number">1</span>);     <span class="comment">//把原问题转化成更小的问题</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/03/29/%E9%80%92%E5%BD%92/image-20220301121033298.png" alt="image-20220301121033298"></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/%E9%80%92%E5%BD%92/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/%E9%9B%86%E5%90%88/">集合</a>
+    <h1 class="article-title" itemprop="name">
+      集合
     </h1>
   
 
@@ -268,16 +188,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/%E9%9B%86%E5%90%88/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/29/%E9%9B%86%E5%90%88/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/03/29/%E9%80%92%E5%BD%92/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          递归
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二分搜索树-BST</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -297,620 +285,14 @@
 
 
 
-
   
-    <article id="post-二分搜索树-BST" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/">二分搜索树-BST</a>
-    </h1>
   
 
-        
-        <a href="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/" class="archive-article-date">
-  	<time datetime="2022-03-29T05:32:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="二分搜索树"><a href="#二分搜索树" class="headerlink" title="二分搜索树"></a>二分搜索树</h3><h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><ul>
-<li>二分搜索树的每个节点的值：<ul>
-<li>大于其左子树的所有节点的值</li>
-<li>小于其右子树的所有节点的值</li>
-</ul>
-</li>
-</ul>
-<h4 id="删除节点问题："><a href="#删除节点问题：" class="headerlink" title="删除节点问题："></a>删除节点问题：</h4><ul>
-<li><p>删除最小节点：</p>
-<ol>
-<li>找到最小节点</li>
-<li>判断该节点有没有右子树，如果有则保存其右子树，然后释放其右子树并返回保存的右子树</li>
-<li>将进行删除操作所返回的值赋值给node的左子树</li>
-<li>返回完成所有操作的根节点</li>
-<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220306114251121.png" alt="image-20220306114251121"></li>
-</ol>
-</li>
-<li><p>删除任意节点</p>
-</li>
-</ul>
-<ol>
-<li>先找到需删除的节点</li>
-<li>对于没有左子树的删除节点<ul>
-<li>先保存该节点的右子树</li>
-<li>释放该节点的右子树</li>
-<li>返回所保存的树</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220326133627732.png" alt="image-20220326133627732"></li>
-</ul>
-<ol start="3">
-<li>对于没有右子树的删除节点<ul>
-<li>先保存该节点的左子树</li>
-<li>释放该节点的左子树</li>
-<li>返回所保存的树</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220326133642909.png" alt="image-20220326133642909"></li>
-</ul>
-<ol start="4">
-<li>对于有左右子树的删除节点<ul>
-<li>先寻找并保存该节点右子树的最小节点<strong>successor</strong></li>
-<li>对删除节点的右子树进行删除最小节点操作</li>
-<li><strong>successor</strong>的左子树连接删除节点的左子树</li>
-<li><strong>successor</strong>的右子树连接已经进行最小删除操作的删除节点的右子树</li>
-<li>返回<strong>successor</strong></li>
-<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220306145040199.png" alt="image-20220306145040199"></li>
-<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220306145117550.png" alt="image-20220306145117550"></li>
-</ul>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-线段树（SegmentTree）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/">线段树（SegmentTree）</a>
-    </h1>
   
 
-        
-        <a href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-03-29T05:31:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="线段树（SegmentTree）"><a href="#线段树（SegmentTree）" class="headerlink" title="线段树（SegmentTree）"></a>线段树（SegmentTree）</h1><p>对于有些问题，我们关心的是某个线段或者区间，例如区间染色<img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321215836799.png" alt="image-20220321215836799"></p>
-<p>因此线段树是十分符合的一种数据结构，一般需要更新区间和查询区间，如果不使用线段树这种结构这两个操作的时间复杂度都为O(n)。</p>
-<h2 id="线段树例子"><a href="#线段树例子" class="headerlink" title="线段树例子"></a>线段树例子</h2><p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321223149685.png" alt="image-20220321223149685"></p>
-<ul>
-<li><p>线段树是平衡二叉树，可以把树当成满二叉树，用数组表示需要多少个节点，满二叉树最后一层节点数大概等于前面所有层的节点的和，如果区间有n&#x3D;2^k个元素只需要2n的空间，最坏情况有n&#x3D;2^k+1,则需要4n的空间，线段树不考虑添加元素，所以只需静态的4n的空间。</p>
-</li>
-<li><p>初始化</p>
-<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321224605667.png" alt="image-20220321224605667"></p>
-</li>
-<li><p>建立区间树，需要获得当前节点的左右孩子节点，其中，merge(a,b)表示对两个数据进行融合，如何融合有用户决定</p>
-<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321224649364.png" alt="image-20220321224649364"></p>
-</li>
-<li><p>查询区间</p>
-<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321225238268.png" alt="image-20220321225238268"></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-并查集-UnionFind" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/">并查集(UnionFind)</a>
-    </h1>
   
 
-        
-        <a href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/" class="archive-article-date">
-  	<time datetime="2022-03-29T05:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="并查集（UnionFind）"><a href="#并查集（UnionFind）" class="headerlink" title="并查集（UnionFind）"></a>并查集（UnionFind）</h1><ul>
-<li>如在网络中两个节点是否连接，在回答两个节点是否连接中可以用复杂度更高的路径问题思路，但有时只是需要判断两个节点是否连接，无需回答额外的问题，因此出现并查集，并查集只回答是否连接，并不关心如何连接，路径如何。</li>
-</ul>
-<h2 id="并查集基本功能"><a href="#并查集基本功能" class="headerlink" title="并查集基本功能"></a>并查集基本功能</h2><ul>
-<li>对两个数据合并</li>
-<li>判断是否连接</li>
-<li><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320224115655.png" alt="image-20220320224115655"></li>
-</ul>
-<p>例： 用数组实现子节点指向父节点的树，因此组成森林，int[i]为节点元素的父节点，i为节点元素。</p>
-<ol>
-<li><p>初始化森林</p>
-<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232137564.png" alt="image-20220320232137564"></p>
-</li>
-<li><p>寻找根节点</p>
-<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232210245.png" alt="image-20220320232210245"></p>
-</li>
-<li><p>合并数据，如果数据p的根节点和不q节点不同，则将p的根节点指向q。</p>
-<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232314846.png" alt="image-20220320232314846"></p>
-</li>
-<li><p>判断是否连接</p>
-<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320225934111.png" alt="image-20220320225934111"></p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-平衡二叉树和AVL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/">平衡二叉树和AVL</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/" class="archive-article-date">
-  	<time datetime="2022-03-29T04:16:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="平衡二叉树和AVL"><a href="#平衡二叉树和AVL" class="headerlink" title="平衡二叉树和AVL"></a>平衡二叉树和AVL</h1><ul>
-<li>堆和线段树的平衡二叉树叶子节点的高度差不会超过1</li>
-<li>AVL的平衡二叉树对于任意一个节点，左子树和右子树的高度差不能超过1</li>
-</ul>
-<h2 id="基于二分搜索树的AVL"><a href="#基于二分搜索树的AVL" class="headerlink" title="基于二分搜索树的AVL"></a>基于二分搜索树的AVL</h2><ul>
-<li><p>在二分搜索树最坏的情况时，树会退化成链表，经过AVL优化可以防止出现这种情况。</p>
-</li>
-<li><p>在二分搜索树节点中添加<strong>height</strong>用来记录该节点的高度</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326130542258.png" alt="image-20220326130542258"></p>
-</li>
-<li><p>高度的维护是通过比较左右孩子节点的最高高度加一则是该节点的高度</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326130939596.png" alt="image-20220326130939596"></p>
-</li>
-<li><p>通过判断节点的平衡因子（左子树的高度减去右子树的高度）可以判断以该节点为根节点的树是否是平衡二叉树，如果平衡因子的绝对值大于1，则不是平衡二叉树。</p>
-<ul>
-<li><p>是否平衡</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326131656551.png" alt="image-20220326131656551"></p>
-</li>
-<li><p>判断平衡因子</p>
-</li>
-</ul>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326131124959.png" alt="image-20220326131124959"></p>
-</li>
-<li><p>在添加元素时会破坏平衡，所以需要进行维护，有四种情况会破坏平衡</p>
-<ol>
-<li><p>（LL）添加在该节点左节点的左节点，需要对该节点进行右旋转</p>
-<ul>
-<li><p>右旋转</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133031974.png" alt="image-20220326133031974"></p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326132635230.png" alt="image-20220326132635230"></p>
-</li>
-<li><p>维护节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326132833633.png" alt="image-20220326132833633"></p>
-</li>
-</ul>
-</li>
-<li><p>添加在该节点的右节点的右节点，需要对该节点进行左旋转</p>
-<ul>
-<li><p>左旋转</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133205543.png" alt="image-20220326133205543"></p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133106717.png" alt="image-20220326133106717"></p>
-</li>
-<li><p>维护节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133240149.png" alt="image-20220326133240149"></p>
-</li>
-</ul>
-</li>
-<li><p>添加 在该节点的左节点的右节点，需要对该节点的左节点先进行左旋转，然后对该节点进行右旋转</p>
-<ul>
-<li><p>维护节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133310844.png" alt="image-20220326133310844"></p>
-</li>
-</ul>
-</li>
-<li><p>添加在该节点的右节点的左节点，需要对该节点的右节点先进行右旋转，然后对该节点信息左旋转</p>
-<ul>
-<li><p>维护节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133405909.png" alt="image-20220326133405909"></p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>在删除节点时同样需要进行平衡维护，利用<strong>retNode</strong> 暂存已经进行删除操作的需要返回的树，在需删除节点的左右都不为空的情况下，一般用删除节点的右节点的最小节点来替代删除节点，这时有需要进行一次最小删除操作，因此会导致又需要进行平衡维护，一般有两种进行维护的方式，一是在<strong>removeMin()</strong> 方法进行平衡维护，需要重新写一遍维护代码，二是调用<strong>remove()<strong>自身，只需传入</strong>remove(node.right,succerssor.e)<strong>，因为</strong>successor</strong>是暂存<strong>node.right</strong>的最小节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326134229704.png" alt="image-20220326134229704"></p>
-</li>
-<li><p>对已经进行删除操作的节点进行平衡维护，如果不需要平衡维护，则直接返回<strong>retNode</strong></p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326135231935.png" alt="image-20220326135231935"></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2022-03-29T04:13:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第二个博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/">我的第二个博客</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2022-03-29T02:51:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h2><p><img src="/2022/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/aef4911ec36dee3f3008ee7b377bdfa.jpg"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/29/hello-world/" class="archive-article-date">
-  	<time datetime="2022-03-29T00:26:45.204Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -933,8 +315,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
