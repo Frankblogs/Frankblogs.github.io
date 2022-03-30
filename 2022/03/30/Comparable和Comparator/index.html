@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>JAVA8-API | Hexo</title>
+  <title>Comparable和Comparator | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JAVA8-API">
+  <meta name="description" content="Comparable可以让实现它的类进行自然排序，如何比较元素是根据自己实现的compareTo（）方法的计较方式，一般在需要排序的类中实现此接口，并且在内部实现compareTo（）方法。 例，Student类可以按倒序排序，num是学号    Comparator是在外部定制排序规则，然后作为排序策略参数传递给某些类比如Collection.sort()，Arrays.sort()，或者一些">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA8-API">
-<meta property="og:url" content="http://example.com/2022/03/29/JAVA8-API/index.html">
+<meta property="og:title" content="Comparable和Comparator">
+<meta property="og:url" content="http://example.com/2022/03/30/Comparable%E5%92%8CComparator/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JAVA8-API">
+<meta property="og:description" content="Comparable可以让实现它的类进行自然排序，如何比较元素是根据自己实现的compareTo（）方法的计较方式，一般在需要排序的类中实现此接口，并且在内部实现compareTo（）方法。 例，Student类可以按倒序排序，num是学号    Comparator是在外部定制排序规则，然后作为排序策略参数传递给某些类比如Collection.sort()，Arrays.sort()，或者一些">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-29T14:38:31.000Z">
-<meta property="article:modified_time" content="2022-03-29T14:40:51.136Z">
+<meta property="og:image" content="http://example.com/2022/03/30/Comparable%E5%92%8CComparator/image-20220331000059990.png">
+<meta property="og:image" content="http://example.com/2022/03/30/Comparable%E5%92%8CComparator/image-20220331000444967.png">
+<meta property="article:published_time" content="2022-03-30T15:16:13.000Z">
+<meta property="article:modified_time" content="2022-03-30T16:07:18.266Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/03/30/Comparable%E5%92%8CComparator/image-20220331000059990.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -146,27 +149,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JAVA8-API" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Comparable和Comparator" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JAVA8-API
+      Comparable和Comparator
     </h1>
   
 
         
-        <a href="/2022/03/29/JAVA8-API/" class="archive-article-date">
-  	<time datetime="2022-03-29T14:38:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
+        <a href="/2022/03/30/Comparable%E5%92%8CComparator/" class="archive-article-date">
+  	<time datetime="2022-03-30T15:16:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JAVA8-API"><a href="#JAVA8-API" class="headerlink" title="JAVA8-API"></a><a target="_blank" rel="noopener" href="https://www.matools.com/api/java8">JAVA8-API</a></h1>
+        <ul>
+<li><strong>Comparable</strong>可以让实现它的类进行自然排序，如何比较元素是根据自己实现的compareTo（）方法的计较方式，一般在需要排序的类中实现此接口，并且在内部实现compareTo（）方法。<ul>
+<li>例，Student类可以按倒序排序，<strong>num</strong>是学号</li>
+<li><img src="/2022/03/30/Comparable%E5%92%8CComparator/image-20220331000059990.png" alt="image-20220331000059990"></li>
+</ul>
+</li>
+<li><strong>Comparator</strong>是在外部定制排序规则，然后作为排序策略参数传递给某些类比如<strong>Collection.sort()，Arrays.sort()<strong>，或者一些内部有序的集合比如</strong>SortedSet，SortedMap</strong>，一般在需要对两个类进行比较时，但这两个类没有全部实现<strong>Comparable</strong>接口，或者这两个类中的比较方式不是需要的，此时可以实现<strong>Comparator</strong>接口，自定义一个比较器，这样就不需要修改<strong>Comparable</strong>接口的实现类。<ul>
+<li>例，对Student类进行正序排序，<strong>arr</strong>是**ArrayList<student>**类型</student></li>
+<li><img src="/2022/03/30/Comparable%E5%92%8CComparator/image-20220331000444967.png" alt="image-20220331000444967"></li>
+</ul>
+</li>
+</ul>
+
       
 
       
@@ -255,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/29/JAVA8-API/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/30/Comparable%E5%92%8CComparator/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,18 +284,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/03/30/Comparable%E5%92%8CComparator/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Comparable和Comparator
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/03/29/%E9%80%92%E5%BD%92/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">递归</div>
+    <a href="/2022/03/29/JAVA8-API/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA8-API</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -307,7 +313,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JAVA8-API"><span class="toc-number">1.</span> <span class="toc-text">JAVA8-API</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
