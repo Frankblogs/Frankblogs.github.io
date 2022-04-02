@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/04/01/LeetCode/image-20220401144121321.png">
 <meta property="article:published_time" content="2022-04-01T06:31:08.000Z">
-<meta property="article:modified_time" content="2022-04-02T04:39:10.376Z">
+<meta property="article:modified_time" content="2022-04-02T08:17:38.209Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/04/01/LeetCode/image-20220401144121321.png">
@@ -202,20 +202,7 @@
 <p>在最后一个节点开始第一次反转，此时head指向当前节点的上一个节点，所以想要当前节点指向前一个节点，只需head.next.next&#x3D;head,同时使上一个节点不再指向当前节点：head.next&#x3D;null;反转完成后返回新的头节点。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head.next.next=head;</span><br><span class="line">head.next=<span class="literal">null</span>;</span><br><span class="line"><span class="keyword">return</span> newHead;</span><br></pre></td></tr></table></figure></li>
 </ol>
-</li>
-<li><pre><code class="java">public ListNode reverseList(ListNode head) &#123;
-        if (head==null||head.next==null)&#123;
-            return head;
-        &#125;
-        else &#123;
-            ListNode newHead=reverseList(head.next);
-            head.next.next=head;
-            head.next=null;
-            return newHead;
-        &#125;
-</code></pre>
-</li>
-<li></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head==<span class="literal">null</span>||head.next==<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ListNode newHead=reverseList(head.next);</span><br><span class="line">            head.next.next=head;</span><br><span class="line">            head.next=<span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">return</span> newHead;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
