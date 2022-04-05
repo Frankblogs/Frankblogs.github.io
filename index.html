@@ -253,7 +253,7 @@
 <li><p>原地复制</p>
 <ul>
 <li><p>复制各个节点，拼接在各个节点后面</p>
-<p><img src="/LeetCode/image-20220405115721697.png" alt="image-20220405115721697"></p>
+<p><img src="/2022/04/01/LeetCode/image-20220405115721697.png" alt="image-20220405115721697"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Node</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line"><span class="keyword">while</span> (cur != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="type">Node</span> <span class="variable">newNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(cur.val);</span><br><span class="line">    newNode.next = cur.next;</span><br><span class="line">    cur.next = newNode;</span><br><span class="line">    cur = cur.next.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
