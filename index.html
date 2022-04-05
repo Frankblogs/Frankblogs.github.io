@@ -144,6 +144,54 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-哈希表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1><span id="哈希表">哈希表</span></h1><p><a target="_blank" rel="noopener" href="http://planetmath.org/goodhashtableprimes">取模选择</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/04/02/%E5%93%88%E5%B8%8C%E8%A1%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-LeetCode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -170,6 +218,7 @@
 <li><a href="#%E4%BD%BF%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97">使用两个栈实现队列</a></li>
 <li><a href="#%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88minstack">包含Min函数的栈(MinStack)</a></li>
 <li><a href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC">单链表反转</a></li>
+<li><a href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E6%9C%89%E4%B8%AArandom%E6%8C%87%E9%92%88%E5%A4%8D%E5%88%B6">单链表（复杂链表，有个random指针）复制</a></li>
 </ul>
 <!-- tocstop -->
 
@@ -199,6 +248,36 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head.next.next=head;</span><br><span class="line">head.next=<span class="literal">null</span>;</span><br><span class="line"><span class="keyword">return</span> newHead;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head==<span class="literal">null</span>||head.next==<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ListNode newHead=reverseList(head.next);</span><br><span class="line">            head.next.next=head;</span><br><span class="line">            head.next=<span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">return</span> newHead;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1><span id="单链表复杂链表有个random指针复制">单链表（复杂链表，有个random指针）复制</span></h1><ul>
+<li><p>原地复制</p>
+<ul>
+<li><p>复制各个节点，拼接在各个节点后面</p>
+<p><img src="/LeetCode/image-20220405115721697.png" alt="image-20220405115721697"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Node</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line"><span class="keyword">while</span> (cur != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="type">Node</span> <span class="variable">newNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(cur.val);</span><br><span class="line">    newNode.next = cur.next;</span><br><span class="line">    cur.next = newNode;</span><br><span class="line">    cur = cur.next.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>构建新链表各个节点的random指向</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cur=head;</span><br><span class="line"><span class="keyword">while</span> (cur!=<span class="literal">null</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (cur.random != <span class="literal">null</span>) &#123;                      cur.next.random=cur.random.next;</span><br><span class="line">    &#125;</span><br><span class="line">    cur=cur.next.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>拆分原来拼接的链表，返回复制的链表</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cur = head;</span><br><span class="line">Node copyHead=head.next;</span><br><span class="line">Node copyCur=head.next;</span><br><span class="line"><span class="keyword">while</span> (cur!= <span class="literal">null</span>) &#123;</span><br><span class="line">    cur.next=cur.next.next;</span><br><span class="line">    cur=cur.next;</span><br><span class="line">    <span class="keyword">if</span> (copyCur.next!=<span class="literal">null</span>)&#123;</span><br><span class="line">        copyCur.next=copyCur.next.next;</span><br><span class="line">        copyCur=copyCur.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> copyHead;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>使用HashMap&lt;Node,Node&gt;存储，key存原链表，value存复制的链表。</p>
+<ul>
+<li><p>先复制各个节点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;Node, Node&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="type">Node</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line"><span class="keyword">while</span> (cur != <span class="literal">null</span>) &#123;</span><br><span class="line">    map.put(cur, <span class="keyword">new</span> <span class="title class_">Node</span>(cur.val));</span><br><span class="line">    cur = cur.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>然后按原链表的连接方式连接复制的节点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (cur = head; cur != <span class="literal">null</span>; cur = cur.next) &#123;</span><br><span class="line">    map.get(cur).next = map.get(cur.next);</span><br><span class="line">    map.get(cur).random = map.get(cur.random);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> map.get(head);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
 </ul>
 
       
@@ -950,199 +1029,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2022-03-29T04:13:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1><span id="java基础">JAVA基础</span></h1><hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#01-%E5%8F%98%E9%87%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">01 变量与数据类型</a></li>
-<li><a href="#02-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F">02 运算符与表达式</a></li>
-<li><a href="#03-%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">03 条件判断与循环语句</a></li>
-<li><a href="#04-java%E6%95%B0%E7%BB%84">04 JAVA数组</a></li>
-<li><a href="#05-%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B9%E6%B3%95">05 函数与方法</a></li>
-<li><a href="#06-%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86">06 断点调试与数据加密</a></li>
-<li><a href="#07-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1">07 面向对象-类与对象</a></li>
-<li><a href="#08-java%E5%B8%B8%E7%94%A8api-%E5%9F%BA%E7%A1%80">08 java常用API-基础</a></li>
-<li><a href="#09-java%E9%9B%86%E5%90%88">09 java集合</a></li>
-<li><a href="#10-io%E6%B5%81-%E5%9F%BA%E7%A1%80%E5%AF%B9%E5%AD%97%E7%AC%A6%E6%B5%81%E6%93%8D%E4%BD%9C">10 IO流-基础(对字符流操作)</a></li>
-<li><a href="#11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-static%E5%8F%98%E9%87%8F%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%9D%97">11 面向对象-static变量与代码块</a></li>
-<li><a href="#12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BB%A7%E6%89%BF%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB">12 面向对象-继承与抽象类</a></li>
-<li><a href="#13-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%A4%9A%E6%80%81">13 面向对象-接口与多态</a></li>
-<li><a href="#14-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%8C%85%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6">14 面向对象-包与修饰符</a></li>
-<li><a href="#15-java%E5%B8%B8%E7%94%A8api-%E9%AB%98%E7%BA%A7">15 JAVA常用API-高级</a></li>
-<li><a href="#16-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">16 泛型与常见数据结构</a></li>
-<li><a href="#17-map%E4%B8%8Eset%E9%9B%86%E5%90%88">17 Map与Set集合</a></li>
-<li><a href="#18-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">18 异常处理</a></li>
-<li><a href="#19-io%E6%B5%81-%E9%AB%98%E7%BA%A7">19 IO流-高级</a></li>
-<li><a href="#20-%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%8E%E5%AD%97%E8%8A%82%E6%B5%81">20 字符流与字节流</a></li>
-<li><a href="#21-%E5%A4%9A%E7%BA%BF%E7%A8%8B">21 多线程</a></li>
-<li><a href="#22-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B">22 网络编程</a></li>
-</ul>
-<!-- tocstop -->
-
-<hr>
-<h2><span id="01-变量与数据类型">01 变量与数据类型</span></h2><h2><span id="02-运算符与表达式">02 运算符与表达式</span></h2><h2><span id="03-条件判断与循环语句">03 条件判断与循环语句</span></h2><h2><span id="04-java数组">04 JAVA数组</span></h2><h2><span id="05-函数与方法">05 函数与方法</span></h2><h2><span id="06-断点调试与数据加密">06 断点调试与数据加密</span></h2><h2><span id="07-面向对象-类与对象">07 面向对象-类与对象</span></h2><h2><span id="08-java常用api-基础">08 java常用API-基础</span></h2><h2><span id="09-java集合">09 java集合</span></h2><ul>
-<li><p>为什么会出现集合类</p>
-</li>
-<li><p>对多个对象的操作需要对多个对象进行存储，而多个对象存储不能用常用类型，需要用容器类型。 </p>
-</li>
-<li><p>集合类特点</p>
-<ul>
-<li><p>长度可变</p>
-</li>
-<li><p>存储的元素只会存储一次，不会出现重复的元素</p>
-</li>
-<li><p>Java的集合主要有List , Set, Map</p>
-</li>
-<li><p>其中 List , Set 继承至Collection接口，Map为独立接口</p>
-<p>List下有ArrayList，LinkedList，Vector</p>
-<p>Set下有HashSet，LinkedHashSet，TreeSet</p>
-<p>Map下有HashMap，LinkedHashMap， TreeMap，Hashtable</p>
-</li>
-<li><p>在<a target="_blank" rel="noopener" href="https://www.matools.com/api/java8">java.util</a>包下</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2><span id="10-io流-基础对字符流操作">10 IO流-基础(对字符流操作)</span></h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/furaywww/p/8849850.html">大佬的详细介绍</a></p>
-</li>
-<li><p>java中将输入输出抽象成流，就好像水管，将两个容器连接起来，将数据从外存读取到内存是输入流，数据从内存写入到外存是输出流。</p>
-<ul>
-<li><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220401225640478.png" alt="image-20220401225640478"></li>
-</ul>
-</li>
-<li><p>字符流，数据流中最小的数据单元是字符，按功能可分为节点流和包装流。</p>
-</li>
-<li><p>节点流，可以从一个特定的地方(节点)读写数据，如FileReader，FileWriter。</p>
-</li>
-<li><p>包装流，不直接连接数据源，是对一个一已存在的流的连接和包装，如提供缓存机制的BufferedReader，BufferWriter。</p>
-</li>
-<li><p>FileReader</p>
-<ul>
-<li>构造方法<ul>
-<li>FileReader(String fileName):传递一个文件名称，若不写路径则默认在当前项目的根目录下。</li>
-</ul>
-</li>
-<li>方法摘要<ul>
-<li>int  read()：一次读取一个字符，返回该字符的int值，若等于-1，则读取结束</li>
-<li>int  read(char[]  cbuf): 一次读取一个字符数组，返回实际读取了多少个字符，若等于-1，则读取结束</li>
-<li>int  read(char[] cbuf,int off,int len): 将字符读入数组的一部分</li>
-<li>void close(): 关闭流</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>FileWriter</p>
-<ul>
-<li><p>构造方法</p>
-<ul>
-<li>FileWriter(String fileName):传递一个文件名称，若不写路径则默认在当前项目的根目录下。</li>
-</ul>
-</li>
-<li><p>方法摘要</p>
-<ul>
-<li>void write(char[] cbuf): 写入一个字符数组</li>
-<li>void write(char[] cbuf，int off，int len): 写入字符数组的一部分</li>
-<li>void write(int c): 写入一个字符</li>
-<li>void write(String str): 写入一个字符串</li>
-<li>void write(String str，int off，int len):  写入字符串的一部分</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>BufferedReader</p>
-<ul>
-<li><p>构造方法</p>
-<ul>
-<li>BufferedReader(Reader in): 传递一个输入流</li>
-</ul>
-</li>
-<li><p>方法摘要</p>
-<ul>
-<li><p>该流不能直接读取数据源，是通过提供的输入流，对数据源进行操作，所以和基本和Reader的方法一样</p>
-</li>
-<li><p>String readLine()：读取一行数据，返回包含行的内容的字符串，不包括任何行终止字符，如果已达到流的末尾，则为null</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>BufferedWriter</p>
-<ul>
-<li>构造方法<ul>
-<li>BufferedWriter(Writer out): 传递一个输出流</li>
-</ul>
-</li>
-<li>方法摘要<ul>
-<li>该流不能直接输出数据到目的地，是通过提供的输出流，对目的地进行操作，所以和基本和Writer 的方法一样</li>
-<li>void nextLine()：写一行行分隔符。 行分隔符字符串由系统属性<code>line.separator</code>定义，并不一定是单个换行符（’\ n’）字符。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2><span id="11-面向对象-static变量与代码块">11 面向对象-static变量与代码块</span></h2><h2><span id="12-面向对象-继承与抽象类">12 面向对象-继承与抽象类</span></h2><h2><span id="13-面向对象-接口与多态">13 面向对象-接口与多态</span></h2><h2><span id="14-面向对象-包与修饰符">14 面向对象-包与修饰符</span></h2><h2><span id="15-java常用api-高级">15 JAVA常用API-高级</span></h2><h2><span id="16-泛型与常见数据结构">16 泛型与常见数据结构</span></h2><h2><span id="17-map与set集合">17 Map与Set集合</span></h2><h2><span id="18-异常处理">18 异常处理</span></h2><h2><span id="19-io流-高级">19 IO流-高级</span></h2><h2><span id="20-字符流与字节流">20 字符流与字节流</span></h2><h2><span id="21-多线程">21 多线程</span></h2><h2><span id="22-网络编程">22 网络编程</span></h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/">展开全文 >></a>
         </p>
       
 
