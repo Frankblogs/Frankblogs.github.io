@@ -144,6 +144,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/05/%E6%9F%A5%E6%89%BE/">查找</a>
+    </h1>
+  
+
+        
+        <a href="/2022/04/05/%E6%9F%A5%E6%89%BE/" class="archive-article-date">
+  	<time datetime="2022-04-05T05:56:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--toc-->
+
+<hr>
+<h1><span id="线性查找">线性查找</span></h1><ul>
+<li>逐一比对，发现相同值则返回</li>
+</ul>
+<h1><span id="二分查找">二分查找</span></h1><ul>
+<li><p>是对一个有序数组进行查找，如果无序则需先进行排序。</p>
+</li>
+<li><p>计算中间值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> mid=left+(right-left)/<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>目标在中间值右边,往右边查找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (target&gt;nums[mid])&#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(nums,mid+<span class="number">1</span>,right,target);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>目标在中间值左边，往左边查找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (target&lt;nums[mid])&#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(nums,left,mid-<span class="number">1</span>,target);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>目标与中间值吻合，进行相应操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<p><img src="/2022/04/05/%E6%9F%A5%E6%89%BE/image-20220405171856461.png" alt="image-20220405171856461"></p>
+</li>
+</ul>
+<h1><span id="插值查找">插值查找</span></h1><ul>
+<li>也是对一个有序数组进行查找。同时数据分布比较均匀，且数据量较大，这时插值查找才比二分查找好</li>
+<li></li>
+</ul>
+<h1><span id="斐波那契查找">斐波那契查找</span></h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/04/05/%E6%9F%A5%E6%89%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-哈希表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -897,138 +994,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-平衡二叉树和AVL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/">平衡二叉树和AVL</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/" class="archive-article-date">
-  	<time datetime="2022-03-29T04:16:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="平衡二叉树和AVL"><a href="#平衡二叉树和AVL" class="headerlink" title="平衡二叉树和AVL"></a>平衡二叉树和AVL</h1><ul>
-<li>堆和线段树的平衡二叉树叶子节点的高度差不会超过1</li>
-<li>AVL的平衡二叉树对于任意一个节点，左子树和右子树的高度差不能超过1</li>
-</ul>
-<h2 id="基于二分搜索树的AVL"><a href="#基于二分搜索树的AVL" class="headerlink" title="基于二分搜索树的AVL"></a>基于二分搜索树的AVL</h2><ul>
-<li><p>在二分搜索树最坏的情况时，树会退化成链表，经过AVL优化可以防止出现这种情况。</p>
-</li>
-<li><p>在二分搜索树节点中添加<strong>height</strong>用来记录该节点的高度</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326130542258.png" alt="image-20220326130542258"></p>
-</li>
-<li><p>高度的维护是通过比较左右孩子节点的最高高度加一则是该节点的高度</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326130939596.png" alt="image-20220326130939596"></p>
-</li>
-<li><p>通过判断节点的平衡因子（左子树的高度减去右子树的高度）可以判断以该节点为根节点的树是否是平衡二叉树，如果平衡因子的绝对值大于1，则不是平衡二叉树。</p>
-<ul>
-<li><p>是否平衡</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326131656551.png" alt="image-20220326131656551"></p>
-</li>
-<li><p>判断平衡因子</p>
-</li>
-</ul>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326131124959.png" alt="image-20220326131124959"></p>
-</li>
-<li><p>在添加元素时会破坏平衡，所以需要进行维护，有四种情况会破坏平衡</p>
-<ol>
-<li><p>（LL）添加在该节点左节点的左节点，需要对该节点进行右旋转</p>
-<ul>
-<li><p>右旋转</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133031974.png" alt="image-20220326133031974"></p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326132635230.png" alt="image-20220326132635230"></p>
-</li>
-<li><p>维护节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326132833633.png" alt="image-20220326132833633"></p>
-</li>
-</ul>
-</li>
-<li><p>添加在该节点的右节点的右节点，需要对该节点进行左旋转</p>
-<ul>
-<li><p>左旋转</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133205543.png" alt="image-20220326133205543"></p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133106717.png" alt="image-20220326133106717"></p>
-</li>
-<li><p>维护节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133240149.png" alt="image-20220326133240149"></p>
-</li>
-</ul>
-</li>
-<li><p>添加 在该节点的左节点的右节点，需要对该节点的左节点先进行左旋转，然后对该节点进行右旋转</p>
-<ul>
-<li><p>维护节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133310844.png" alt="image-20220326133310844"></p>
-</li>
-</ul>
-</li>
-<li><p>添加在该节点的右节点的左节点，需要对该节点的右节点先进行右旋转，然后对该节点信息左旋转</p>
-<ul>
-<li><p>维护节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326133405909.png" alt="image-20220326133405909"></p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>在删除节点时同样需要进行平衡维护，利用<strong>retNode</strong> 暂存已经进行删除操作的需要返回的树，在需删除节点的左右都不为空的情况下，一般用删除节点的右节点的最小节点来替代删除节点，这时有需要进行一次最小删除操作，因此会导致又需要进行平衡维护，一般有两种进行维护的方式，一是在<strong>removeMin()</strong> 方法进行平衡维护，需要重新写一遍维护代码，二是调用<strong>remove()<strong>自身，只需传入</strong>remove(node.right,succerssor.e)<strong>，因为</strong>successor</strong>是暂存<strong>node.right</strong>的最小节点</p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326134229704.png" alt="image-20220326134229704"></p>
-</li>
-<li><p>对已经进行删除操作的节点进行平衡维护，如果不需要平衡维护，则直接返回<strong>retNode</strong></p>
-<p><img src="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/image-20220326135231935.png" alt="image-20220326135231935"></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/">展开全文 >></a>
         </p>
       
 
