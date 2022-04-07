@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220401225640478.png">
 <meta property="article:published_time" content="2022-03-29T04:13:27.000Z">
-<meta property="article:modified_time" content="2022-04-06T15:36:50.385Z">
+<meta property="article:modified_time" content="2022-04-07T12:56:50.293Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220401225640478.png">
@@ -352,7 +352,22 @@
 <li>继承中的成员方法，如果想调用父类的方法则需使用<strong>super</strong>（可以把super看成父类的对象），当父类的方法不满足需求时，子类可以重写父类的方法，不能重写父类私有的方法，且权限大于等于父类的方法。</li>
 <li>继承中的构造方法执行顺序，如果子类的构造方法的第一行代码没有调用父类的构造方法则默认调用父类的无参构造方法，可以使用再第一行代码中使用<strong>super</strong>调用父类的其他构造方法。</li>
 </ul>
-<h2><span id="抽象类">抽象类</span></h2><h2><span id="13-面向对象-接口与多态">13 面向对象-接口与多态</span></h2><h2><span id="14-面向对象-包与修饰符">14 面向对象-包与修饰符</span></h2><h2><span id="15-java常用api-高级">15 JAVA常用API-高级</span></h2><h2><span id="16-泛型与常见数据结构">16 泛型与常见数据结构</span></h2><h2><span id="17-map与set集合">17 Map与Set集合</span></h2><h2><span id="18-异常处理">18 异常处理</span></h2><h2><span id="19-io流-高级">19 IO流-高级</span></h2><h2><span id="20-字符流与字节流">20 字符流与字节流</span></h2><h2><span id="21-多线程">21 多线程</span></h2><h2><span id="22-网络编程">22 网络编程</span></h2>
+<h2><span id="抽象类">抽象类</span></h2><ul>
+<li>抽取多个类的共性放在一个类中，用<strong>abstract</strong>修饰此类，该类的方法可以不写方法体，而是用<strong>abstract</strong>修饰，一个类如果继承了抽象类就必需重写抽象类的抽象方法，抽象类继承另一个抽象类就不需要重写。</li>
+<li>特点：<ul>
+<li>抽象方法只能在抽象类中</li>
+<li>抽象类和抽象方法必须<strong>abstract</strong>修饰</li>
+<li>抽象类不能实例化</li>
+<li>抽象类可以有非抽象方法</li>
+<li>一个类继承了抽象类要么重写所有的重写方法，要么该类本身就是抽象类</li>
+</ul>
+</li>
+<li>成员特点：<ul>
+<li>可以有成员变量，常量，抽象方法，非抽象方法和构造方法</li>
+</ul>
+</li>
+</ul>
+<h2><span id="13-面向对象-接口与多态">13 面向对象-接口与多态</span></h2><h2><span id="14-面向对象-包与修饰符">14 面向对象-包与修饰符</span></h2><h2><span id="15-java常用api-高级">15 JAVA常用API-高级</span></h2><h2><span id="16-泛型与常见数据结构">16 泛型与常见数据结构</span></h2><h2><span id="17-map与set集合">17 Map与Set集合</span></h2><h2><span id="18-异常处理">18 异常处理</span></h2><h2><span id="19-io流-高级">19 IO流-高级</span></h2><h2><span id="20-字符流与字节流">20 字符流与字节流</span></h2><h2><span id="21-多线程">21 多线程</span></h2><h2><span id="22-网络编程">22 网络编程</span></h2>
       
 
       

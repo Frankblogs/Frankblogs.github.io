@@ -144,6 +144,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-并查集-UnionFind" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/">并查集(UnionFind)</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/" class="archive-article-date">
+  	<time datetime="2022-03-29T05:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86unionfind">并查集（UnionFind）</a><ul>
+<li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD">并查集基本功能</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<hr>
+<h1><span id="并查集unionfind">并查集（UnionFind）</span></h1><ul>
+<li>如在网络中两个节点是否连接，在回答两个节点是否连接中可以用复杂度更高的路径问题思路，但有时只是需要判断两个节点是否连接，无需回答额外的问题，因此出现并查集，并查集只回答是否连接，并不关心如何连接，路径如何。</li>
+</ul>
+<h2><span id="并查集基本功能">并查集基本功能</span></h2><ul>
+<li>对两个数据合并</li>
+<li>判断是否连接</li>
+<li><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320224115655.png" alt="image-20220320224115655"></li>
+</ul>
+<p>例： 用数组实现子节点指向父节点的树，因此组成森林，int[i]为节点元素的父节点，i为节点元素。</p>
+<ol>
+<li><p>初始化森林</p>
+<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232137564.png" alt="image-20220320232137564"></p>
+</li>
+<li><p>寻找根节点</p>
+<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232210245.png" alt="image-20220320232210245"></p>
+</li>
+<li><p>合并数据，如果数据p的根节点和不q节点不同，则将p的根节点指向q。</p>
+<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232314846.png" alt="image-20220320232314846"></p>
+</li>
+<li><p>判断是否连接</p>
+<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320225934111.png" alt="image-20220320225934111"></p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-平衡二叉树和AVL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -480,7 +577,22 @@
 <li>继承中的成员方法，如果想调用父类的方法则需使用<strong>super</strong>（可以把super看成父类的对象），当父类的方法不满足需求时，子类可以重写父类的方法，不能重写父类私有的方法，且权限大于等于父类的方法。</li>
 <li>继承中的构造方法执行顺序，如果子类的构造方法的第一行代码没有调用父类的构造方法则默认调用父类的无参构造方法，可以使用再第一行代码中使用<strong>super</strong>调用父类的其他构造方法。</li>
 </ul>
-<h2><span id="抽象类">抽象类</span></h2><h2><span id="13-面向对象-接口与多态">13 面向对象-接口与多态</span></h2><h2><span id="14-面向对象-包与修饰符">14 面向对象-包与修饰符</span></h2><h2><span id="15-java常用api-高级">15 JAVA常用API-高级</span></h2><h2><span id="16-泛型与常见数据结构">16 泛型与常见数据结构</span></h2><h2><span id="17-map与set集合">17 Map与Set集合</span></h2><h2><span id="18-异常处理">18 异常处理</span></h2><h2><span id="19-io流-高级">19 IO流-高级</span></h2><h2><span id="20-字符流与字节流">20 字符流与字节流</span></h2><h2><span id="21-多线程">21 多线程</span></h2><h2><span id="22-网络编程">22 网络编程</span></h2>
+<h2><span id="抽象类">抽象类</span></h2><ul>
+<li>抽取多个类的共性放在一个类中，用<strong>abstract</strong>修饰此类，该类的方法可以不写方法体，而是用<strong>abstract</strong>修饰，一个类如果继承了抽象类就必需重写抽象类的抽象方法，抽象类继承另一个抽象类就不需要重写。</li>
+<li>特点：<ul>
+<li>抽象方法只能在抽象类中</li>
+<li>抽象类和抽象方法必须<strong>abstract</strong>修饰</li>
+<li>抽象类不能实例化</li>
+<li>抽象类可以有非抽象方法</li>
+<li>一个类继承了抽象类要么重写所有的重写方法，要么该类本身就是抽象类</li>
+</ul>
+</li>
+<li>成员特点：<ul>
+<li>可以有成员变量，常量，抽象方法，非抽象方法和构造方法</li>
+</ul>
+</li>
+</ul>
+<h2><span id="13-面向对象-接口与多态">13 面向对象-接口与多态</span></h2><h2><span id="14-面向对象-包与修饰符">14 面向对象-包与修饰符</span></h2><h2><span id="15-java常用api-高级">15 JAVA常用API-高级</span></h2><h2><span id="16-泛型与常见数据结构">16 泛型与常见数据结构</span></h2><h2><span id="17-map与set集合">17 Map与Set集合</span></h2><h2><span id="18-异常处理">18 异常处理</span></h2><h2><span id="19-io流-高级">19 IO流-高级</span></h2><h2><span id="20-字符流与字节流">20 字符流与字节流</span></h2><h2><span id="21-多线程">21 多线程</span></h2><h2><span id="22-网络编程">22 网络编程</span></h2>
       
 
       
