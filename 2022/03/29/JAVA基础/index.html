@@ -16,8 +16,12 @@
 <meta property="og:description" content="JAVA基础    01 变量与数据类型 02 运算符与表达式 03 条件判断与循环语句 04 JAVA数组 05 函数与方法 06 断点调试与数据加密 07 面向对象-类与对象 08 java常用API-基础 09 java集合 10 IO流-基础(对字符流操作) 11 面向对象-static变量与代码块 static变量 代码块 12 面向对象-继承与抽象类 继承（extends） 抽象类 1">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220401225640478.png">
+<meta property="og:image" content="http://example.com/JAVA%E5%9F%BA%E7%A1%80/image-20220409225736460.png">
+<meta property="og:image" content="http://example.com/JAVA%E5%9F%BA%E7%A1%80/image-20220409234333210.png">
+<meta property="og:image" content="http://example.com/JAVA%E5%9F%BA%E7%A1%80/image-20220409234608281.png">
+<meta property="og:image" content="http://example.com/JAVA%E5%9F%BA%E7%A1%80/image-20220409234643226.png">
 <meta property="article:published_time" content="2022-03-29T04:13:27.000Z">
-<meta property="article:modified_time" content="2022-04-07T12:56:50.293Z">
+<meta property="article:modified_time" content="2022-04-09T15:49:33.154Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220401225640478.png">
@@ -189,6 +193,8 @@
 <li><a href="#%E7%BB%A7%E6%89%BFextends">继承（extends）</a></li>
 <li><a href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB">抽象类</a></li>
 <li><a href="#13-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%A4%9A%E6%80%81">13 面向对象-接口与多态</a></li>
+<li><a href="#%E6%8E%A5%E5%8F%A3">接口</a></li>
+<li><a href="#%E5%A4%9A%E6%80%81">多态</a></li>
 <li><a href="#14-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%8C%85%E4%B8%8E%E4%BF%AE%E9%A5%B0%E7%AC%A6">14 面向对象-包与修饰符</a></li>
 <li><a href="#15-java%E5%B8%B8%E7%94%A8api-%E9%AB%98%E7%BA%A7">15 JAVA常用API-高级</a></li>
 <li><a href="#16-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">16 泛型与常见数据结构</a></li>
@@ -367,7 +373,97 @@
 </ul>
 </li>
 </ul>
-<h2><span id="13-面向对象-接口与多态">13 面向对象-接口与多态</span></h2><h2><span id="14-面向对象-包与修饰符">14 面向对象-包与修饰符</span></h2><h2><span id="15-java常用api-高级">15 JAVA常用API-高级</span></h2><h2><span id="16-泛型与常见数据结构">16 泛型与常见数据结构</span></h2><h2><span id="17-map与set集合">17 Map与Set集合</span></h2><h2><span id="18-异常处理">18 异常处理</span></h2><h2><span id="19-io流-高级">19 IO流-高级</span></h2><h2><span id="20-字符流与字节流">20 字符流与字节流</span></h2><h2><span id="21-多线程">21 多线程</span></h2><h2><span id="22-网络编程">22 网络编程</span></h2>
+<h2><span id="13-面向对象-接口与多态">13 面向对象-接口与多态</span></h2><h2><span id="接口">接口</span></h2><ul>
+<li><p>类的继承是单一继承，多重继承，不能多个继承，接口可以解决这个问题，接口比抽象类还抽象，接口和类很相似。</p>
+</li>
+<li><p>成员特点</p>
+<ul>
+<li>只能有抽象方法</li>
+</ul>
+</li>
+<li><p>接口和类之间的关系</p>
+<ul>
+<li>接口和接口之间是继承<strong>extends</strong>，单一继承</li>
+<li>接口和类之间是实现<strong>implements</strong>，而且是多实现</li>
+</ul>
+</li>
+<li><p>优点</p>
+<ul>
+<li>降低程序耦合性</li>
+<li>提供约束，规范化</li>
+</ul>
+</li>
+<li><p>接口与抽象类的区别</p>
+<ul>
+<li><p>区别一：</p>
+<p>接口与类之间是实现关系，且必须实现接口的全部方法，类可以实现多个接口着是抽象类无法做到的；抽象类与类之间是继承关系，单一继承，可以多层继承，子类只需实现抽象方法。</p>
+</li>
+<li><p>区别二：</p>
+<p>接口的成员只能有抽象方法，没有成员变量，所以没有构造方法；抽象类可以有成员变量，抽象及非抽象方法，有构造方法</p>
+</li>
+</ul>
+<h2><span id="多态">多态</span></h2><p>一个类呈现多种形态</p>
+<ul>
+<li><p>多态前提</p>
+<ul>
+<li><p>要有子父类继承关系，子类实现父类接口也行</p>
+</li>
+<li><p>方法重写</p>
+</li>
+<li><p>父类引用指向子类对象（父类   name&#x3D;new 子类()）</p>
+<p><img src="/JAVA%E5%9F%BA%E7%A1%80/image-20220409225736460.png" alt="image-20220409225736460"></p>
+</li>
+</ul>
+</li>
+<li><p>多态成员特点</p>
+<ul>
+<li><p>成员变量</p>
+<p>编译时看的是左边(父类)，运行时看的是左边(父类)</p>
+</li>
+<li><p>成员方法</p>
+<p>编译时看的是左边(父类)，运行时看的是右边(子类)</p>
+</li>
+<li><p>静态方法</p>
+<p>编译时看的是左边(父类)，运行时看的是左边(父类)</p>
+<p>总结：调用变量时，使用的是父类的变量，调用非静态方法时，使用的是子类的重写方法，调用静态的方法时使用的是父类的静态方法。</p>
+</li>
+</ul>
+</li>
+<li><p>向上转型和向下转型</p>
+<ul>
+<li><p>向上（子类型转父类型）</p>
+<p>例：Animal    a&#x3D;new   Dog()；，当需要使用多态时则需向上转型</p>
+</li>
+<li><p>向下(父类型转子类型)</p>
+<p>例：Dog      d&#x3D;（Dog）a； 当需要使用子类特有的方法时，则需要向下转型</p>
+</li>
+</ul>
+</li>
+<li><p>优缺点</p>
+<ul>
+<li><p>优</p>
+<p>提高代码的可扩展性，例如有三个类，一个是手机工厂类，是生产手机的，一个是小米手机类，一个是红米手机类。手机工厂类里有生产手机的方法。</p>
+<ul>
+<li><p>没有使用多态，每一个手机生产就需要对应一个方法，需要写很多方法</p>
+<p><img src="/JAVA%E5%9F%BA%E7%A1%80/image-20220409234333210.png" alt="image-20220409234333210"></p>
+</li>
+<li><p>使用多态，这时只需写一个生产手机的方法就行，这个方法需要传进来一个手机型号接口的实现类就行</p>
+<p>手机型号接口及其实现类</p>
+<p><img src="/JAVA%E5%9F%BA%E7%A1%80/image-20220409234608281.png" alt="image-20220409234608281"></p>
+<p>手机工厂类</p>
+<p><img src="/JAVA%E5%9F%BA%E7%A1%80/image-20220409234643226.png" alt="image-20220409234643226"></p>
+</li>
+</ul>
+</li>
+<li><p>缺</p>
+<p>无法直接访问子类特有的成员</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><span id="14-面向对象-包与修饰符">14 面向对象-包与修饰符</span></h2><h2><span id="15-java常用api-高级">15 JAVA常用API-高级</span></h2><h2><span id="16-泛型与常见数据结构">16 泛型与常见数据结构</span></h2><h2><span id="17-map与set集合">17 Map与Set集合</span></h2><h2><span id="18-异常处理">18 异常处理</span></h2><h2><span id="19-io流-高级">19 IO流-高级</span></h2><h2><span id="20-字符流与字节流">20 字符流与字节流</span></h2><h2><span id="21-多线程">21 多线程</span></h2><h2><span id="22-网络编程">22 网络编程</span></h2>
       
 
       
@@ -508,7 +604,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">JAVA基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">01 变量与数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">02 运算符与表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">03 条件判断与循环语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">04 JAVA数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">05 函数与方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.6.</span> <span class="toc-text">06 断点调试与数据加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.7.</span> <span class="toc-text">07 面向对象-类与对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.8.</span> <span class="toc-text">08 java常用API-基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.9.</span> <span class="toc-text">09 java集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.10.</span> <span class="toc-text">10 IO流-基础(对字符流操作)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.11.</span> <span class="toc-text">11 面向对象-static变量与代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.12.</span> <span class="toc-text">static变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.13.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.14.</span> <span class="toc-text">12 面向对象-继承与抽象类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.15.</span> <span class="toc-text">继承（extends）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.16.</span> <span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.17.</span> <span class="toc-text">13 面向对象-接口与多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.18.</span> <span class="toc-text">14 面向对象-包与修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.19.</span> <span class="toc-text">15 JAVA常用API-高级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.20.</span> <span class="toc-text">16 泛型与常见数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.21.</span> <span class="toc-text">17 Map与Set集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.22.</span> <span class="toc-text">18 异常处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.23.</span> <span class="toc-text">19 IO流-高级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.24.</span> <span class="toc-text">20 字符流与字节流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.25.</span> <span class="toc-text">21 多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.26.</span> <span class="toc-text">22 网络编程</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">JAVA基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">01 变量与数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">02 运算符与表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">03 条件判断与循环语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">04 JAVA数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">05 函数与方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.6.</span> <span class="toc-text">06 断点调试与数据加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.7.</span> <span class="toc-text">07 面向对象-类与对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.8.</span> <span class="toc-text">08 java常用API-基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.9.</span> <span class="toc-text">09 java集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.10.</span> <span class="toc-text">10 IO流-基础(对字符流操作)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.11.</span> <span class="toc-text">11 面向对象-static变量与代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.12.</span> <span class="toc-text">static变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.13.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.14.</span> <span class="toc-text">12 面向对象-继承与抽象类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.15.</span> <span class="toc-text">继承（extends）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.16.</span> <span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.17.</span> <span class="toc-text">13 面向对象-接口与多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.18.</span> <span class="toc-text">接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.19.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.20.</span> <span class="toc-text">14 面向对象-包与修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.21.</span> <span class="toc-text">15 JAVA常用API-高级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.22.</span> <span class="toc-text">16 泛型与常见数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.23.</span> <span class="toc-text">17 Map与Set集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.24.</span> <span class="toc-text">18 异常处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.25.</span> <span class="toc-text">19 IO流-高级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.26.</span> <span class="toc-text">20 字符流与字节流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.27.</span> <span class="toc-text">21 多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.28.</span> <span class="toc-text">22 网络编程</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
