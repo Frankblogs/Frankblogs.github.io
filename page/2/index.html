@@ -510,7 +510,7 @@ File(String parent,String child )//根据指定的父路径和文件路径创建
 <li><p>标准输出流</p>
 <ul>
 <li><pre><code class="java">public static final PrintStream out//字节输出流，用于输出到命令行中
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 转换流（字节流转字符流）</span><br><span class="line"></span><br><span class="line">- ### InputStreamReader类</span><br><span class="line"></span><br><span class="line">  - 把字节输入流转换成字符输入流</span><br><span class="line"></span><br><span class="line">  - 构造方法</span><br><span class="line"></span><br><span class="line">    - ```java</span><br><span class="line">      public InputStreamReader(InputStream in)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 转换流（字节流转字符流）</span><br><span class="line"></span><br><span class="line">- ### InputStreamReader类</span><br><span class="line"></span><br><span class="line">  - 把字节输入流转换成字符输入流</span><br><span class="line"></span><br><span class="line">  - 构造方法</span><br><span class="line"></span><br><span class="line">    - ```java</span><br><span class="line">      public InputStreamReader(InputStream in)</span><br><span class="line">      public InputStreamReader(InputStream in,</span><br><span class="line">                               String charsetName//可以指定编码</span><br></pre></td></tr></table></figure>
 </code></pre>
 </li>
 <li><p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220416192259090.png" alt="image-20220416192259090"></p>
@@ -522,7 +522,7 @@ File(String parent,String child )//根据指定的父路径和文件路径创建
 </li>
 <li><p>构造方法</p>
 <ul>
-<li>&#96;&#96;&#96;java<br>public OutputStreamWriter(OutputStream out)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - ![image-20220416191418643](image-20220416191418643.png)</span><br><span class="line"></span><br><span class="line">## 打印流</span><br><span class="line"></span><br><span class="line">- 是输出流的一种包装流，拥有自动换行和自动刷新功能，</span><br><span class="line"></span><br><span class="line">- PrintStream</span><br><span class="line">- PrintWriter</span><br><span class="line">- ![image-20220416195702016](image-20220416195702016.png)</span><br><span class="line"></span><br><span class="line">## 对象操作流</span><br><span class="line"></span><br><span class="line">- 适用于读写对象的一种包装流，操作对象必须实现**Serializable**接口，序列化接口是一个标识接口，当一个类实现了序列化接口就会有一个序列化ID，在操作对象IO流时会根据ID进行对象和类的比较，如果不一样则会出现异常，这个ID我们如果没有自己定义则会使用默认的，默认是根据成员变量形成的，如果想不根据成员变量有关则需要自己定义</span><br><span class="line"></span><br><span class="line">  例如：![image-20220416205438231](image-20220416205438231.png)</span><br><span class="line"></span><br><span class="line">- ObjectOutputStream</span><br><span class="line"></span><br><span class="line">  - 构造方法：</span><br><span class="line"></span><br><span class="line">    - ```java</span><br><span class="line">      public ObjectOutputStream(OutputStream out)</span><br></pre></td></tr></table></figure></li>
+<li>&#96;&#96;&#96;java<br>public OutputStreamWriter(OutputStream out)<br>public OutputStreamWriter(OutputStream out,<br>                    String charsetName)&#x2F;&#x2F;可以指定编码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">  - ![image-20220416191418643](image-20220416191418643.png)</span><br><span class="line"></span><br><span class="line">## 打印流</span><br><span class="line"></span><br><span class="line">- 是输出流的一种包装流，拥有自动换行和自动刷新功能，</span><br><span class="line"></span><br><span class="line">- PrintStream</span><br><span class="line">- PrintWriter</span><br><span class="line">- ![image-20220416195702016](image-20220416195702016.png)</span><br><span class="line"></span><br><span class="line">## 对象操作流</span><br><span class="line"></span><br><span class="line">- 适用于读写对象的一种包装流，操作对象必须实现**Serializable**接口，序列化接口是一个标识接口，当一个类实现了序列化接口就会有一个序列化ID，在操作对象IO流时会根据ID进行对象和类的比较，如果不一样则会出现异常，这个ID我们如果没有自己定义则会使用默认的，默认是根据成员变量形成的，如果想不根据成员变量有关则需要自己定义</span><br><span class="line"></span><br><span class="line">  例如：![image-20220416205438231](image-20220416205438231.png)</span><br><span class="line"></span><br><span class="line">- ObjectOutputStream</span><br><span class="line"></span><br><span class="line">  - 构造方法：</span><br><span class="line"></span><br><span class="line">    - ```java</span><br><span class="line">      public ObjectOutputStream(OutputStream out)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>方法</p>
@@ -549,7 +549,41 @@ public void load(Reader reader)//以字符流输入
 </ul>
 </li>
 </ul>
-<h2><span id="21-多线程">21 多线程</span></h2><h2><span id="22-网络编程">22 网络编程</span></h2>
+<h2><span id="21-多线程">21 多线程</span></h2><ul>
+<li><p>进程：一个应用程序在内存中的执行区域</p>
+<p>线程：进程中的一个执行控制单元，即执行路径，cpu通过调用线程来执行程序，cpu调用线程是随机的，所以在java代码中创建多个线程，那么cpu调用到的概率变高，这样就提高了程序的执行效率。注意java的主方法是单线程。</p>
+</li>
+<li><p>多线程实现方式</p>
+<ul>
+<li><p>继承Thread类，并且重写run()方法，run方法里写需要执行的程序，</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417120802349.png" alt="image-20220417120802349"></p>
+<p>使用拥有多线程的类，先创建目标类的对象，然后调用start()方法，这个方法是调用对象里的run()方法</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417120835258.png" alt="image-20220417120835258"></p>
+</li>
+<li><p>实现Runnable接口,并且重写run()方法，run方法里写需要执行的程序，</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417120953864.png" alt="image-20220417120953864"></p>
+<p>使用拥有多线程的类，先创建目标类的对象，然后调用start()方法，这个方法是调用对象里的run()方法</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417121108487.png" alt="image-20220417121108487"></p>
+</li>
+</ul>
+</li>
+<li><p>多线程可能出现的问题，当多个线程并发的使用共享的资源时，资源枯竭了，但是线程还在访问，这样就出现了安全问题。</p>
+<p>如下，共享的变量<strong>ticket</strong>可能为零了，但是线程还在访问就可能会出现ticket小于零</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417210423183.png" alt="image-20220417210423183"></p>
+</li>
+<li><p>解决方法，访问状态变量时使用同步机制。即对代码块或者方法使用synchronized修饰，代码块使用该修饰符时需要写明锁对象**synchronized(object)**，锁对象可以是任何类型</p>
+<p>如下，同步代码块</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417211801058.png" alt="image-20220417211801058"></p>
+<p>同步非静态方法，默认锁对象是this</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417212958362.png" alt="image-20220417212958362"></p>
+<p>同步静态方法，默认锁对象是目前类的字节码对象</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417213139950.png" alt="image-20220417213139950"></p>
+</li>
+<li><p>线程的生命周期</p>
+<p><img src="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/image-20220417213739910.png" alt="image-20220417213739910"></p>
+</li>
+</ul>
+<h2><span id="22-网络编程">22 网络编程</span></h2>
       
 
       
