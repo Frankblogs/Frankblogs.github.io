@@ -234,13 +234,13 @@
 </ul>
 <h2><span id="js的输出">JS的输出</span></h2><ul>
 <li><p>alert()直接弹框</p>
-<p><img src="/JS/image-20220424112717054.png" alt="image-20220424112717054"></p>
+<p><img src="/2022/04/24/JS/image-20220424112717054.png" alt="image-20220424112717054"></p>
 </li>
 <li><p>document.write()向页面输出</p>
-<p><img src="/JS/image-20220424113338525.png" alt="image-20220424113338525"></p>
+<p><img src="/2022/04/24/JS/image-20220424113338525.png" alt="image-20220424113338525"></p>
 </li>
 <li><p>console.log()向控制台输出</p>
-<p><img src="/JS/image-20220424113428475.png" alt="image-20220424113428475"></p>
+<p><img src="/2022/04/24/JS/image-20220424113428475.png" alt="image-20220424113428475"></p>
 </li>
 <li><p>innerHTML：向页面输出</p>
 </li>
@@ -306,8 +306,8 @@
 <h2><span id="表格的隔行换色">表格的隔行换色</span></h2><h2><span id="表格的全选和全不选">表格的全选和全不选</span></h2><h2><span id="html中的dom操作">HTML中的DOM操作</span></h2><ul>
 <li><p>什么是DOM(文档对象模型)</p>
 <p>一个页面所显示的就是一个DOM树，页面里的各种标签或者属性就是DOM树的节点，可以利用DOM对象对节点进行增删改查</p>
-<p><img src="/JS/image-20220427202320517.png" alt="image-20220427202320517"></p>
-<p><img src="/JS/image-20220427202404464.png" alt="image-20220427202404464"></p>
+<p><img src="/2022/04/24/JS/image-20220427202320517.png" alt="image-20220427202320517"></p>
+<p><img src="/2022/04/24/JS/image-20220427202404464.png" alt="image-20220427202404464"></p>
 </li>
 <li></li>
 </ul>
@@ -531,43 +531,18 @@
 
 <h3><span id="表单">表单</span></h3><ul>
 <li><p>&lt;input&gt; 标签定义输入字段，用户可在其中输入数据，可以是文本或者文件</p>
-<ul>
-<li><pre><code class="html">&lt;!--
-    &lt;input type=&quot;text&quot; name=&quot;usernam&quot;  value=&quot;&quot; /&gt;
-    属性：
-        type：指示 input 元素的类型。
-        name：为 input 元素定义唯一的名称，可以理解为变量名，当作参数名称
-        value 为input元素设置默认值
-        placeholder：设置提示信息
-        type常用类型：
-                    text：文本
-                    password：密码类型
-                    file：文件
-                    radio：单选按钮  
-                    checkbox：复选框
-                    submit:提交按钮
-                    reset：重置按钮
-                    hidden：隐藏域，主要是用来存放页面上的一些ID信息
-                    date：时间类型
-                    number：限制只能输入数字
-                    
---&gt;
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- **\&lt;textarea&gt;**定义一个文本区域 (text-area) （一个多行的文本输入区域）。用户可在此文本区域中写文本</span><br><span class="line"></span><br><span class="line">  - ``` html</span><br><span class="line">    &lt;!-- </span><br><span class="line">    	&lt;textarea rows=&quot;&quot; cols=&quot;&quot;&gt;</span><br><span class="line">    		 	文本</span><br><span class="line">    	&lt;/textarea&gt;</span><br><span class="line">    </span><br><span class="line">    	属性：</span><br><span class="line">    		rows：指定高度</span><br><span class="line">    		cols：指定宽度</span><br><span class="line">    --&gt;</span><br></pre></td></tr></table></figure>
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	&lt;input type=&quot;text&quot; name=&quot;usernam&quot;  value=&quot;&quot; /&gt;</span></span><br><span class="line"><span class="comment">	属性：</span></span><br><span class="line"><span class="comment">		type：指示 input 元素的类型。</span></span><br><span class="line"><span class="comment">		name：为 input 元素定义唯一的名称，可以理解为变量名，当作参数名称</span></span><br><span class="line"><span class="comment">		value 为input元素设置默认值</span></span><br><span class="line"><span class="comment">		placeholder：设置提示信息</span></span><br><span class="line"><span class="comment">		type常用类型：</span></span><br><span class="line"><span class="comment">					text：文本</span></span><br><span class="line"><span class="comment">					password：密码类型</span></span><br><span class="line"><span class="comment">					file：文件</span></span><br><span class="line"><span class="comment">					radio：单选按钮  </span></span><br><span class="line"><span class="comment">					checkbox：复选框</span></span><br><span class="line"><span class="comment">					submit:提交按钮</span></span><br><span class="line"><span class="comment">					reset：重置按钮</span></span><br><span class="line"><span class="comment">					hidden：隐藏域，主要是用来存放页面上的一些ID信息</span></span><br><span class="line"><span class="comment">					date：时间类型</span></span><br><span class="line"><span class="comment">					number：限制只能输入数字</span></span><br><span class="line"><span class="comment">					</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li></li>
-</ul>
+<li><p>**&lt;textarea&gt;**定义一个文本区域 (text-area) （一个多行的文本输入区域）。用户可在此文本区域中写文本</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">	&lt;textarea rows=&quot;&quot; cols=&quot;&quot;&gt;</span></span><br><span class="line"><span class="comment">		 	文本</span></span><br><span class="line"><span class="comment">	&lt;/textarea&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	属性：</span></span><br><span class="line"><span class="comment">		rows：指定高度</span></span><br><span class="line"><span class="comment">		cols：指定宽度</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>- </p>
 </li>
-<li><p>**&lt;select&gt;**标签创建下拉列表</p>
-<ul>
-<li>&#96;&#96;&#96; html<!--
-         <select name="">
-        <option value=""></option>//选择项
-        </select>
--->
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- **\&lt;form&gt;** 标签创建供用户输入的表单。表单可包含文本域，复选框，单选按钮等等。表单用于向指定的 URL 传递用户数据。</span><br><span class="line"></span><br><span class="line">  - ``` html</span><br><span class="line">    &lt;!--</span><br><span class="line">    	&lt;form action=&quot;&quot; method=&quot;&quot;&gt;</span><br><span class="line">    		 	</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    </span><br><span class="line">    	属性：</span><br><span class="line">    		action：提交地址</span><br><span class="line">    		method：提交方式，有两种，get和post</span><br><span class="line">    				get：默认提交方式，会将参数拼接在链接后面，有大小限制</span><br><span class="line">    				post：会将参数封装在请求体中，没有大小限制</span><br><span class="line">    --&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
+<li><p>&lt;select&gt;标签创建下拉列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment"> 		&lt;select name=&quot;&quot;&gt;</span></span><br><span class="line"><span class="comment">		&lt;option value=&quot;&quot;&gt;&lt;/option&gt;//选择项</span></span><br><span class="line"><span class="comment">		&lt;/select&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>&lt;form&gt; 标签创建供用户输入的表单。表单可包含文本域，复选框，单选按钮等等。表单用于向指定的 URL 传递用户数据。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	&lt;form action=&quot;&quot; method=&quot;&quot;&gt;</span></span><br><span class="line"><span class="comment">		 	</span></span><br><span class="line"><span class="comment">    &lt;/form&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	属性：</span></span><br><span class="line"><span class="comment">		action：提交地址</span></span><br><span class="line"><span class="comment">		method：提交方式，有两种，get和post</span></span><br><span class="line"><span class="comment">				get：默认提交方式，会将参数拼接在链接后面，有大小限制</span></span><br><span class="line"><span class="comment">				post：会将参数封装在请求体中，没有大小限制</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <h3><span id="块标签">块标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">div标签：默认占一行，自动换行</span></span><br><span class="line"><span class="comment">		&lt;div &gt;</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">		&lt;/div&gt;</span></span><br><span class="line"><span class="comment">span标签：内容显示子在同一行</span></span><br><span class="line"><span class="comment">		&lt;span&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
