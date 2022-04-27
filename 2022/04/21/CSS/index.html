@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>CSS | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主要作用 美化HTML页面 提高代码复用性  简单语法 在一个&lt;style&gt;标签中编写CSS内容，&lt;style&gt;标签写在head标签中  123456789&lt;!-- &lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;											选择器&amp;#123;						属性名称:属性的值						属性名称2: 属性的值2					&amp;#125">
+  <meta name="description" content="CSS    主要作用 简单语法 ID选择器 类(class)选择器 元素选择 选择器的优先级 CSS的引入方式 CSS的浮动 CSS盒子模型 CSS绝对定位       主要作用 美化HTML页面 提高代码复用性  简单语法 在一个&lt;style&gt;标签中编写CSS内容，&lt;style&gt;标签写在head标签中  123456789&lt;!-- &lt;style type&#x3D;&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS">
 <meta property="og:url" content="http://example.com/2022/04/21/CSS/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="主要作用 美化HTML页面 提高代码复用性  简单语法 在一个&lt;style&gt;标签中编写CSS内容，&lt;style&gt;标签写在head标签中  123456789&lt;!-- &lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;											选择器&amp;#123;						属性名称:属性的值						属性名称2: 属性的值2					&amp;#125">
+<meta property="og:description" content="CSS    主要作用 简单语法 ID选择器 类(class)选择器 元素选择 选择器的优先级 CSS的引入方式 CSS的浮动 CSS盒子模型 CSS绝对定位       主要作用 美化HTML页面 提高代码复用性  简单语法 在一个&lt;style&gt;标签中编写CSS内容，&lt;style&gt;标签写在head标签中  123456789&lt;!-- &lt;style type&#x3D;&amp;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-21T00:22:39.000Z">
-<meta property="article:modified_time" content="2022-04-24T02:45:18.573Z">
+<meta property="article:modified_time" content="2022-04-27T12:35:29.686Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -166,7 +166,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2><span id="主要作用">主要作用</span></h2><ul>
+        <h1><span id="css">CSS</span></h1><hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8">主要作用</a></li>
+<li><a href="#%E7%AE%80%E5%8D%95%E8%AF%AD%E6%B3%95">简单语法</a><ul>
+<li><a href="#id%E9%80%89%E6%8B%A9%E5%99%A8">ID选择器</a></li>
+<li><a href="#%E7%B1%BBclass%E9%80%89%E6%8B%A9%E5%99%A8">类(class)选择器</a></li>
+<li><a href="#%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9">元素选择</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7">选择器的优先级</a></li>
+<li><a href="#css%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F">CSS的引入方式</a></li>
+<li><a href="#css%E7%9A%84%E6%B5%AE%E5%8A%A8">CSS的浮动</a></li>
+<li><a href="#css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B">CSS盒子模型</a></li>
+<li><a href="#css%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D">CSS绝对定位</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<hr>
+<h2><span id="主要作用">主要作用</span></h2><ul>
 <li>美化HTML页面</li>
 <li>提高代码复用性</li>
 </ul>
@@ -351,7 +371,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">主要作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">简单语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">ID选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">类(class)选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">元素选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.4.</span> <span class="toc-text">选择器的优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.5.</span> <span class="toc-text">CSS的引入方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.6.</span> <span class="toc-text">CSS的浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.7.</span> <span class="toc-text">CSS盒子模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.8.</span> <span class="toc-text">CSS绝对定位</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">主要作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">简单语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.1.</span> <span class="toc-text">ID选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.2.</span> <span class="toc-text">类(class)选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.3.</span> <span class="toc-text">元素选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.4.</span> <span class="toc-text">选择器的优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.5.</span> <span class="toc-text">CSS的引入方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.6.</span> <span class="toc-text">CSS的浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.7.</span> <span class="toc-text">CSS盒子模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.8.</span> <span class="toc-text">CSS绝对定位</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

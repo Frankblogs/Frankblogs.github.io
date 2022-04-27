@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>JS | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript概述 什么是JavaScript： 一种直译式脚本语言  什么是脚本语言 java源代码——&gt;编译成.class文件—-&gt;java虚拟机中才能执行 脚本语言：源码—–&gt;解释执行 js由浏览器来解释执行  有什么用 HTML决定页面骨架 CSS美化页面 JS提供用户交互   JS组成 ECMAScirpt：核心部分，定义js的语法规范 DOM：documen">
+  <meta name="description" content="JS    JavaScript概述 JS组成 JS语法 JS数据类型 JS的运算符和语句 JS的输出 JS的开发步骤 JS简单的数据校验 定时器 轮播图 表单校验 表格的隔行换色 表格的全选和全不选 HTML中的DOM操作 省市联动 商品左右选择     JavaScript概述 什么是JavaScript： 一种直译式脚本语言  什么是脚本语言 java源代码——&gt;编译成.class文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS">
 <meta property="og:url" content="http://example.com/2022/04/24/JS/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JavaScript概述 什么是JavaScript： 一种直译式脚本语言  什么是脚本语言 java源代码——&gt;编译成.class文件—-&gt;java虚拟机中才能执行 脚本语言：源码—–&gt;解释执行 js由浏览器来解释执行  有什么用 HTML决定页面骨架 CSS美化页面 JS提供用户交互   JS组成 ECMAScirpt：核心部分，定义js的语法规范 DOM：documen">
+<meta property="og:description" content="JS    JavaScript概述 JS组成 JS语法 JS数据类型 JS的运算符和语句 JS的输出 JS的开发步骤 JS简单的数据校验 定时器 轮播图 表单校验 表格的隔行换色 表格的全选和全不选 HTML中的DOM操作 省市联动 商品左右选择     JavaScript概述 什么是JavaScript： 一种直译式脚本语言  什么是脚本语言 java源代码——&gt;编译成.class文件">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/04/24/JS/image-20220424112717054.png">
 <meta property="og:image" content="http://example.com/2022/04/24/JS/image-20220424113338525.png">
@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://example.com/2022/04/24/JS/image-20220427202320517.png">
 <meta property="og:image" content="http://example.com/2022/04/24/JS/image-20220427202404464.png">
 <meta property="article:published_time" content="2022-04-24T02:46:46.000Z">
-<meta property="article:modified_time" content="2022-04-27T12:30:15.982Z">
+<meta property="article:modified_time" content="2022-04-27T12:34:16.679Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/04/24/JS/image-20220424112717054.png">
@@ -173,8 +173,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- top-->
+        <h1><span id="js">JS</span></h1><hr>
+<!-- toc -->
 
+<ul>
+<li><a href="#javascript%E6%A6%82%E8%BF%B0">JavaScript概述</a></li>
+<li><a href="#js%E7%BB%84%E6%88%90">JS组成</a></li>
+<li><a href="#js%E8%AF%AD%E6%B3%95">JS语法</a></li>
+<li><a href="#js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">JS数据类型</a></li>
+<li><a href="#js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%AF%AD%E5%8F%A5">JS的运算符和语句</a></li>
+<li><a href="#js%E7%9A%84%E8%BE%93%E5%87%BA">JS的输出</a></li>
+<li><a href="#js%E7%9A%84%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4">JS的开发步骤</a></li>
+<li><a href="#js%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C">JS简单的数据校验</a></li>
+<li><a href="#%E5%AE%9A%E6%97%B6%E5%99%A8">定时器</a></li>
+<li><a href="#%E8%BD%AE%E6%92%AD%E5%9B%BE">轮播图</a></li>
+<li><a href="#%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C">表单校验</a></li>
+<li><a href="#%E8%A1%A8%E6%A0%BC%E7%9A%84%E9%9A%94%E8%A1%8C%E6%8D%A2%E8%89%B2">表格的隔行换色</a></li>
+<li><a href="#%E8%A1%A8%E6%A0%BC%E7%9A%84%E5%85%A8%E9%80%89%E5%92%8C%E5%85%A8%E4%B8%8D%E9%80%89">表格的全选和全不选</a></li>
+<li><a href="#html%E4%B8%AD%E7%9A%84dom%E6%93%8D%E4%BD%9C">HTML中的DOM操作</a></li>
+<li><a href="#%E7%9C%81%E5%B8%82%E8%81%94%E5%8A%A8">省市联动</a></li>
+<li><a href="#%E5%95%86%E5%93%81%E5%B7%A6%E5%8F%B3%E9%80%89%E6%8B%A9">商品左右选择</a></li>
+</ul>
+<!-- tocstop -->
+
+<hr>
 <h2><span id="javascript概述">JavaScript概述</span></h2><ul>
 <li><p>什么是JavaScript：</p>
 <p>一种直译式脚本语言</p>
@@ -452,7 +474,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">JavaScript概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">JS组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">JS语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">JS数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">JS的运算符和语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">JS的输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">JS的开发步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">JS简单的数据校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">定时器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">轮播图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">表单校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">表格的隔行换色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">表格的全选和全不选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">HTML中的DOM操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">15.</span> <span class="toc-text">省市联动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">16.</span> <span class="toc-text">商品左右选择</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">JS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">JavaScript概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">JS组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">JS语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">JS数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">JS的运算符和语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.6.</span> <span class="toc-text">JS的输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.7.</span> <span class="toc-text">JS的开发步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.8.</span> <span class="toc-text">JS简单的数据校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.9.</span> <span class="toc-text">定时器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.10.</span> <span class="toc-text">轮播图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.11.</span> <span class="toc-text">表单校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.12.</span> <span class="toc-text">表格的隔行换色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.13.</span> <span class="toc-text">表格的全选和全不选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.14.</span> <span class="toc-text">HTML中的DOM操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.15.</span> <span class="toc-text">省市联动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.16.</span> <span class="toc-text">商品左右选择</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
