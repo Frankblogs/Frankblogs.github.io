@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | Hexo</title>
+  <title>JS | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="JavaScript概述 什么是JavaScript： 一种直译式脚本语言  什么是脚本语言 java源代码——&gt;编译成.class文件—-&gt;java虚拟机中才能执行 脚本语言：源码—–&gt;解释执行 js由浏览器来解释执行  有什么用 HTML决定页面骨架 CSS美化页面 JS提供用户交互   JS组成 ECMAScirpt：核心部分，定义js的语法规范 DOM：documen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS">
+<meta property="og:url" content="http://example.com/2022/04/24/JS/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaScript概述 什么是JavaScript： 一种直译式脚本语言  什么是脚本语言 java源代码——&gt;编译成.class文件—-&gt;java虚拟机中才能执行 脚本语言：源码—–&gt;解释执行 js由浏览器来解释执行  有什么用 HTML决定页面骨架 CSS美化页面 JS提供用户交互   JS组成 ECMAScirpt：核心部分，定义js的语法规范 DOM：documen">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/JS/image-20220424112717054.png">
+<meta property="og:image" content="http://example.com/JS/image-20220424113338525.png">
+<meta property="og:image" content="http://example.com/JS/image-20220424113428475.png">
+<meta property="og:image" content="http://example.com/2022/04/24/JS/image-20220426181642060.png">
+<meta property="og:image" content="http://example.com/JS/image-20220427202320517.png">
+<meta property="og:image" content="http://example.com/JS/image-20220427202404464.png">
+<meta property="article:published_time" content="2022-04-24T02:46:46.000Z">
+<meta property="article:modified_time" content="2022-04-27T12:24:33.031Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/JS/image-20220424112717054.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -142,295 +153,324 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JS" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JS
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/24/JS/" class="archive-article-date">
+
+        
+        <a href="/2022/04/24/JS/" class="archive-article-date">
   	<time datetime="2022-04-24T02:46:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-24</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/24/JS/">JS</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- top-->
 
-        <div class="article-info info-on-right">
-          
-          
+<h2><span id="javascript概述">JavaScript概述</span></h2><ul>
+<li><p>什么是JavaScript：</p>
+<p>一种直译式脚本语言</p>
+</li>
+<li><p>什么是脚本语言</p>
+<p>java源代码——&gt;编译成.class文件—-&gt;java虚拟机中才能执行</p>
+<p>脚本语言：源码—–&gt;解释执行</p>
+<p>js由浏览器来解释执行</p>
+</li>
+<li><p>有什么用</p>
+<p>HTML决定页面骨架</p>
+<p>CSS美化页面</p>
+<p>JS提供用户交互</p>
+</li>
+</ul>
+<h2><span id="js组成">JS组成</span></h2><ul>
+<li>ECMAScirpt：核心部分，定义js的语法规范</li>
+<li>DOM：document Object Model 文档对象模型，主要用来管理页面</li>
+<li>BOM：Browser Object Model 浏览器对象模型，封装了浏览器的前进，后退，页面刷新，历史记录，屏幕宽高</li>
+</ul>
+<h2><span id="js语法">JS语法</span></h2><ul>
+<li>变量弱类型<ul>
+<li>例： var i&#x3D;数据；</li>
+</ul>
+</li>
+<li>区分大小写</li>
+<li>语句结束之后的分号可以有也可以没有</li>
+<li>写在script标签内</li>
+</ul>
+<h2><span id="js数据类型">JS数据类型</span></h2><ul>
+<li>基本数据类型<ul>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>undefine</li>
+<li>null</li>
+</ul>
+</li>
+<li>引用类型<ul>
+<li>对象，内置对象</li>
+</ul>
+</li>
+<li>类型转换<ul>
+<li>js内部自动转换</li>
+</ul>
+</li>
+</ul>
+<h2><span id="js的运算符和语句">JS的运算符和语句</span></h2><ul>
+<li><p>运算符和java一样</p>
+<ul>
+<li>特殊：“&#x3D;&#x3D;&#x3D;”，全等号，数据和数据类型全部一样则为true</li>
+</ul>
+</li>
+<li><p>语句和java一样</p>
+</li>
+<li><p>JS声明变量：</p>
+<p>var 变量的名称&#x3D;变量的值</p>
+</li>
+<li><p>JS声明函数：</p>
+<p>var 函数的名称&#x3D;function(){</p>
+<p>}</p>
+<p>或者</p>
+<p>function 函数名称(){</p>
+<p>}</p>
+</li>
+</ul>
+<h2><span id="js的输出">JS的输出</span></h2><ul>
+<li><p>alert()直接弹框</p>
+<p><img src="/JS/image-20220424112717054.png" alt="image-20220424112717054"></p>
+</li>
+<li><p>document.write()向页面输出</p>
+<p><img src="/JS/image-20220424113338525.png" alt="image-20220424113338525"></p>
+</li>
+<li><p>console.log()向控制台输出</p>
+<p><img src="/JS/image-20220424113428475.png" alt="image-20220424113428475"></p>
+</li>
+<li><p>innerHTML：向页面输出</p>
+</li>
+<li><p>document.getElementById(“d 的名称”)；获取页面元素</p>
+</li>
+</ul>
+<h2><span id="js的开发步骤">JS的开发步骤</span></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.确定一个事件</span><br><span class="line">2.通常事件都会触发一个函数</span><br><span class="line">3.函数里面通常都会去操作页面元素。做一些交互动作</span><br></pre></td></tr></table></figure>
 
+<h2><span id="js简单的数据校验">JS简单的数据校验</span></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">function</span> <span class="title function_">check</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="comment">//获取需要校验的数据</span></span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> username=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;username&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> password=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;pwd&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="comment">//进行检验</span></span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span>(username.<span class="property">length</span>&lt;<span class="number">6</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="title function_">alert</span>(<span class="string">&quot;请输入大于六位的账号&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span>(password.<span class="property">length</span>&lt;<span class="number">8</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="title function_">alert</span>(<span class="string">&quot;请输入大于八位的密码&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 确定是提交事件，注意提交事件必须有返回值 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;./index.html&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span> <span class="attr">onsubmit</span>=<span class="string">&quot;return check()&quot;</span>&gt;</span></span><br><span class="line">			账号：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">id</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">			密码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pwd&quot;</span> <span class="attr">id</span>=<span class="string">&quot;pwd&quot;</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;注册&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2><span id="定时器">定时器</span></h2><ul>
+<li><p>setInterval(“方法1”,1000)  :  每隔1000毫秒调用方法1</p>
+<p>setTimeout(“方法2”,1000)  ：过1000毫秒调用方法2</p>
+<p>timerID：上面定时器调用之后会返回一个id参数</p>
+<p>clearInterval(timerID) ： 清除timerID的定时器setInterval</p>
+<p>clearTimeout(timerID) ：清除timerID的定时器clearTimeout</p>
+</li>
+</ul>
+<h2><span id="轮播图">轮播图</span></h2><ul>
+<li><p>1.确定一个事件  </p>
+<ul>
+<li><p>在body标签的加载事件onload</p>
+</li>
+<li><p>&#96;&#96;&#96; html</p>
+<body onload="init()">
+        
+</body>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 2.通常事件都会触发一个函数</span><br><span class="line"></span><br><span class="line">  - 触发调用图片轮播的函数init()</span><br><span class="line"></span><br><span class="line">  - ``` html</span><br><span class="line">    &lt;body onload=&quot;init()&quot;&gt;</span><br><span class="line">    		</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>3.函数里面通常都会去操作页面元素。做一些交互动作</p>
+<ul>
+<li><p>改变图片函数，调用定时器的函数</p>
+</li>
+<li><p>&#96;&#96;&#96; html<br>    <script type="text/javascript"><br>          var index=0;<br>          function change(){<br>              //获取需要轮播的图片元素<br>              var img2=document.getElementById("img1");<br>              //获取图片的名称<br>              var cur=index%2+1;<br>              //改变图片<br>              img2.src="./img/"+cur+".png";<br>              index=index+1;<br><br>          }<br>          function init(){<br>              //每隔1000毫秒改变图片<br>              setInterval("change()",1000);<br>          }<br>      </script></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- demo</span><br><span class="line"></span><br><span class="line">  - ``` html</span><br><span class="line">    &lt;!DOCTYPE html&gt;</span><br><span class="line">    &lt;html&gt;</span><br><span class="line">    	&lt;head&gt;</span><br><span class="line">    		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">    		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    			var index=0;</span><br><span class="line">    			function change()&#123;</span><br><span class="line">    				//获取需要轮播的图片元素</span><br><span class="line">    				var img2=document.getElementById(&quot;img1&quot;);</span><br><span class="line">    				//获取图片的名称</span><br><span class="line">    				var cur=index%2+1;</span><br><span class="line">    				//改变图片</span><br><span class="line">    				img2.src=&quot;./img/&quot;+cur+&quot;.png&quot;;</span><br><span class="line">    				index=index+1;</span><br><span class="line">    				</span><br><span class="line">    			&#125;</span><br><span class="line">    			function init()&#123;</span><br><span class="line">    				//每隔1000毫秒改变图片</span><br><span class="line">    				setInterval(&quot;change()&quot;,1000);</span><br><span class="line">    			&#125;</span><br><span class="line">    		&lt;/script&gt;</span><br><span class="line">    	&lt;/head&gt;</span><br><span class="line">    	&lt;body onload=&quot;init()&quot;&gt;</span><br><span class="line">    		&lt;img src=&quot;img/1.png&quot; width=&quot;100%&quot; id=&quot;img1&quot;  &gt;</span><br><span class="line">    	&lt;/body&gt;</span><br><span class="line">    &lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2><span id="表单校验">表单校验</span></h2><p>1.确定一个事件</p>
+<ul>
+<li>表单中是**onsubmit&#x3D;”return checkForm()”**事件，onsubmit调用的函数必须要有boolean类型的返回值，true则跳转。</li>
+<li>输入框中有三个事件，分别是鼠标点击输入框时<strong>onfocus</strong>事件，鼠标点击其他地方时<strong>onblur</strong>事件，填写时<strong>onkeyup</strong>事件</li>
+</ul>
+<p>2.通常事件都会触发一个函数</p>
+<ul>
+<li>**onsubmit&#x3D;”return checkForm()”**事件触发检查所有输入框是否正确</li>
+<li><strong>onfocus</strong>事件触发检查相应的输入框是否正确并作出提示</li>
+<li><strong>onblur</strong>事件触发检查相应的输入框是否正确并作出提示</li>
+<li><strong>onkeyup</strong>事件触发检查相应的输入框是否正确并作出提示</li>
+</ul>
+<p>3.函数里面通常都会去操作页面元素。做一些交互动作</p>
+<p>函数：检查输入框内容</p>
+<ol start="4">
+<li>demo</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">  <span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">function</span> <span class="title function_">tip</span>(<span class="params">spanid,msg,id</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> id=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span>(id.<span class="property">length</span>&lt;=<span class="number">6</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">var</span> s=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(spanid);</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=msg;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">var</span> s=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;span1&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">function</span> <span class="title function_">checkUid</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> uid=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;uid&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span>(uid.<span class="property">length</span>&lt;=<span class="number">6</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">var</span> s=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;span1&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;font style=&#x27;color: red;&#x27;&gt;用户名长度不能小于六位&lt;/font&gt;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">var</span> s=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;span1&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;font style=&#x27;color: red;&#x27;&gt;可用&lt;/font&gt;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">function</span> <span class="title function_">checkUpwd</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> uid=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;pwd&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span>(uid.<span class="property">length</span>&lt;=<span class="number">6</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">var</span> s=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;span2&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;font style=&#x27;color: red;&#x27;&gt;密码长度不能小于六位&lt;/font&gt;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">var</span> s=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;span2&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;font style=&#x27;color: red;&#x27;&gt;可用&lt;/font&gt;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">function</span> <span class="title function_">checkEmail</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> email=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;email&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> s=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;span3&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> reg=<span class="regexp">/^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+)&#123;1,2&#125;$/</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span>(reg.<span class="title function_">test</span>(email))&#123;</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;font style=&#x27;color: red;&#x27;&gt;可用&lt;/font&gt;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;font style=&#x27;color: red;&#x27;&gt;请输入正确的邮箱&lt;/font&gt;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">				</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">function</span> <span class="title function_">checkTel</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> tel=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;tel&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> s=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;span4&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> reg=<span class="regexp">/^[1][3,4,5,7,8][0-9]&#123;9&#125;$/</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span>(reg.<span class="title function_">test</span>(tel))&#123;</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;font style=&#x27;color: red;&#x27;&gt;可用&lt;/font&gt;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">					s.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;font style=&#x27;color: red;&#x27;&gt;请输入正确的电话号码&lt;/font&gt;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">function</span> <span class="title function_">checkForm</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">return</span> <span class="title function_">checkUid</span>()&amp;&amp;<span class="title function_">checkUpwd</span>()&amp;&amp;<span class="title function_">checkEmail</span>()&amp;&amp;<span class="title function_">checkTel</span>();</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;轮播图.html&quot;</span> <span class="attr">method</span>=<span class="string">&quot;&quot;</span> <span class="attr">onsubmit</span>=<span class="string">&quot;return checkForm()&quot;</span>&gt;</span></span><br><span class="line">			    用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uid&quot;</span> <span class="attr">id</span>=<span class="string">&quot;uid&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">onfocus</span>=<span class="string">&quot;tip(&#x27;span1&#x27;,&#x27;用户名长度不能小于六位&#x27;,&#x27;uid&#x27;)&quot;</span>  <span class="attr">onkeyup</span>=<span class="string">&quot;checkUid()&quot;</span> <span class="attr">onblur</span>=<span class="string">&quot;checkUid()&quot;</span>/&gt;</span> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;span1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span>&gt;</span>密码：<span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pwd&quot;</span> <span class="attr">id</span>=<span class="string">&quot;pwd&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">onfocus</span>=<span class="string">&quot;tip(&#x27;span2&#x27;,&#x27;密码长度不能小于六位&#x27;,&#x27;pwd&#x27;)&quot;</span>  <span class="attr">onkeyup</span>=<span class="string">&quot;checkUpwd()()&quot;</span> <span class="attr">onblur</span>=<span class="string">&quot;checkUpwd()&quot;</span>/&gt;</span> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;span2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span>&gt;</span>邮箱：<span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;email&quot;</span> <span class="attr">id</span>=<span class="string">&quot;email&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">onfocus</span>=<span class="string">&quot;checkEmail()&quot;</span>  <span class="attr">onkeyup</span>=<span class="string">&quot;checkEmail()&quot;</span> <span class="attr">onblur</span>=<span class="string">&quot;checkEmail()&quot;</span>/&gt;</span> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;span3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span>&gt;</span>电话：<span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;number&quot;</span> <span class="attr">name</span>=<span class="string">&quot;tel&quot;</span> <span class="attr">id</span>=<span class="string">&quot;tel&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">onfocus</span>=<span class="string">&quot;checkTel()&quot;</span>  <span class="attr">onkeyup</span>=<span class="string">&quot;checkTel()&quot;</span> <span class="attr">onblur</span>=<span class="string">&quot;checkTel()&quot;</span>/&gt;</span> <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;span4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;注册&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/04/24/JS/image-20220426181642060.png" alt="image-20220426181642060"></p>
+<hr>
+<h2><span id="表格的隔行换色">表格的隔行换色</span></h2><h2><span id="表格的全选和全不选">表格的全选和全不选</span></h2><h2><span id="html中的dom操作">HTML中的DOM操作</span></h2><ul>
+<li><p>什么是DOM(文档对象模型)</p>
+<p>一个页面所显示的就是一个DOM树，页面里的各种标签或者属性就是DOM树的节点，可以利用DOM对象对节点进行增删改查</p>
+<p><img src="/JS/image-20220427202320517.png" alt="image-20220427202320517"></p>
+<p><img src="/JS/image-20220427202404464.png" alt="image-20220427202404464"></p>
+</li>
+<li></li>
+</ul>
+<h2><span id="省市联动">省市联动</span></h2><h2><span id="商品左右选择">商品左右选择</span></h2>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/2.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/3.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/24/JS/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/21/CSS/" class="archive-article-date">
-  	<time datetime="2022-04-21T00:22:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/04/21/CSS/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/21/CSS/">CSS</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">JavaScript概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">JS组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">JS语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">JS数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">JS的运算符和语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">JS的输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">JS的开发步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">JS简单的数据校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">定时器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">轮播图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">表单校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">表格的隔行换色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">表格的全选和全不选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">HTML中的DOM操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">15.</span> <span class="toc-text">省市联动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">16.</span> <span class="toc-text">商品左右选择</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/19/HTML/" class="archive-article-date">
-  	<time datetime="2022-04-19T02:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/19/HTML/">HTML</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/07/%E5%93%88%E5%B8%8C%E8%A1%A8-1/" class="archive-article-date">
-  	<time datetime="2022-04-07T13:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/07/%E5%93%88%E5%B8%8C%E8%A1%A8-1/">哈希表</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/05/%E6%9F%A5%E6%89%BE/" class="archive-article-date">
-  	<time datetime="2022-04-05T05:56:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/05/%E6%9F%A5%E6%89%BE/">查找</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/01/LeetCode/" class="archive-article-date">
-  	<time datetime="2022-04-01T06:31:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/01/LeetCode/">LeetCode</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/30/Comparable%E5%92%8CComparator/" class="archive-article-date">
-  	<time datetime="2022-03-30T15:16:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/30/Comparable%E5%92%8CComparator/">Comparable和Comparator</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/29/JAVA8-API/" class="archive-article-date">
-  	<time datetime="2022-03-29T14:38:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/29/JAVA8-API/">JAVA8-API</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/29/%E9%80%92%E5%BD%92/" class="archive-article-date">
-  	<time datetime="2022-03-29T05:34:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/29/%E9%80%92%E5%BD%92/">递归</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/29/%E9%9B%86%E5%90%88/" class="archive-article-date">
-  	<time datetime="2022-03-29T05:33:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/29/%E9%9B%86%E5%90%88/">集合</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -454,8 +494,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

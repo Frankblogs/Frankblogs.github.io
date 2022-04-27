@@ -144,6 +144,214 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-二分搜索树-BST" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/">二分搜索树-BST</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/" class="archive-article-date">
+  	<time datetime="2022-03-29T05:32:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91">二分搜索树</a><ul>
+<li><a href="#%E5%AE%9A%E4%B9%89">定义：</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E9%97%AE%E9%A2%98">删除节点问题：</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<hr>
+<h3><span id="二分搜索树">二分搜索树</span></h3><h4><span id="定义">定义：</span></h4><ul>
+<li>二分搜索树的每个节点的值：<ul>
+<li>大于其左子树的所有节点的值</li>
+<li>小于其右子树的所有节点的值</li>
+</ul>
+</li>
+</ul>
+<h4><span id="删除节点问题">删除节点问题：</span></h4><ul>
+<li><p>删除最小节点：</p>
+<ol>
+<li>找到最小节点</li>
+<li>判断该节点有没有右子树，如果有则保存其右子树，然后释放其右子树并返回保存的右子树</li>
+<li>将进行删除操作所返回的值赋值给node的左子树</li>
+<li>返回完成所有操作的根节点</li>
+<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220306114251121.png" alt="image-20220306114251121"></li>
+</ol>
+</li>
+<li><p>删除任意节点</p>
+</li>
+</ul>
+<ol>
+<li>先找到需删除的节点</li>
+<li>对于没有左子树的删除节点<ul>
+<li>先保存该节点的右子树</li>
+<li>释放该节点的右子树</li>
+<li>返回所保存的树</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220326133627732.png" alt="image-20220326133627732"></li>
+</ul>
+<ol start="3">
+<li>对于没有右子树的删除节点<ul>
+<li>先保存该节点的左子树</li>
+<li>释放该节点的左子树</li>
+<li>返回所保存的树</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220326133642909.png" alt="image-20220326133642909"></li>
+</ul>
+<ol start="4">
+<li>对于有左右子树的删除节点<ul>
+<li>先寻找并保存该节点右子树的最小节点<strong>successor</strong></li>
+<li>对删除节点的右子树进行删除最小节点操作</li>
+<li><strong>successor</strong>的左子树连接删除节点的左子树</li>
+<li><strong>successor</strong>的右子树连接已经进行最小删除操作的删除节点的右子树</li>
+<li>返回<strong>successor</strong></li>
+<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220306145040199.png" alt="image-20220306145040199"></li>
+<li><img src="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/image-20220306145117550.png" alt="image-20220306145117550"></li>
+</ul>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/29/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A0%91-BST/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-线段树（SegmentTree）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/">线段树（SegmentTree）</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-03-29T05:31:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="线段树（SegmentTree）"><a href="#线段树（SegmentTree）" class="headerlink" title="线段树（SegmentTree）"></a>线段树（SegmentTree）</h1><p>对于有些问题，我们关心的是某个线段或者区间，例如区间染色<img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321215836799.png" alt="image-20220321215836799"></p>
+<p>因此线段树是十分符合的一种数据结构，一般需要更新区间和查询区间，如果不使用线段树这种结构这两个操作的时间复杂度都为O(n)。</p>
+<h2 id="线段树例子"><a href="#线段树例子" class="headerlink" title="线段树例子"></a>线段树例子</h2><p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321223149685.png" alt="image-20220321223149685"></p>
+<ul>
+<li><p>线段树是平衡二叉树，可以把树当成满二叉树，用数组表示需要多少个节点，满二叉树最后一层节点数大概等于前面所有层的节点的和，如果区间有n&#x3D;2^k个元素只需要2n的空间，最坏情况有n&#x3D;2^k+1,则需要4n的空间，线段树不考虑添加元素，所以只需静态的4n的空间。</p>
+</li>
+<li><p>初始化</p>
+<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321224605667.png" alt="image-20220321224605667"></p>
+</li>
+<li><p>建立区间树，需要获得当前节点的左右孩子节点，其中，merge(a,b)表示对两个数据进行融合，如何融合有用户决定</p>
+<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321224649364.png" alt="image-20220321224649364"></p>
+</li>
+<li><p>查询区间</p>
+<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321225238268.png" alt="image-20220321225238268"></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-并查集-UnionFind" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
