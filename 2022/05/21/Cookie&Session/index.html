@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Cookie&amp;Session | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Cookie什么是Cookie 就是一份小数据，是服务器给客户端，并且保存在客户端的一份小数据  应用场景  自动登录，浏览记录，购物车   为什么需要Cookie  http的请求是无状态的，客户端和服务器在通讯的时候，是无状态的，其实就是客户端在第二次来访的时候，服务器根本不知道这个客户以前有没有访问过。    怎么用 使用request的getCookies方法可以取得请求带过来的Cooki">
+  <meta name="description" content="Cookie什么是Cookie 就是一份小数据，是服务器给客户端，并且保存在客户端的一份小数据  应用场景  自动登录，浏览记录，购物车   为什么需要Cookie  http的请求是无状态的，客户端和服务器在通讯的时候，是无状态的，其实就是客户端在第二次来访的时候，服务器根本不知道这个客户以前有没有访问过。    Cookie分类 会话Cookie 默认情况下，关闭浏览器，那么cookie就">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cookie&amp;Session">
 <meta property="og:url" content="http://example.com/2022/05/21/Cookie&Session/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Cookie什么是Cookie 就是一份小数据，是服务器给客户端，并且保存在客户端的一份小数据  应用场景  自动登录，浏览记录，购物车   为什么需要Cookie  http的请求是无状态的，客户端和服务器在通讯的时候，是无状态的，其实就是客户端在第二次来访的时候，服务器根本不知道这个客户以前有没有访问过。    怎么用 使用request的getCookies方法可以取得请求带过来的Cooki">
+<meta property="og:description" content="Cookie什么是Cookie 就是一份小数据，是服务器给客户端，并且保存在客户端的一份小数据  应用场景  自动登录，浏览记录，购物车   为什么需要Cookie  http的请求是无状态的，客户端和服务器在通讯的时候，是无状态的，其实就是客户端在第二次来访的时候，服务器根本不知道这个客户以前有没有访问过。    Cookie分类 会话Cookie 默认情况下，关闭浏览器，那么cookie就">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/05/21/Cookie&Session/image-20220521162841836.png">
 <meta property="article:published_time" content="2022-05-21T05:37:27.000Z">
-<meta property="article:modified_time" content="2022-05-21T15:08:52.249Z">
+<meta property="article:modified_time" content="2022-05-23T02:25:52.028Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/05/21/Cookie&Session/image-20220521162841836.png">
@@ -168,7 +168,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1><span id="cookie">Cookie</span></h1><h2><span id="什么是cookie">什么是Cookie</span></h2><ul>
+        <!-- top-->
+
+<h1><span id="cookie">Cookie</span></h1><h2><span id="什么是cookie">什么是Cookie</span></h2><ul>
 <li><p>就是一份小数据，是服务器给客户端，并且保存在客户端的一份小数据</p>
 </li>
 <li><p>应用场景</p>
@@ -182,6 +184,16 @@
 </blockquote>
 </li>
 </ul>
+<h2><span id="cookie分类">Cookie分类</span></h2><ol>
+<li><p>会话Cookie</p>
+<p>默认情况下，关闭浏览器，那么cookie就消失</p>
+</li>
+<li><p>持久Cookie</p>
+<p>在一定时间内有效，并且会保存在客户端</p>
+<p>cookie.setMaxAge(100)&#x2F;&#x2F;设置存在100秒</p>
+<p>cookie.setMaxAge(0)&#x2F;&#x2F;设置立即删除</p>
+</li>
+</ol>
 <h2><span id="怎么用">怎么用</span></h2><ul>
 <li><p>使用request的getCookies方法可以取得请求带过来的Cookie，response的addCookie方法可以在响应头里添加一个cookie</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        resp.setContentType(<span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * 获取请求带过来的Cookie</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        Cookie[] cookies = req.getCookies();</span><br><span class="line">        <span class="keyword">if</span> (cookies!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span> (Cookie c:cookies</span><br><span class="line">            ) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> c.getName();</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> c.getValue();</span><br><span class="line">                System.out.println(name+<span class="string">&quot;=&quot;</span>+value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 1.先创建一个Cookie对象，参数一是Cookie名称，参数二是Cookie值</span></span><br><span class="line"><span class="comment">        * 2.将Cookie添加到响应头，可以添加多个</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        <span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        resp.addCookie(cookie);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
@@ -193,6 +205,50 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1.先创建一个Cookie，参数一是Cookie名称，参数二是Cookie值</span></span><br><span class="line"><span class="comment"> * 2.将Cookie添加到响应头</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;张三&quot;</span>);</span><br><span class="line">cookie.setMaxAge(<span class="number">60</span>);<span class="comment">//设置Cookie过期时间</span></span><br><span class="line">resp.addCookie(cookie);</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3><span id="其他">其他</span></h3><p><img src="/2022/05/21/Cookie&Session/image-20220521162841836.png" alt="image-20220521162841836"></p>
+<h2><span id="例子一获取上次的登陆时间">例子一：获取上次的登陆时间</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        resp.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;username=&quot;</span> + username);</span><br><span class="line">        System.out.println(<span class="string">&quot;password=&quot;</span> + password);</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">&quot;admin&quot;</span>.equals(username) &amp;&amp; <span class="string">&quot;123&quot;</span>.equals(password)) &#123;</span><br><span class="line">            Cookie[] cookies = req.getCookies();</span><br><span class="line">            <span class="comment">//找出指定名称的cookie</span></span><br><span class="line">            <span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> findCookie(cookies, <span class="string">&quot;lastLogin&quot;</span>);</span><br><span class="line">            <span class="comment">//如果为空则说明是第一次登录</span></span><br><span class="line">            <span class="keyword">if</span> (cookie==<span class="literal">null</span>)&#123;</span><br><span class="line">                <span class="comment">//添加当前登录时间的cookie,且名称为lastLogin</span></span><br><span class="line">                <span class="type">Cookie</span> <span class="variable">cookie1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;lastLogin&quot;</span>, System.currentTimeMillis() + <span class="string">&quot;&quot;</span>);</span><br><span class="line">                cookie1.setMaxAge(<span class="number">60</span>*<span class="number">60</span>);</span><br><span class="line">                resp.addCookie(cookie1);</span><br><span class="line">                resp.getWriter().write(<span class="string">&quot;欢迎您，&quot;</span>+username);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//取得上一次登录时间并转为long类型</span></span><br><span class="line">                <span class="type">long</span> <span class="variable">lastLogin</span> <span class="operator">=</span> Long.parseLong(cookie.getValue());</span><br><span class="line">                resp.getWriter().write(<span class="string">&quot;欢迎您，&quot;</span>+username+<span class="string">&quot;，上一次访问的时间是：&quot;</span>+<span class="keyword">new</span> <span class="title class_">Date</span>(lastLogin));</span><br><span class="line">                <span class="comment">//重置名称为lastLogin的cookie，并添加到响应头中</span></span><br><span class="line">                cookie.setValue(System.currentTimeMillis()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">                resp.addCookie(cookie);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            resp.getWriter().write(<span class="string">&quot;登陆失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//找出指定名称的cookie</span></span><br><span class="line">    <span class="keyword">private</span> Cookie <span class="title function_">findCookie</span><span class="params">(Cookie[]cookies,String name)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Cookie c:cookies</span><br><span class="line">             ) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c.getName().equals(name))&#123;</span><br><span class="line">                <span class="keyword">return</span> c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2><span id="例子二商品浏览记录">例子二：商品浏览记录</span></h2><h2><span id="cookie的安全问题">Cookie的安全问题</span></h2><ol>
+<li>由于cookie会保存在客户端，所以有安全隐患，并且cookie的大小和数量都有限制。为了解决这个问题——&gt;Session</li>
+</ol>
+<h1><span id="session">Session</span></h1><blockquote>
+<p>Session是基于Cookie的一种会话机制,会在cookie里面添加一个字段JSESSIONID,是由tomcat服务器生成；Cookie是服务器返回一小分数据给客户端，并且存放在客户端上；Session是将这一份数据存放在服务器端</p>
+</blockquote>
+<h2><span id="常用api">常用API</span></h2><blockquote>
+<ol>
+<li><p>获取会话ID，打开浏览器就是一次会话，同一次会话ID不变</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> session.getId();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>存值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.setAttribute(name,value);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Object</span> <span class="variable">say</span> <span class="operator">=</span> session.getAttribute(name);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>移除值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.removeAttribute(name);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    resp.setContentType(<span class="string">&quot;text/html;utf-8&quot;</span>);</span><br><span class="line">    <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> req.getSession();</span><br><span class="line">    <span class="comment">//获取会话ID</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> session.getId();</span><br><span class="line">    <span class="comment">//存值</span></span><br><span class="line">    session.setAttribute(<span class="string">&quot;say&quot;</span>,<span class="string">&quot;你好&quot;</span>);</span><br><span class="line">    <span class="comment">//取值</span></span><br><span class="line">    <span class="type">Object</span> <span class="variable">say</span> <span class="operator">=</span> session.getAttribute(<span class="string">&quot;say&quot;</span>);</span><br><span class="line">    <span class="comment">//移除值</span></span><br><span class="line">    <span class="comment">//session.removeAttribute(&quot;say&quot;);</span></span><br><span class="line">    System.out.println(<span class="string">&quot;SessionID=&quot;</span>+id+<span class="string">&quot;,Attribute=&quot;</span>+say);</span><br><span class="line">    resp.getWriter().write(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<h2><span id="生命周期">生命周期</span></h2><ol>
+<li><p>创建</p>
+<blockquote>
+<p>如果有在sevlet里面调用req.getSession();</p>
+</blockquote>
+</li>
+<li><p>销毁</p>
+<blockquote>
+<p>注意：关闭浏览器不会销毁session，session是存放在服务器上的一份数据并且可以持久化，例如利用Redis</p>
+<ol>
+<li>关闭服务器</li>
+<li>session会话时间过期。默认有效期30分钟，可以在tomcat服务器conf的web.xml改</li>
+</ol>
+</blockquote>
+</li>
+</ol>
 
       
 
@@ -325,7 +381,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">什么是Cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">怎么用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">常用API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.1.</span> <span class="toc-text">Cookie有效期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.2.</span> <span class="toc-text">其他</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">什么是Cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">Cookie分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">怎么用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">常用API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.1.</span> <span class="toc-text">Cookie有效期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.2.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">例子一：获取上次的登陆时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.6.</span> <span class="toc-text">例子二：商品浏览记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.7.</span> <span class="toc-text">Cookie的安全问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Session</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">常用API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">生命周期</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
