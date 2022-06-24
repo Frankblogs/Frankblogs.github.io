@@ -144,6 +144,342 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/09/Redis/">Redis</a>
+    </h1>
+  
+
+        
+        <a href="/2022/06/09/Redis/" class="archive-article-date">
+  	<time datetime="2022-06-09T02:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc-->
+
+<h1><span id="nosql">NoSQL</span></h1><ul>
+<li><p>not only sql</p>
+</li>
+<li><p>非关系型数据库</p>
+</li>
+</ul>
+<h2><span id="为什么需要nosql">为什么需要NOsql</span></h2><ul>
+<li>现在互联网项目特点是数据库高并发读写，海量数据需要高效率存储并且可扩展</li>
+</ul>
+<h2><span id="nosql主流">NOSQL主流</span></h2><ul>
+<li>键值对存储数据库：Redis</li>
+<li>列式存储数据库：HBase</li>
+<li>文档类型存储数据库</li>
+<li>图像数据存储数据库</li>
+</ul>
+<h1><span id="redis">Redis</span></h1><h2><span id="特性">特性</span></h2><blockquote>
+<ol>
+<li><p>一个实例支持多个仓库(16个)</p>
+<blockquote>
+<p>选中第0号仓库  ：  select  0</p>
+<p>将当前仓库下的某个键值对的数据移动到另一个仓库： move  key  1</p>
+</blockquote>
+</li>
+<li><p>能够控制的数据类型</p>
+<blockquote>
+<p>string，list，set，sort-set，hash</p>
+<p>添加，删除，获取，查看多少给元素，判断元素是否在集合，</p>
+</blockquote>
+</li>
+<li><p>支持消息订阅与发布</p>
+<blockquote>
+<p><img src="/2022/06/09/Redis/image-20220612100508335.png" alt="image-20220612100508335"></p>
+</blockquote>
+</li>
+<li><p>支持事务</p>
+<blockquote>
+<p>multi:开启事务，类似于关系型数据库的：begin transaction</p>
+<p>exec：提交事务，类似于：commit</p>
+<p>discard：事务回滚，类似于：rollback</p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<h2><span id="key通用操作">key通用操作</span></h2><blockquote>
+<ol>
+<li><p>set&#x2F;get,设置数据和获取数据</p>
+<p><img src="/2022/06/09/Redis/image-20220612100245841.png" alt="image-20220612100245841"></p>
+</li>
+<li><p>del，删除指定key的内容</p>
+<p><img src="/2022/06/09/Redis/image-20220612100337806.png" alt="image-20220612100337806"></p>
+</li>
+<li></li>
+</ol>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/06/09/Redis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CentOS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/08/CentOS/">CentOS</a>
+    </h1>
+  
+
+        
+        <a href="/2022/06/08/CentOS/" class="archive-article-date">
+  	<time datetime="2022-06-08T15:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc-->
+
+<h1><span id="jdk">JDK</span></h1><ul>
+<li>版本：1.8</li>
+</ul>
+<h1><span id="tomcat">Tomcat</span></h1><ul>
+<li>版本：8</li>
+<li>安装目录：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat8</li>
+<li>启动：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat8&#x2F;bin&#x2F;startup.sh</li>
+</ul>
+<h1><span id="mysql">Mysql</span></h1><ul>
+<li><p>版本：8</p>
+</li>
+<li><p>用户：</p>
+<ul>
+<li>uroot:123456</li>
+<li>root:123456</li>
+</ul>
+</li>
+<li><p>开机自启动</p>
+</li>
+</ul>
+<h1><span id="redis">Redis</span></h1><ul>
+<li>版本：6</li>
+<li>安装目录：&#x2F;usr&#x2F;local&#x2F;redis6</li>
+<li>启动服务端：systemclt start redis</li>
+<li>关闭服务端：systemclt stop redis</li>
+<li>查看运行状态：systemclt status redis</li>
+<li>启动客户端：&#x2F;usr&#x2F;local&#x2F;redis6&#x2F;bin&#x2F;redis-cli</li>
+<li>已设置开机自启动</li>
+</ul>
+<h1><span id="开放端口">开放端口</span></h1><p>1、开放端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –add-port&#x3D;5672&#x2F;tcp –permanent</strong>  # 开放5672端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –remove-port&#x3D;5672&#x2F;tcp –permanent</strong> #关闭5672端口</p>
+<p><strong>firewall-cmd –reload</strong>  # 配置立即生效</p>
+<p>2、查看防火墙所有开放的端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –list-ports</strong></p>
+<p>3.、关闭防火墙</p>
+<p>如果要开放的端口太多，嫌麻烦，可以关闭防火墙，安全性自行评估</p>
+<p><strong>systemctl stop firewalld.service</strong></p>
+<p>4、查看防火墙状态</p>
+<p> <strong>firewall-cmd –state</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/06/08/CentOS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-装饰者模式和动态代理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/07/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">装饰者模式和动态代理</a>
+    </h1>
+  
+
+        
+        <a href="/2022/06/07/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" class="archive-article-date">
+  	<time datetime="2022-06-07T03:35:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc-->
+
+<h1><span id="注解">注解</span></h1><h2><span id="什么是注解">什么是注解</span></h2><ul>
+<li>是java提供的一类似注释的机制，给程序元素（类、方法、成员变量等）做标记</li>
+</ul>
+<h2><span id="有什么用">有什么用</span></h2><ul>
+<li>可以用来将任何信息或元数据与程序元素进行关联，我们可以通过反射机制来进行校验与赋值，例如找到有注解的地方并把这个注解通过反射获得这个注解对象，然后查看这个对象的成员</li>
+</ul>
+<h2><span id="怎么用">怎么用</span></h2><ul>
+<li><p>跟类或者接口类似，先创建一个注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"><span class="comment">//定义注解时，需要通过元注解Retention说明自定义注解的作用域(class,Source,Runtime)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="comment">//定义注解时，需要通过元注解Target说明当前定义注解的作用目标</span></span><br><span class="line"><span class="meta">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyJunit &#123;</span><br><span class="line">    <span class="comment">//可以定义成员属性</span></span><br><span class="line">    <span class="type">long</span> <span class="title function_">time</span><span class="params">()</span> <span class="keyword">default</span> <span class="number">1234</span>;</span><br><span class="line">    String <span class="title function_">name</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;frank&quot;</span>;</span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在需要的地方进行注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">demo01</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyJunit(time = 123)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;shit&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyJunit(name = &quot;username&quot;,value = &quot;张三&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;sleep&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>读取注解，利用注解的信息完成业务</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//1.将demo01.class的字节码文件加载到内存中，class对象(代表字节码文件在内存中的对象)</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">aClass</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;Annotation.demo01&quot;</span>);</span><br><span class="line">        <span class="comment">//获取字节码对象上的所以方法</span></span><br><span class="line">        Method[] methods = aClass.getMethods();</span><br><span class="line">        <span class="comment">//遍历方法数组，如果有@MyJunit注解信息的方法则执行</span></span><br><span class="line">        <span class="keyword">for</span> (Method m:methods</span><br><span class="line">             ) &#123;</span><br><span class="line">            <span class="keyword">if</span> (m.isAnnotationPresent(MyJunit.class))&#123;</span><br><span class="line">                <span class="comment">//获取该方法的注解信息,先获取该方法的注解对象</span></span><br><span class="line">                <span class="type">MyJunit</span> <span class="variable">myJunit</span> <span class="operator">=</span> m.getAnnotation(MyJunit.class);</span><br><span class="line">                <span class="comment">//通过打点获取注解的成员信息</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> myJunit.name();</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> myJunit.value();</span><br><span class="line">                System.out.println(name+<span class="string">&quot;=&quot;</span>+value);</span><br><span class="line">                m.invoke(<span class="keyword">new</span> <span class="title class_">demo01</span>());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1><span id="装饰者模式">装饰者模式</span></h1><h2><span id="有什么用">有什么用</span></h2><ul>
+<li>是一种设计模式，例如有些公司提供了一些jar包，在我们使用提供的jar包时，这些包里 的某些方法不是很完美，我们需要先执行一些其他 的操作再执行提供的方法，但是我们无法取得源码，那么就无法进行修改，所以使用装饰者模式进行一次包装，类似二次开发，前提是我们知道需要装饰的类的是实现了哪些接口</li>
+</ul>
+<h2><span id="怎么用">怎么用</span></h2><blockquote>
+<ol>
+<li><p>例如汽车公司定义了汽车应该有哪些功能，即定义了汽车接口，谷歌公司实现了这些接口并造出来谷歌汽车给大众使用，但 不公布具体构造，一家小公司买了谷歌汽车并对谷歌汽车进行了装饰使其成为自家生产的汽车，</p>
+</li>
+<li><p>汽车接口Car</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Decorator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">start</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>谷歌汽车</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Decorator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GoogleCar</span> <span class="keyword">implements</span> <span class="title class_">Car</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;GoogleCar start&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;GoogleCar run&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;GoogleCar stop&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>装饰完成的汽车</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Decorator;</span><br><span class="line">      </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyCar</span> <span class="keyword">implements</span> <span class="title class_">Car</span>&#123;</span><br><span class="line">    Car car;</span><br><span class="line">      </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyCar</span><span class="params">(Car car)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.car = car;</span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;检查天气&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;检查路况&quot;</span>);</span><br><span class="line">        car.start();</span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        car.run();</span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span> &#123;</span><br><span class="line">        car.stop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<h1><span id="proxy">Proxy</span></h1><h2><span id="是什么">是什么</span></h2><ul>
+<li>利用java虚拟机动态生成一个字节码对象，即动态代理，怎么个动态法呢？我们可以指定这个字节码对象里面有什么方法，提供接口告诉虚拟机我们需要哪些方法，可以指定这些方法执行的实体，即这些接口的方法使用的是哪个实现类的方法，再通过这个字节码对象生成一个实例对象，</li>
+</ul>
+<h2><span id="怎么用">怎么用</span></h2><blockquote>
+<ol>
+<li>使用Proxy.newProxyInstance(ClassLoader loader,@NotNull Class&lt;?&gt;[] interfaces,@NotNull reflect.InvocationHandler h)创建一个实例对象</li>
+<li>使用这个对象</li>
+</ol>
+</blockquote>
+<h2><span id="案例">案例</span></h2><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Proxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Decorator.Car;</span><br><span class="line"><span class="keyword">import</span> Decorator.GoogleCar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationHandler;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Proxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyGoogleCar</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * Proxy.newProxyInstance(ClassLoader loader,</span></span><br><span class="line"><span class="comment">        *                             @NotNull Class&lt;?&gt;[] interfaces,</span></span><br><span class="line"><span class="comment">        *                             @NotNull reflect.InvocationHandler h)</span></span><br><span class="line"><span class="comment">        * 参数一：使用什么类型的类加载器来加载一个字节码对象</span></span><br><span class="line"><span class="comment">        * 参数二：通过接口的字节码对象来告诉虚拟机被加载的字节码对象需要有什么方法</span></span><br><span class="line"><span class="comment">        * 参数三：这些方法怎么执行，给这些方法一个实体，即这些接口的方法使用的是哪个实现类的方法</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        Car myCar=(Car) Proxy.newProxyInstance(MyGoogleCar.class.getClassLoader(), GoogleCar.class.getInterfaces(), <span class="keyword">new</span> <span class="title class_">InvocationHandler</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> Object <span class="title function_">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable &#123;</span><br><span class="line">                            <span class="comment">/*</span></span><br><span class="line"><span class="comment">                            * invoke(Object proxy, Method method, Object[] args)</span></span><br><span class="line"><span class="comment">                            * 参数一：</span></span><br><span class="line"><span class="comment">                            * 参数二：当前正在执行的方法</span></span><br><span class="line"><span class="comment">                            * 参数三：当前正在执行的方法所需传递的参数</span></span><br><span class="line"><span class="comment">                            * */</span></span><br><span class="line">                <span class="keyword">if</span> (method.getName().equalsIgnoreCase(<span class="string">&quot;start&quot;</span>))&#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;检查路况&quot;</span>);</span><br><span class="line">                    <span class="comment">//当前方法所执行的实体是GoogleCar类的方法，如果该方法有返回值则需要用Object类型接收一下，在最后return回去</span></span><br><span class="line">                    method.invoke(<span class="keyword">new</span> <span class="title class_">GoogleCar</span>());</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    method.invoke(<span class="keyword">new</span> <span class="title class_">GoogleCar</span>());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        myCar.start();</span><br><span class="line">        myCar.run();</span><br><span class="line">        myCar.stop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2><span id="使用动态代理解决网站乱码">使用动态代理解决网站乱码</span></h2><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">package</span> Proxy;</span><br><span class="line"></span><br><span class="line">&gt;<span class="keyword">import</span> javax.servlet.*;</span><br><span class="line">&gt;<span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line">&gt;<span class="keyword">import</span> java.io.IOException;</span><br><span class="line">&gt;<span class="keyword">import</span> java.lang.reflect.InvocationHandler;</span><br><span class="line">&gt;<span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line">&gt;<span class="keyword">import</span> java.lang.reflect.Proxy;</span><br><span class="line">&gt;<span class="keyword">import</span> java.nio.charset.StandardCharsets;</span><br><span class="line"></span><br><span class="line">&gt;<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EncodingFilter</span> <span class="keyword">implements</span> <span class="title class_">Filter</span> &#123;</span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException &#123;</span><br><span class="line">       <span class="keyword">final</span> HttpServletRequest req=(HttpServletRequest) servletRequest;</span><br><span class="line">       <span class="comment">//1.先动态代理生成一个新的HttpServletRequest对象，对这个对象的getParameter方法进行增强</span></span><br><span class="line">       HttpServletRequest myRequest= (HttpServletRequest) Proxy.newProxyInstance(EncodingFilter.class.getClassLoader(), req.getClass().getInterfaces(), <span class="keyword">new</span> <span class="title class_">InvocationHandler</span>() &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="keyword">public</span> Object <span class="title function_">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable &#123;</span><br><span class="line">               <span class="type">String</span> <span class="variable">methodName</span> <span class="operator">=</span> method.getName();</span><br><span class="line">               Object obj=<span class="literal">null</span>;</span><br><span class="line">               <span class="comment">//2.如果是getParameter方法则增强</span></span><br><span class="line">               <span class="keyword">if</span> (methodName.equalsIgnoreCase(<span class="string">&quot;getParameter&quot;</span>))&#123;</span><br><span class="line">                   <span class="comment">//3.判断是get方式还是post方式</span></span><br><span class="line">                   <span class="keyword">if</span> (req.getMethod().equalsIgnoreCase(<span class="string">&quot;get&quot;</span>))&#123;</span><br><span class="line">                       <span class="comment">//4.get方式则先执行方法得到数据再对数据进行转码加工然后返回数据</span></span><br><span class="line">                       <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> (String) method.invoke(req, args);</span><br><span class="line">                       String ret=<span class="keyword">new</span> <span class="title class_">String</span>(str.getBytes(StandardCharsets.ISO_8859_1),StandardCharsets.UTF_8);</span><br><span class="line">                       <span class="keyword">return</span> ret;</span><br><span class="line">                   &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                       <span class="comment">//5.post方式则先调用setCharacterEncoding方法，再执行方法</span></span><br><span class="line">                       req.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                       obj=method.invoke(req,args);</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;<span class="keyword">else</span> &#123;<span class="comment">//6.其他方法直接执行HttpServletRequest的方法</span></span><br><span class="line">                   obj=method.invoke(req,args);</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">return</span> obj;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">       System.out.println(myRequest.hashCode());</span><br><span class="line">       filterChain.doFilter(myRequest,servletResponse);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/06/07/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-BeanUtil" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1330,628 +1666,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/05/21/Cookie&Session/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tomcat乱码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/17/tomcat%E4%B9%B1%E7%A0%81/">tomcat乱码</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/17/tomcat%E4%B9%B1%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2022-05-17T02:40:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1><span id="彻底解决tomcat控制台输出中文乱码">彻底解决Tomcat控制台输出中文乱码</span></h1><h3><span id="1修改tomcat">1.修改tomcat</span></h3><p><img src="/2022/05/17/tomcat%E4%B9%B1%E7%A0%81/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5rKQ6KiA6bit,size_20,color_FFFFFF,t_70,g_se,x_16-16527554143752.png"></p>
-<p>tomcat根目录\conf的web.xml，在100行左右，改成</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>default<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.apache.catalina.servlets.DefaultServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>debug<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>0<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>fileEncoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>listings<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>tomcat根目录\conf的server.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=xml&spm=1001.2101.3001.7020">xml</a>，在70行左右，改成</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">&quot;8080&quot;</span> <span class="attr">protocol</span>=<span class="string">&quot;HTTP/1.1&quot;</span></span></span><br><span class="line"><span class="tag">			   <span class="attr">connectionTimeout</span>=<span class="string">&quot;20000&quot;</span></span></span><br><span class="line"><span class="tag">			   <span class="attr">redirectPort</span>=<span class="string">&quot;8443&quot;</span> <span class="attr">URIEncoding</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="2idea统一utf8编码-dfileencodingx3dutf-8">2.idea统一utf8编码,-Dfile.encoding&#x3D;utf-8</span></h3><p><img src="/2022/05/17/tomcat%E4%B9%B1%E7%A0%81/2cd1f207179d7e5c4ca5658149dbf9c0.png" alt="image-20211108174953087"></p>
-<p><img src="/2022/05/17/tomcat%E4%B9%B1%E7%A0%81/30c9c9ef98ddb38bb1ee8047fc87eb10.png" alt="image-20211108175158041"></p>
-<p><img src="/2022/05/17/tomcat%E4%B9%B1%E7%A0%81/34f08eaa5b5c1e9d02c5052ad6a2153a.png" alt="image-20211108175848136"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/17/tomcat%E4%B9%B1%E7%A0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-http&amp;Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/17/http&Servlet/">http&amp;Servlet</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/17/http&Servlet/" class="archive-article-date">
-  	<time datetime="2022-05-17T00:26:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- toc -->
-
-<ul>
-<li><a href="#http">http</a></li>
-<li><a href="#servlet">Servlet</a><ul>
-<li><a href="#%E5%85%A5%E9%97%A8">入门</a></li>
-<li><a href="#servlet%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">servlet的生命周期</a></li>
-<li><a href="#servlet%E9%80%9A%E7%94%A8%E5%86%99%E6%B3%95">servlet通用写法</a></li>
-<li><a href="#servlet%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F">servlet配置方式</a></li>
-<li><a href="#servletcontext">ServletContext</a></li>
-</ul>
-</li>
-<li><a href="#httpservletrequest">HttpServletRequest</a><ul>
-<li><a href="#%E8%8E%B7%E5%8F%96%E5%A4%B4%E4%BF%A1%E6%81%AF">获取头信息</a></li>
-<li><a href="#%E8%8E%B7%E5%8F%96%E6%8F%90%E4%BA%A4%E7%9A%84%E6%95%B0%E6%8D%AE">获取提交的数据</a></li>
-<li><a href="#%E8%8E%B7%E5%8F%96%E4%B8%AD%E6%96%87%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98">获取中文数据的乱码问题</a></li>
-</ul>
-</li>
-<li><a href="#httpservletresponse">HttpServletResponse</a><ul>
-<li><a href="#%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8">简单使用</a></li>
-<li><a href="#%E5%93%8D%E5%BA%94%E6%97%B6%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98">响应时中文乱码问题</a></li>
-<li><a href="#%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6">下载文件</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="http">http</span></h1><ul>
-<li><p>客户端与服务器端通讯的一种协议</p>
-</li>
-<li><p>[HTTP状态码](<a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-status-codes.html">HTTP 状态码 | 菜鸟教程 (runoob.com)</a>)</p>
-</li>
-<li><p>request：</p>
-<blockquote>
-<p>请求行</p>
-<p>请求头</p>
-<p>请求体</p>
-</blockquote>
-</li>
-<li><p>response</p>
-<blockquote>
-<p>响应行</p>
-<p>[响应头](<a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-header-fields.html">HTTP 响应头信息 | 菜鸟教程 (runoob.com)</a>)</p>
-<p>响应体</p>
-</blockquote>
-</li>
-<li><p>get</p>
-<ol>
-<li>带上数据，在url上面拼接。数据长度有限制 1KB</li>
-<li>有安全隐患</li>
-</ol>
-</li>
-<li><p>post</p>
-<ol>
-<li>以流 的方式写过去，数据无限制</li>
-</ol>
-</li>
-</ul>
-<h1><span id="servlet">Servlet</span></h1><h2><span id="入门">入门</span></h2><ol>
-<li><p>写一个类，实现Servlet接口</p>
-</li>
-<li><p>注册web.xml</p>
-<blockquote>
-<p>&lt;!-向tomcat报告，我这个应用里面有个servlet，名字叫…,具体路径是…….-&gt;</p>
-<servlet>
-
-<p>​        <servlet-name>[自定义]</servlet-name></p>
-<p>​        <servlet-class>[全路径]</servlet-class></p>
-</servlet> 
-
-<p>&lt;!- 注册servlet的映射，servlet-name：找到上面注册的具体servlet；url-pattern:地址栏上的path,以斜杠开头 -&gt;</p>
-<servlet-mapping>
-
-<p>​            <servlet-name>[与上面注册的名字相同]<servlet-name></servlet-name></servlet-name></p>
-<p>​            <url-pattern>[地址栏上的path]</url-pattern></p>
-</servlet-mapping></blockquote>
-</li>
-<li><p>servlet标签里还可以写一些需要的初始化参数，用<init-param>标签。</init-param></p>
-</li>
-<li><p>servlet类里可以通过<strong>ServletConfig</strong>对象获取对应注册的servlet信息</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    <span class="type">ServletConfig</span> <span class="variable">servletConfig</span> <span class="operator">=</span> getServletConfig();</span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> servletConfig.getInitParameter(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">servletName</span> <span class="operator">=</span> servletConfig.getServletName();</span><br><span class="line">    System.out.println(<span class="string">&quot;doGet请求。。。。&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2><span id="servlet的生命周期">servlet的生命周期</span></h2><ol>
-<li><p>init()</p>
-<blockquote>
-<p>只会执行一次，</p>
-<p>默认情况下：初次访问，就会执行</p>
-<p>提前执行：在服务器启动时就执行，需要在注册servlet时添加<load-on-startup>标签，里面的值越小就先执行，从2开始</load-on-startup></p>
-</blockquote>
-</li>
-<li><p>service()</p>
-<blockquote>
-<p>只要请求过来，就会执行。可以执行多次，一次请求对应一次调用</p>
-</blockquote>
-</li>
-<li><p>destory</p>
-<blockquote>
-<p>销毁的时候调用</p>
-<p>什么时候销毁？</p>
-<p>​    注意：关浏览器—不销毁</p>
-<ol>
-<li>从服务器中移出托管</li>
-<li>正常关闭服务器</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-<h2><span id="servlet通用写法">servlet通用写法</span></h2><ul>
-<li><p>不是实现servlet接口，而是继承这个接口已有 的实现类。HttpServlet。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">helloHttpServlet</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="built_in">super</span>.doGet(req, resp);</span><br><span class="line">        System.out.println(<span class="string">&quot;helloHttpServlet&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        doGet(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>通用写法一般不重写init(),或者service()方法，而是重写doGet()和doPost();因为在父类里的service方法里会根据时什么类型的请求调用你重写的doPost,doGet或者其他的do方法</p>
-</li>
-</ul>
-<h2><span id="servlet配置方式">servlet配置方式</span></h2><p>即servlet-mapping的url-pattern的配置方式</p>
-<ol>
-<li><p>全路径匹配</p>
-<blockquote>
-<p>以&#x2F;开始     访问时需要输入完整的路径</p>
-</blockquote>
-</li>
-<li><p>路径匹配，前半段匹配</p>
-<blockquote>
-<p>以&#x2F;开始，但是以*结束    ，例如&#x2F;a&#x2F;*</p>
-<p>*其实是一个通配符，匹配任何文字，访问时必须输入*号前面的路径，*号后面可以是任意</p>
-</blockquote>
-</li>
-<li><p>以扩展名匹配</p>
-<blockquote>
-<p>写法：没有&#x2F;  ,以*开始，*.扩展名。</p>
-<p>例如：*.aa</p>
-<p>访问时<em>号前面可以是任意字符，后面的</em>*.扩展名**必须写</p>
-</blockquote>
-</li>
-</ol>
-<h2><span id="servletcontext">ServletContext</span></h2><ul>
-<li><p>Servlet 上下文</p>
-</li>
-<li><p>每个web工程都只有一个ServletContext对象，就是不管在哪个servlet里面，获取到的这个类的对象都是同一个</p>
-<blockquote>
-<p>获取对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ServletContext</span> <span class="variable">servletContext</span> <span class="operator">=</span> getServletContext();</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>有什么用？</p>
-<ol>
-<li><p>可以获取全局配置参数，这和SerlvetConfig功能相似，区别是SerlvetConfig是对某个特定的sevlet进行操作</p>
-<blockquote>
-<p>需要在web.xml通过&lt;context-param&gt;标签配置全局参数</p>
-<p>然后通过ServletContext对象的get方法获取参数的值</p>
-</blockquote>
-</li>
-<li><p>可以获取web工程的资源文件</p>
-<blockquote>
-<p>注意：由于web工程是tomcat服务器托管的，在使用相对路径时发生了变化，在源码里使用相对路径是相对jre的路径，而web工程一经发布，那么相对路径就是相对于tomcat的路径。</p>
-<ol>
-<li><p>servletContext对象提供了获取资源文件在tomcat里面的绝对路径的方法,    从而获取资源</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        Properties properties=<span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        <span class="type">ServletContext</span> <span class="variable">servletContext</span> <span class="operator">=</span> getServletContext();</span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> servletContext.getRealPath(&amp;quot;file/conf.properties&amp;quot;);</span><br><span class="line">        properties.load(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(path));</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> properties.getProperty(&amp;quot;name&amp;quot;);</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(&amp;quot;doGet请求。。。。&amp;quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>servletContext对象提供根据相对路径转化成流对象，这个相对路径是相对于tomcat上的web工程目录</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">    <span class="type">ServletContext</span> <span class="variable">servletContext</span> <span class="operator">=</span> getServletContext();</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> servletContext.getResourceAsStream(<span class="string">&quot;file/conf.properties&quot;</span>);</span><br><span class="line">    properties.load(inputStream);</span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> properties.getProperty(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">    System.out.println(name);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>除了以上两种方法可以获取资源，还就可以通过classLoader。注意classloader的相对路径是在字节码文件夹</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220518194508524.png" alt="image-20220518194508524"></p>
-<p>在tomcat的工程，它的字节码文件夹在工程目录下的WEB-INF文件里，一般web资源是放在工程目录下，所以如果想通过classloader获取资源相对路径需要返回到工程目录下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line"><span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> <span class="built_in">this</span>.getClass().getClassLoader().getResourceAsStream(<span class="string">&quot;../../file/conf.properties&quot;</span>);</span><br><span class="line">properties.load(is);</span><br><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> properties.getProperty(<span class="string">&quot;name&quot;</span>);</span><br></pre></td></tr></table></figure></li>
-</ol>
-</blockquote>
-</li>
-<li><p>存取数据，即servlet间共享数据，就是在servletContext对象存一个数据，而一个web工程servletContext对象只有一个。域对象。</p>
-<blockquote>
-<p>以获取成功登录总数为例子</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220519102231640.png" alt="image-20220519102231640"></p>
-<p><img src="/2022/05/17/http&Servlet/image-20220519104323585.png" alt="image-20220519104323585"></p>
-<ol>
-<li><p>当点击登录时发送一个loginServlet请求，loginServlet判断账号密码是否正确，如正确则在servletContext对象设置一个count属性来记录成功登录的条数</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    <span class="comment">//获取账号</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line">    <span class="comment">//获取密码</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;username=&quot;</span>+username);</span><br><span class="line">    System.out.println(<span class="string">&quot;password=&quot;</span>+password);</span><br><span class="line">    <span class="type">PrintWriter</span> <span class="variable">responseWriter</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line">    <span class="keyword">if</span> (username.equals(<span class="string">&quot;admin&quot;</span>)&amp;&amp;password.equals(<span class="string">&quot;password&quot;</span>))&#123;</span><br><span class="line">        <span class="type">ServletContext</span> <span class="variable">servletContext</span> <span class="operator">=</span> getServletContext();</span><br><span class="line">        <span class="comment">//获取在servletContext存的值，返回的时Object类型，需要转化类型</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">count</span> <span class="operator">=</span> servletContext.getAttribute(<span class="string">&quot;count&quot;</span>);</span><br><span class="line">        <span class="comment">//默认是0次</span></span><br><span class="line">        <span class="type">int</span> totalCount=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (count!=<span class="literal">null</span>)&#123;</span><br><span class="line">            totalCount= (<span class="type">int</span>) count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//给count赋新值</span></span><br><span class="line">        servletContext.setAttribute(<span class="string">&quot;count&quot;</span>,totalCount+<span class="number">1</span>);</span><br><span class="line">        <span class="comment">//设置状态码，重新定位状态码</span></span><br><span class="line">        response.setStatus(<span class="number">302</span>);</span><br><span class="line">        <span class="comment">//定位跳转的位置是哪一个页面</span></span><br><span class="line">        response.setHeader(<span class="string">&quot;location&quot;</span>,<span class="string">&quot;success.html&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        responseWriter.write(<span class="string">&quot;login failed&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>在成功登录的页面设置一个超链接，点击超链接会发送一个查询登录总条数的countServlet请求</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    <span class="comment">//获取在servletContext存的值，返回的时Object类型，需要转化类型</span></span><br><span class="line">    <span class="type">Object</span> <span class="variable">count</span> <span class="operator">=</span> getServletContext().getAttribute(<span class="string">&quot;count&quot;</span>);</span><br><span class="line">    <span class="type">int</span> totalCount= (<span class="type">int</span>) count;</span><br><span class="line">    <span class="type">PrintWriter</span> <span class="variable">responseWriter</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line">    responseWriter.write(<span class="string">&quot;你是第&quot;</span>+totalCount+<span class="string">&quot;位成功登录&quot;</span>);</span><br><span class="line">    responseWriter.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><p>ServletContext作用范围和生命周期</p>
-<ol>
-<li>何时创建？何时销毁？<ol>
-<li>服务器启动时，会为托管的每一个web应用程序创建一个ServletContextduix</li>
-<li>从服务器移出托管，或者关闭服务器</li>
-</ol>
-</li>
-<li>作用范围<ol>
-<li>同一个项目里都可以取</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<h1><span id="httpservletrequest">HttpServletRequest</span></h1><blockquote>
-<p>负责提交数据，就是一个请求对象。用于封装客户端提交过来的信息</p>
-</blockquote>
-<h2><span id="获取头信息">获取头信息</span></h2><ol>
-<li><p>使用HttpServletRequest对象的getHeaderName方法获得一个或者所有请求头有的名称，然后根据名称使用getHeader方法其值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">method1</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">    <span class="comment">//取出所有请求头名称</span></span><br><span class="line">    Enumeration&lt;String&gt; headerNames = request.getHeaderNames();</span><br><span class="line">    <span class="keyword">while</span> (headerNames.hasMoreElements())&#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> headerNames.nextElement();</span><br><span class="line">        <span class="comment">//根据请求头名称取其值</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> request.getHeader(name);</span><br><span class="line">        System.out.println(name+<span class="string">&quot;=&quot;</span>+value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2><span id="获取提交的数据">获取提交的数据</span></h2><ol>
-<li><p>使用HttpServletRequest对象的getParameterNames方法获得一个数据或者多个数据名称，然后根据名称使用getParameter方法取值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">method2</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">    Enumeration&lt;String&gt; parameterNames = request.getParameterNames();</span><br><span class="line">    <span class="keyword">while</span> (parameterNames.hasMoreElements())&#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> parameterNames.nextElement();</span><br><span class="line">        <span class="type">String</span> <span class="variable">parameter</span> <span class="operator">=</span> request.getParameter(name);</span><br><span class="line">        System.out.println(name+<span class="string">&quot;=&quot;</span>+parameter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>使用HttpServletRequest对象的getParameterMap方法取得数据的Map，注意其中key是String类型而value是String[]类型，然后遍历Map取值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">method3</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">    Map&lt;String,String[]&gt; parameterMap = request.getParameterMap();</span><br><span class="line">    Set&lt;String&gt; keySet = parameterMap.keySet();</span><br><span class="line">    Iterator&lt;String&gt; iterator = keySet.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">        <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> parameterMap.get(name)[<span class="number">0</span>];</span><br><span class="line">        System.out.println(name+<span class="string">&quot;=&quot;</span>+value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2><span id="获取中文数据的乱码问题">获取中文数据的乱码问题</span></h2><ol>
-<li><p>如果是GET方式</p>
-<p>可以在servlet处理，先取得数据将其转回ISO-8859-1对应的字节数组，然后再按UTF-8生成字符串</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220519200446056.png" alt="image-20220519200446056"></p>
-<p>可以在tomcat里做设置处理，以后get请求过来的数据永远都是用UTF-8，修改tomcat的conf&#x2F;server.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">&quot;8080&quot;</span> <span class="attr">protocol</span>=<span class="string">&quot;HTTP/1.1&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">connectionTimeout</span>=<span class="string">&quot;20000&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">redirectPort</span>=<span class="string">&quot;8443&quot;</span> <span class="attr">URLEncoding</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果是post方式</p>
-<p>可以先对请求体设置文字编码，再取数据，一点写在取数据之前</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220519202103647.png" alt="image-20220519202103647"></p>
-</li>
-</ol>
-<h1><span id="httpservletresponse">HttpServletResponse</span></h1><blockquote>
-<p>负责返回数据，一个响应对象，用于封装服务器返回的信息</p>
-</blockquote>
-<h2><span id="简单使用">简单使用</span></h2><ol>
-<li><p>输出数据到页面上</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220519203425479.png" alt="image-20220519203425479"></p>
-</li>
-<li><p>响应数据。响应头或者响应体</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220519204552569.png" alt="image-20220519204552569"></p>
-</li>
-<li><p>重定位</p>
-<p>例：当用户点击登陆时会发送一个loginServlet请求，如果账号密码匹配，服务器则返回一个新的请求路径个客户端，此时客户端通过服务器返回的新路径定位到登录成功的页面，因此客户端实际会至少执行两次请求</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;username&quot;</span>+username);</span><br><span class="line">        System.out.println(<span class="string">&quot;password&quot;</span>+password);</span><br><span class="line">        <span class="keyword">if</span> (username.equals(<span class="string">&quot;admin&quot;</span>)&amp;&amp;password.equals(<span class="string">&quot;password&quot;</span>))&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            重定向写法一</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            response.setStatus(302);</span></span><br><span class="line"><span class="comment">            response.setHeader(&quot;location&quot;,&quot;success.html&quot;);</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            重定向写法二</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            response.sendRedirect(<span class="string">&quot;success.html&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            response.setContentType(<span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">            response.getWriter().write(<span class="string">&quot;登录失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>请求转发</p>
-<p>例：当用户点击登陆时会发送一个loginServlet请求，如果账号密码匹配，服务器在内部帮客户端完成跳转到新的页面，而不会返回新的路径给客户端，因此客户端只需只需一次请求</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;username&quot;</span>+username);</span><br><span class="line">        System.out.println(<span class="string">&quot;password&quot;</span>+password);</span><br><span class="line">        <span class="keyword">if</span> (username.equals(<span class="string">&quot;admin&quot;</span>)&amp;&amp;password.equals(<span class="string">&quot;password&quot;</span>))&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            请求转发</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            request.getRequestDispatcher(<span class="string">&quot;success.html&quot;</span>).forward(request,response);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            response.setContentType(<span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">            response.getWriter().write(<span class="string">&quot;登录失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>请求转发和重定向的区别</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220521142754491.png" alt="image-20220521142754491"></p>
-<p>请求转发：</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220521143016993.png" alt="image-20220521143016993"></p>
-<p>重定向：</p>
-<p><img src="/2022/05/17/http&Servlet/image-20220521143033735.png" alt="image-20220521143033735"></p>
-</li>
-</ol>
-<h2><span id="响应时中文乱码问题">响应时中文乱码问题</span></h2><ul>
-<li><p>解决方法</p>
-<ol>
-<li><p>方式一(不推荐),一定要在获取流对象之前调用才有效</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置服务器字符集为 UTF-8 </span></span><br><span class="line">resp.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>); </span><br><span class="line"><span class="comment">// 通过响应头，设置浏览器也使用 UTF-8 字符集 </span></span><br><span class="line">resp.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/html; charset=UTF-8&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line">        out.println(<span class="string">&quot;\&lt;html&gt;\&lt;body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;\&lt;h1&gt;&quot;</span> + <span class="string">&quot;我是一句中文！&quot;</span>+ <span class="string">&quot;\&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;\&lt;/body&gt;\&lt;/html&gt;&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>方式二,一定要在获取流对象之前调用才有效</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 它会同时设置服务器和客户端都使用 UTF-8 字符集，还设置了响应头 </span></span><br><span class="line"><span class="comment">// 一定要在获取流对象之前调用才有效 </span></span><br><span class="line">resp.setContentType(<span class="string">&quot;text/html; charset=UTF-8&quot;</span>);</span><br><span class="line"><span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line">        out.println(<span class="string">&quot;\&lt;html&gt;\&lt;body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;\&lt;h1&gt;&quot;</span> + <span class="string">&quot;我是一句中文！&quot;</span>+ <span class="string">&quot;\&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;\&lt;/body&gt;\&lt;/html&gt;&quot;</span>);</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-</ul>
-<h2><span id="下载文件">下载文件</span></h2><ol>
-<li><p>方式一，利用tomcat里面的默认Sercvlet，这个默认的Servlet专门用于处理放在tomcat服务器上的静态资源</p>
-<blockquote>
-<p>直接以超链接的方式下载，不写任何代码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tomcat的默认Servlet去提供下载：<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;file/1.jpg&quot;</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;file/test.txt&quot;</span>&gt;</span>文本<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>方式二，手动编写servlet</p>
-<blockquote>
-<p>html</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">手动写Servlet提供下载：<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;SourcesDownLoanServlet?filename=1.jpg&quot;</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;SourcesDownLoanServlet?filename=test.txt&quot;</span>&gt;</span>文本<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>servlet</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    <span class="comment">//获取要下载文件的名称</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">filename</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;filename&quot;</span>);</span><br><span class="line">    <span class="comment">//设置响应头，告诉浏览器下载到本地而不在浏览器展示,如果不设置则会直接展示</span></span><br><span class="line">    response.setHeader(<span class="string">&quot;Content-Disposition&quot;</span>,<span class="string">&quot;attachment;filename=&quot;</span>+filename);</span><br><span class="line">    <span class="comment">//读取在tomcat的资源，转化成流，然后响应输出到浏览器</span></span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">resourceAsStream</span> <span class="operator">=</span> getServletContext().getResourceAsStream(<span class="string">&quot;file/&quot;</span> + filename);</span><br><span class="line">    <span class="type">ServletOutputStream</span> <span class="variable">servletOutputStream</span> <span class="operator">=</span> response.getOutputStream();</span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line">    <span class="type">byte</span>[] buff=<span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">    <span class="keyword">while</span> ((len= resourceAsStream.read(buff))!=-<span class="number">1</span>)&#123;</span><br><span class="line">        servletOutputStream.write(buff,<span class="number">0</span>,len);</span><br><span class="line">    &#125;</span><br><span class="line">    resourceAsStream.close();</span><br><span class="line">    servletOutputStream.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></blockquote>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/17/http&Servlet/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-XML&amp;Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/08/XML&Tomcat/">XML&amp;Tomcat</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/08/XML&Tomcat/" class="archive-article-date">
-  	<time datetime="2022-05-08T04:25:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- toc -->
-
-<ul>
-<li><a href="#xml">XML</a><ul>
-<li><a href="#xml%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8">XML有什么用</a></li>
-<li><a href="#%E5%AE%9A%E4%B9%89xml">定义XML</a></li>
-<li><a href="#%E8%A7%A3%E6%9E%90xml">解析XML</a></li>
-</ul>
-</li>
-<li><a href="#tomcat">Tomcat</a></li>
-</ul>
-<!-- tocstop -->
-
-<hr>
-<h1><span id="xml">XML</span></h1><h2><span id="xml有什么用">XML有什么用</span></h2><ol>
-<li>可以用来保存数据(数据较少的情况)</li>
-<li>可以用来做配置文件</li>
-<li>数据传输载体</li>
-</ol>
-<h2><span id="定义xml">定义XML</span></h2><ul>
-<li><p>就是一个后缀为.xml的文件</p>
-<p><img src="/2022/05/08/XML&Tomcat/image-20220509092454247.png" alt="image-20220509092454247"></p>
-</li>
-<li><p>文档声明</p>
-<ul>
-<li><p>简单声明，version：解析这个xml的时候，使用的什么版本的解析器解析。</p>
-<p>&lt;?xml version&#x3D;”1.0”?&gt;</p>
-</li>
-<li><p>encoding:解析xml中的文字的时候，使用什么编码来翻译</p>
-<p>&lt;?xml version&#x3D;”1.0” encoding&#x3D;”gbk”?&gt;</p>
-</li>
-</ul>
-</li>
-<li><p>encoding详解</p>
-<ul>
-<li>在解析xml的时候，使用什么编码去解析。    —-解码</li>
-<li>一般出现乱码是因为文件保存时使用一种编码，而解析时使用了另一种编码。</li>
-<li>解决乱码问题，需要让保存时使用的编码和解析时使用的编码一致</li>
-<li>默认文件保存的时候，使用的时GBK编码保存</li>
-<li>保存的时候见到的ANSI对应的其实是GBK</li>
-</ul>
-</li>
-<li><p>元素定义</p>
-<ul>
-<li><p>元素就是标签，使用&lt;&gt;包起来，成对出现，如下</p>
-<blockquote>
-<p>&lt;stus&gt;</p>
-</blockquote>
-</li>
-<li><p>文档的第一个的元素时根元素</p>
-</li>
-<li><p>可以嵌套标签</p>
-</li>
-<li><p>标签命名规则，不可以使用数字或者标点符号开始</p>
-</li>
-<li><p>标签里面可以定义属性，例如</p>
-<blockquote>
-<p>&lt;stu   id&#x3D;”10001”&gt;</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>CDATA区</p>
-<ul>
-<li><p>当标签里面的内容含有不想被解析的标签，可以使用CDATA区包起来</p>
-</li>
-<li><p>CDATA区内部的所有东西都会被解析器忽略</p>
-</li>
-<li><p>使用：&lt;![CDATA[内容]]&gt;</p>
-</li>
-<li><p>例：&lt;stu&gt;&lt;![CDATA[内容]]&gt;&lt;&#x2F;stu&gt;</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2><span id="解析xml">解析XML</span></h2><ul>
-<li><p>解析方式，常用的两种</p>
-<ol>
-<li><p>DOM：把整个文档读入内存，可以进行增删查操作</p>
-</li>
-<li><p>SAX：读取一行解析一行，只能查询</p>
-<p><img src="/2022/05/08/XML&Tomcat/image-20220513222342771.png" alt="image-20220513222342771"></p>
-</li>
-</ol>
-</li>
-<li><p>针对以上两种解析方式的API</p>
-<ol>
-<li>jaxp，比较繁琐</li>
-<li>jdom，早期和dom4j是同一批人搞的，后期因为理念不同分家</li>
-<li>dom4j，使用比较广泛</li>
-</ol>
-</li>
-<li><p>dom4j的使用</p>
-<ol>
-<li><p>导入dom4j的jiar包</p>
-</li>
-<li><p>创建sax读取对象或者dom读取对象</p>
-</li>
-<li><p>获取根元素</p>
-</li>
-<li><p>定位的需要的元素</p>
-</li>
-<li><p>获取内容</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">        <span class="comment">//创建sax读取对象</span></span><br><span class="line">        SAXReader saxReader=<span class="keyword">new</span> <span class="title class_">SAXReader</span>();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//读取xml文件</span></span><br><span class="line">            <span class="type">Document</span> <span class="variable">document</span> <span class="operator">=</span> saxReader.read(test.class.getClassLoader().getResourceAsStream(<span class="string">&quot;stus.xml&quot;</span>));</span><br><span class="line">            <span class="comment">//获取根元素</span></span><br><span class="line">            <span class="type">Element</span> <span class="variable">rootElement</span> <span class="operator">=</span> document.getRootElement();</span><br><span class="line"><span class="comment">//            Element element = (Element) rootElement.selectSingleNode(&quot;//name&quot;);</span></span><br><span class="line">            <span class="comment">//通过链式编程定位到需要的元素,也可以用XPATH来定位，selectSingleNode方法支持XPATH</span></span><br><span class="line">            List&lt;Element&gt; list1 = rootElement.elements(<span class="string">&quot;stu&quot;</span>);</span><br><span class="line"><span class="comment">//            for (Element e:list</span></span><br><span class="line"><span class="comment">//                 ) &#123;</span></span><br><span class="line"><span class="comment">//                System.out.println(e.getText());</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">            <span class="keyword">for</span> (Element e1:list1</span><br><span class="line">                 ) &#123;</span><br><span class="line">                <span class="comment">//获取元素内容</span></span><br><span class="line">                System.out.println(e1.element(<span class="string">&quot;name&quot;</span>).getText());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (DocumentException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-</ul>
-<h1><span id="tomcat">Tomcat</span></h1><ul>
-<li><p>目录介绍</p>
-<ol>
-<li>bin：包含了一些jar包</li>
-<li>conf：tomcat的配置</li>
-<li>lib：tomcat运行需要的jar文件</li>
-<li>logs：运行的日志文件</li>
-<li>temp：临时文件</li>
-<li>webapps：发布到tomcat的项目</li>
-<li>work：jsp翻译成class文件的存放地</li>
-</ol>
-</li>
-<li><p>如何把一个项目发布到tomcat</p>
-<p>例：让其他电脑访问服务器的资源stu.xml,有如下几种方式</p>
-<ol>
-<li><p>拷贝文件的webapps&#x2F;ROOT底下，在浏览器访问</p>
-<blockquote>
-<p> <a target="_blank" rel="noopener" href="http://localhost:8080/stu.xml">http://localhost:8080/stu.xml</a></p>
-</blockquote>
-</li>
-<li><p>在webapps下面创建一个文件夹xml，然后拷贝文件放置这个文件夹</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://localhost:8080/xml/stu.xml">http://localhost:8080/xml/stu.xml</a></p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/08/XML&Tomcat/">展开全文 >></a>
         </p>
       
 

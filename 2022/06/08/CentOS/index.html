@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>CentOS | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/page/4/index.html">
+  <meta name="description" content="JDK 版本：1.8  Tomcat 版本：8 安装目录：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat8 启动：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat8&#x2F;bin&#x2F;startup.sh  Mysql 版本：8  用户：  uroot:123456 root:123456   开机自启">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS">
+<meta property="og:url" content="http://example.com/2022/06/08/CentOS/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JDK 版本：1.8  Tomcat 版本：8 安装目录：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat8 启动：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat8&#x2F;bin&#x2F;startup.sh  Mysql 版本：8  用户：  uroot:123456 root:123456   开机自启">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-08T15:30:07.000Z">
+<meta property="article:modified_time" content="2022-06-09T03:37:18.247Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -142,133 +146,228 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CentOS" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CentOS
+    </h1>
+  
+
+        
+        <a href="/2022/06/08/CentOS/" class="archive-article-date">
+  	<time datetime="2022-06-08T15:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-08</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc-->
+
+<h1><span id="jdk">JDK</span></h1><ul>
+<li>版本：1.8</li>
+</ul>
+<h1><span id="tomcat">Tomcat</span></h1><ul>
+<li>版本：8</li>
+<li>安装目录：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat8</li>
+<li>启动：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat8&#x2F;bin&#x2F;startup.sh</li>
+</ul>
+<h1><span id="mysql">Mysql</span></h1><ul>
+<li><p>版本：8</p>
+</li>
+<li><p>用户：</p>
+<ul>
+<li>uroot:123456</li>
+<li>root:123456</li>
+</ul>
+</li>
+<li><p>开机自启动</p>
+</li>
+</ul>
+<h1><span id="redis">Redis</span></h1><ul>
+<li>版本：6</li>
+<li>安装目录：&#x2F;usr&#x2F;local&#x2F;redis6</li>
+<li>启动服务端：systemclt start redis</li>
+<li>关闭服务端：systemclt stop redis</li>
+<li>查看运行状态：systemclt status redis</li>
+<li>启动客户端：&#x2F;usr&#x2F;local&#x2F;redis6&#x2F;bin&#x2F;redis-cli</li>
+<li>已设置开机自启动</li>
+</ul>
+<h1><span id="开放端口">开放端口</span></h1><p>1、开放端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –add-port&#x3D;5672&#x2F;tcp –permanent</strong>  # 开放5672端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –remove-port&#x3D;5672&#x2F;tcp –permanent</strong> #关闭5672端口</p>
+<p><strong>firewall-cmd –reload</strong>  # 配置立即生效</p>
+<p>2、查看防火墙所有开放的端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –list-ports</strong></p>
+<p>3.、关闭防火墙</p>
+<p>如果要开放的端口太多，嫌麻烦，可以关闭防火墙，安全性自行评估</p>
+<p><strong>systemctl stop firewalld.service</strong></p>
+<p>4、查看防火墙状态</p>
+<p> <strong>firewall-cmd –state</strong></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/2.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/3.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/" class="archive-article-date">
-  	<time datetime="2022-03-29T04:16:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/29/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CAVL/">平衡二叉树和AVL</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/06/08/CentOS/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2022-03-29T04:13:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/06/09/Redis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Redis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/07/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">装饰者模式和动态代理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/29/JAVA%E5%9F%BA%E7%A1%80/">JAVA基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">JDK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Tomcat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">Mysql</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">Redis</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">开放端口</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2022-03-29T02:51:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/">我的第二个博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/29/hello-world/" class="archive-article-date">
-  	<time datetime="2022-03-29T00:26:45.204Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/29/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
   
 
 
@@ -292,8 +391,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
