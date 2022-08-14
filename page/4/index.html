@@ -144,6 +144,181 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-线段树（SegmentTree）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/">线段树（SegmentTree）</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-03-29T05:31:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="线段树（SegmentTree）"><a href="#线段树（SegmentTree）" class="headerlink" title="线段树（SegmentTree）"></a>线段树（SegmentTree）</h1><p>对于有些问题，我们关心的是某个线段或者区间，例如区间染色<img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321215836799.png" alt="image-20220321215836799"></p>
+<p>因此线段树是十分符合的一种数据结构，一般需要更新区间和查询区间，如果不使用线段树这种结构这两个操作的时间复杂度都为O(n)。</p>
+<h2 id="线段树例子"><a href="#线段树例子" class="headerlink" title="线段树例子"></a>线段树例子</h2><p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321223149685.png" alt="image-20220321223149685"></p>
+<ul>
+<li><p>线段树是平衡二叉树，可以把树当成满二叉树，用数组表示需要多少个节点，满二叉树最后一层节点数大概等于前面所有层的节点的和，如果区间有n&#x3D;2^k个元素只需要2n的空间，最坏情况有n&#x3D;2^k+1,则需要4n的空间，线段树不考虑添加元素，所以只需静态的4n的空间。</p>
+</li>
+<li><p>初始化</p>
+<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321224605667.png" alt="image-20220321224605667"></p>
+</li>
+<li><p>建立区间树，需要获得当前节点的左右孩子节点，其中，merge(a,b)表示对两个数据进行融合，如何融合有用户决定</p>
+<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321224649364.png" alt="image-20220321224649364"></p>
+</li>
+<li><p>查询区间</p>
+<p><img src="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/image-20220321225238268.png" alt="image-20220321225238268"></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/29/%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%88SegmentTree%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-并查集-UnionFind" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/">并查集(UnionFind)</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/" class="archive-article-date">
+  	<time datetime="2022-03-29T05:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86unionfind">并查集（UnionFind）</a><ul>
+<li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD">并查集基本功能</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<hr>
+<h1><span id="并查集unionfind">并查集（UnionFind）</span></h1><ul>
+<li>如在网络中两个节点是否连接，在回答两个节点是否连接中可以用复杂度更高的路径问题思路，但有时只是需要判断两个节点是否连接，无需回答额外的问题，因此出现并查集，并查集只回答是否连接，并不关心如何连接，路径如何。</li>
+</ul>
+<h2><span id="并查集基本功能">并查集基本功能</span></h2><ul>
+<li>对两个数据合并</li>
+<li>判断是否连接</li>
+<li><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320224115655.png" alt="image-20220320224115655"></li>
+</ul>
+<p>例： 用数组实现子节点指向父节点的树，因此组成森林，int[i]为节点元素的父节点，i为节点元素。</p>
+<ol>
+<li><p>初始化森林</p>
+<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232137564.png" alt="image-20220320232137564"></p>
+</li>
+<li><p>寻找根节点</p>
+<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232210245.png" alt="image-20220320232210245"></p>
+</li>
+<li><p>合并数据，如果数据p的根节点和不q节点不同，则将p的根节点指向q。</p>
+<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320232314846.png" alt="image-20220320232314846"></p>
+</li>
+<li><p>判断是否连接</p>
+<p><img src="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/image-20220320225934111.png" alt="image-20220320225934111"></p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/29/%E5%B9%B6%E6%9F%A5%E9%9B%86-UnionFind/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-平衡二叉树和AVL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

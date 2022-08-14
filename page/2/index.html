@@ -144,6 +144,408 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSP&amp;EL&amp;JSTL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/23/JSP&EL&JSTL/">JSP&amp;EL&amp;JSTL</a>
+    </h1>
+  
+
+        
+        <a href="/2022/05/23/JSP&EL&JSTL/" class="archive-article-date">
+  	<time datetime="2022-05-23T08:22:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+
+<ul>
+<li><a href="#jsp">JSP</a><ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFjsp">什么是JSP</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E7%94%A8">怎么用</a></li>
+<li><a href="#page%E6%8C%87%E4%BB%A4">page指令</a></li>
+<li><a href="#include%E6%8C%87%E4%BB%A4">include指令</a></li>
+<li><a href="#taglib%E6%8C%87%E4%BB%A4">taglib指令</a></li>
+<li><a href="#%E5%8A%A8%E4%BD%9C%E6%A0%87%E7%AD%BE">动作标签</a></li>
+</ul>
+</li>
+<li><a href="#el%E8%A1%A8%E8%BE%BE%E5%BC%8F">EL表达式</a><ul>
+<li><a href="#%E4%B8%BA%E4%BD%95%E5%87%BA%E7%8E%B0">为何出现</a></li>
+<li><a href="#%E5%86%99%E6%B3%95%E6%A0%BC%E5%BC%8F">写法格式</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8">如何使用</a></li>
+<li><a href="#%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1">内置对象</a></li>
+</ul>
+</li>
+<li><a href="#jstl">JSTL</a><ul>
+<li><a href="#%E6%98%AF%E4%BB%80%E4%B9%88">是什么</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E7%94%A8-1">怎么用</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<hr>
+<h1><span id="jsp">JSP</span></h1><h2><span id="什么是jsp">什么是JSP</span></h2><ul>
+<li>Java Server Page</li>
+<li>从用户角度来看就是一个网页，从程序员角度来看就是一个java类，jsp会被翻译成java文件。它继承了servlet，因此jsp可以说是一个Servlet</li>
+<li>html多数情况是用来显示静态内容，当需要显示一些动态内容就可以用jsp，因为jsp里面可以写java代码</li>
+</ul>
+<h2><span id="怎么用">怎么用</span></h2><blockquote>
+<p>普通java代码写法：用&lt;% %&gt;把java代码包起来。</p>
+<p>打印东西在html页面：&lt;%&#x3D;值  %&gt;  </p>
+<p>指令写法：&lt;%@指令   %&gt;，可以用来设置页面的一些属性或者把其他的页面包含进来或者引用一些标签库</p>
+</blockquote>
+<h2><span id="page指令">page指令</span></h2><blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> isELIgnored=<span class="string">&quot;false&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>contentType</p>
+<blockquote>
+<p>告诉浏览器当前页面是什么类型内容以及使用什么编码</p>
+</blockquote>
+</li>
+<li><p>language</p>
+<blockquote>
+<p>表明jsp页面可以写java代码</p>
+</blockquote>
+</li>
+<li><p>isELIgnored</p>
+<blockquote>
+<p>表明是否识别EL表达式</p>
+</blockquote>
+</li>
+<li><p>import</p>
+<blockquote>
+<p>导包使用，一般不用手写</p>
+</blockquote>
+</li>
+<li><p>session</p>
+<blockquote>
+<p>用于控制当前页面是否可以直接使用session对象</p>
+</blockquote>
+</li>
+<li><p>errorPage</p>
+<blockquote>
+<p>指定错误页面</p>
+<p>如果当前页面出现了错误就转发到指定的错误页面</p>
+</blockquote>
+</li>
+<li><p>isErrorPage</p>
+<blockquote>
+<p>声明当前页面是不是错误页面，配合上面的errorPage使用</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2><span id="include指令">include指令</span></h2><blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">&quot;page02.jsp&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>作用：把其他页面所有内容包含在当前页面，静态包含，就是把其他页面的所有标签全部拿过来输出</p>
+</blockquote>
+<h2><span id="taglib指令">taglib指令</span></h2><blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jstl/core_rt&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>引入标签库</p>
+<p>uri： 标签库的路径</p>
+<p>prefix：类似给标签库起别名，方便写代码</p>
+</blockquote>
+<h2><span id="动作标签">动作标签</span></h2><ul>
+<li><p>常用动作标签</p>
+<ol>
+<li><pre><code class="jsp">&lt;jsp:forward page=&quot;page02.jsp&quot;&gt;&lt;/jsp:forward&gt;
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   &gt; 前往指定的页面,等同于request的请求转发</span><br><span class="line"></span><br><span class="line">2. ```jsp</span><br><span class="line">   &lt;jsp:include page=&quot;page03.jsp&quot; flush=&quot;true&quot;&gt;&lt;/jsp:include&gt;</span><br></pre></td></tr></table></figure>
+
+&gt; 包含指定页面，这里是动态包含，就是不把包含的页面的所有标签全部拿过来输出，而是把它的运行结果拿过来
+</code></pre>
+</li>
+<li><p>&#96;&#96;&#96;jsp<br>  &lt;jsp:include page&#x3D;”page03.jsp” flush&#x3D;”true”&gt;<br>&lt;jsp:param name&#x3D;”age” value&#x3D;”18”&#x2F;&gt;<br>  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">     &gt; 在包含页面或者前往指定页面时带一个参数</span><br><span class="line"></span><br><span class="line">## 九大内置对象</span><br><span class="line"></span><br><span class="line">1. 四个域对象，这些域对象可以存值或者取值  setAttribute和getAttribute</span><br><span class="line"></span><br><span class="line">   ```jsp</span><br><span class="line">   pageContext</span><br><span class="line">   request</span><br><span class="line">   session</span><br><span class="line">   application</span><br><span class="line">   </span><br><span class="line">   作用域的范围</span><br><span class="line">   pageContext：仅当前页面有效，</span><br><span class="line">   request：同一次请求内有效，例如当请求跳转到其他页面时，任然可以对request域里面的属性取值存值，只要服务器对该请求作出响应则失效</span><br><span class="line">   session：在一次对话内有效，无论执行了多少此请求或者响应</span><br><span class="line">   application：整个工程都可以访问，服务器关闭后就不能访问</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p>page对象</p>
+<ul>
+<li>就是这个jsp翻译成的java类的实例对象</li>
+</ul>
+</li>
+<li><p>config对象</p>
+<ul>
+<li>就是一个ServletConfig对象</li>
+</ul>
+</li>
+<li><p>exception对象</p>
+<ul>
+<li>就是一个异常对象</li>
+</ul>
+</li>
+<li><p>out对象</p>
+<ul>
+<li><p>往页面输出内容</p>
+</li>
+<li><p>和response.getWrite输出的逻辑</p>
+<p><img src="/2022/05/23/JSP&EL&JSTL/image-20220525220400589.png" alt="image-20220525220400589"></p>
+</li>
+</ul>
+</li>
+<li><p>response对象</p>
+<ul>
+<li>是HttpServletResponse对象</li>
+</ul>
+</li>
+</ol>
+<h1><span id="el表达式">EL表达式</span></h1><h2><span id="为何出现">为何出现</span></h2><ul>
+<li>为了简化jsp代码，</li>
+</ul>
+<h2><span id="写法格式">写法格式</span></h2><blockquote>
+<p>${表达式}</p>
+</blockquote>
+<h2><span id="如何使用">如何使用</span></h2><blockquote>
+<p>可以用来取值操作,可以指定从哪个域取值，就是下面例子的pageScope，如果没有指定则按照pageContext&gt;request&gt;session&gt;application顺序寻找直到找到第一个匹配的值，如果值是有下标的则用[],否则用**.**</p>
+<p>例：单个字符串值</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;%      </span><br><span class="line">pageContext.setAttribute(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;pageContext&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">   <span class="comment">/*普通手段取值*/</span></span><br><span class="line">   &lt;%=pageContext.getAttribute(<span class="string">&quot;name&quot;</span>)%&gt;</span><br><span class="line">   &lt;!--使用EL表达式--&gt;</span><br><span class="line">   $&#123;pageScope.name&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例：数组的值</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   String[] str=&#123;<span class="string">&quot;11&quot;</span>,<span class="string">&quot;aa&quot;</span>&#125;;</span><br><span class="line">   pageContext.setAttribute(<span class="string">&quot;str&quot;</span>,str);</span><br><span class="line">   <span class="comment">/*普通手段取值*/</span></span><br><span class="line">   String[] name= (String[])      			   </span><br><span class="line">   pageContext.getAttribute(<span class="string">&quot;str&quot;</span>);</span><br><span class="line">   String s=name[<span class="number">0</span>];</span><br><span class="line">%&gt;</span><br><span class="line">	&lt;%=s%&gt;</span><br><span class="line">&lt;!--使用EL表达式--&gt;</span><br><span class="line">$&#123;pageScope.str[<span class="number">0</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例：Map的值</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	  Map&lt;String,String&gt; map=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">   map.put(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;lishi&quot;</span>);</span><br><span class="line">   pageContext.setAttribute(<span class="string">&quot;map&quot;</span>,map);</span><br><span class="line">   <span class="comment">/*普通手段取值*/</span></span><br><span class="line">   Map&lt;String,String&gt; map1= (Map) </span><br><span class="line">   pageContext.getAttribute(<span class="string">&quot;map&quot;</span>);</span><br><span class="line">   <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> map1.get(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;%=s%&gt;</span><br><span class="line">&lt;!--使用EL表达式--&gt;</span><br><span class="line">$&#123;pageScope.map.name&#125;</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h2><span id="内置对象">内置对象</span></h2><ul>
+<li>一个jsp上下文。四个作用域，两个请求参数，两个请求头，一个cookie，一个初始化参数</li>
+</ul>
+<p><img src="/2022/05/23/JSP&EL&JSTL/image-20220526082632647.png" alt="image-20220526082632647"></p>
+<h1><span id="jstl">JSTL</span></h1><p>Java standard Tag library ，标签库</p>
+<h2><span id="是什么">是什么</span></h2><p>简化jsp代码编写，替换&lt;%%&gt;写法，一般与EL表达式配合</p>
+<h2><span id="怎么用">怎么用</span></h2><ol>
+<li><p>导入JSTL支持jar文件</p>
+</li>
+<li><p>在页面上使用taglib标签引入标签库</p>
+</li>
+<li><p>注意：如果想支持EL表达式，那么引入的必须是1.1版本，1.0不支持EL表达式</p>
+</li>
+<li><p>常用标签：</p>
+<blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">&quot;$&#123;a&gt;b&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;flag&quot;</span> scope=<span class="string">&quot;session&quot;</span>&gt;a大于b&lt;/c:<span class="keyword">if</span>&gt;<span class="comment">//如果test里面的表达式为真则执行标签里面的内容，test的值赋值給var，var存在session域</span></span><br><span class="line">&lt;c:set <span class="keyword">var</span>=<span class="string">&quot;name&quot;</span> value=<span class="string">&quot;zhansan&quot;</span> scope=<span class="string">&quot;session&quot;</span>&gt;&lt;/c:set&gt;<span class="comment">//声明一个对象name，值为zhansan，储存到session域，默认是存在page域</span></span><br><span class="line">&lt;c:forEach begin=<span class="string">&quot;&quot;</span> end=<span class="string">&quot;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;&quot;</span> items=<span class="string">&quot;&quot;</span> step=<span class="string">&quot;&quot;</span>&gt;&lt;/c:forEach&gt;</span><br><span class="line"><span class="comment">//items:被遍历的对象</span></span><br><span class="line"><span class="comment">//var：声明一个对象，每次的结果赋值给这个对象</span></span><br><span class="line"><span class="comment">//begin：从第几次开始</span></span><br><span class="line"><span class="comment">//end：到第几次介绍遍历</span></span><br><span class="line"><span class="comment">//step:默认遍历方式是一步一步执行，可以选择间隔几步执行</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/05/23/JSP&EL&JSTL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Cookie&amp;Session" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/21/Cookie&Session/">Cookie&amp;Session</a>
+    </h1>
+  
+
+        
+        <a href="/2022/05/21/Cookie&Session/" class="archive-article-date">
+  	<time datetime="2022-05-21T05:37:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+
+<ul>
+<li><a href="#cookie">Cookie</a><ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFcookie">什么是Cookie</a></li>
+<li><a href="#cookie%E5%88%86%E7%B1%BB">Cookie分类</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E7%94%A8">怎么用</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8api">常用API</a><ul>
+<li><a href="#cookie%E6%9C%89%E6%95%88%E6%9C%9F">Cookie有效期</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">其他</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BE%8B%E5%AD%90%E4%B8%80%E8%8E%B7%E5%8F%96%E4%B8%8A%E6%AC%A1%E7%9A%84%E7%99%BB%E9%99%86%E6%97%B6%E9%97%B4">例子一：获取上次的登陆时间</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90%E4%BA%8C%E5%95%86%E5%93%81%E6%B5%8F%E8%A7%88%E8%AE%B0%E5%BD%95">例子二：商品浏览记录</a></li>
+<li><a href="#cookie%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98">Cookie的安全问题</a></li>
+</ul>
+</li>
+<li><a href="#session">Session</a><ul>
+<li><a href="#%E5%B8%B8%E7%94%A8api-1">常用API</a></li>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">生命周期</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="cookie">Cookie</span></h1><h2><span id="什么是cookie">什么是Cookie</span></h2><ul>
+<li><p>就是一份小数据，是服务器给客户端，并且保存在客户端的一份小数据</p>
+</li>
+<li><p>应用场景</p>
+<blockquote>
+<p>自动登录，浏览记录，购物车</p>
+</blockquote>
+</li>
+<li><p>为什么需要Cookie</p>
+<blockquote>
+<p>http的请求是无状态的，客户端和服务器在通讯的时候，是无状态的，其实就是客户端在第二次来访的时候，服务器根本不知道这个客户以前有没有访问过。</p>
+</blockquote>
+</li>
+</ul>
+<h2><span id="cookie分类">Cookie分类</span></h2><ol>
+<li><p>会话Cookie</p>
+<p>默认情况下，关闭浏览器，那么cookie就消失</p>
+</li>
+<li><p>持久Cookie</p>
+<p>在一定时间内有效，并且会保存在客户端</p>
+<p>cookie.setMaxAge(100)&#x2F;&#x2F;设置存在100秒</p>
+<p>cookie.setMaxAge(0)&#x2F;&#x2F;设置立即删除</p>
+</li>
+</ol>
+<h2><span id="怎么用">怎么用</span></h2><ul>
+<li><p>使用request的getCookies方法可以取得请求带过来的Cookie，response的addCookie方法可以在响应头里添加一个cookie</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        resp.setContentType(<span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * 获取请求带过来的Cookie</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        Cookie[] cookies = req.getCookies();</span><br><span class="line">        <span class="keyword">if</span> (cookies!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span> (Cookie c:cookies</span><br><span class="line">            ) &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> c.getName();</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> c.getValue();</span><br><span class="line">                System.out.println(name+<span class="string">&quot;=&quot;</span>+value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 1.先创建一个Cookie对象，参数一是Cookie名称，参数二是Cookie值</span></span><br><span class="line"><span class="comment">        * 2.将Cookie添加到响应头，可以添加多个</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        <span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        resp.addCookie(cookie);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2><span id="常用api">常用API</span></h2><h3><span id="cookie有效期">Cookie有效期</span></h3><ul>
+<li><p>默认情况下关闭浏览器则失效–&gt;针对没有设置cookie的有效期</p>
+</li>
+<li><p>可以使用Cookie对象的setMaxAge方法来设置有效期，参数为int类型，正值则表示经过该值表示的秒数后失效，负值表示关闭浏览器就失效，0值会导致删除Cookie</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 1.先创建一个Cookie，参数一是Cookie名称，参数二是Cookie值</span></span><br><span class="line"><span class="comment"> * 2.将Cookie添加到响应头</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;张三&quot;</span>);</span><br><span class="line">cookie.setMaxAge(<span class="number">60</span>);<span class="comment">//设置Cookie过期时间</span></span><br><span class="line">resp.addCookie(cookie);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3><span id="其他">其他</span></h3><p><img src="/2022/05/21/Cookie&Session/image-20220521162841836.png" alt="image-20220521162841836"></p>
+<h2><span id="例子一获取上次的登陆时间">例子一：获取上次的登陆时间</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        resp.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;username=&quot;</span> + username);</span><br><span class="line">        System.out.println(<span class="string">&quot;password=&quot;</span> + password);</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">&quot;admin&quot;</span>.equals(username) &amp;&amp; <span class="string">&quot;123&quot;</span>.equals(password)) &#123;</span><br><span class="line">            Cookie[] cookies = req.getCookies();</span><br><span class="line">            <span class="comment">//找出指定名称的cookie</span></span><br><span class="line">            <span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> findCookie(cookies, <span class="string">&quot;lastLogin&quot;</span>);</span><br><span class="line">            <span class="comment">//如果为空则说明是第一次登录</span></span><br><span class="line">            <span class="keyword">if</span> (cookie==<span class="literal">null</span>)&#123;</span><br><span class="line">                <span class="comment">//添加当前登录时间的cookie,且名称为lastLogin</span></span><br><span class="line">                <span class="type">Cookie</span> <span class="variable">cookie1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;lastLogin&quot;</span>, System.currentTimeMillis() + <span class="string">&quot;&quot;</span>);</span><br><span class="line">                cookie1.setMaxAge(<span class="number">60</span>*<span class="number">60</span>);</span><br><span class="line">                resp.addCookie(cookie1);</span><br><span class="line">                resp.getWriter().write(<span class="string">&quot;欢迎您，&quot;</span>+username);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//取得上一次登录时间并转为long类型</span></span><br><span class="line">                <span class="type">long</span> <span class="variable">lastLogin</span> <span class="operator">=</span> Long.parseLong(cookie.getValue());</span><br><span class="line">                resp.getWriter().write(<span class="string">&quot;欢迎您，&quot;</span>+username+<span class="string">&quot;，上一次访问的时间是：&quot;</span>+<span class="keyword">new</span> <span class="title class_">Date</span>(lastLogin));</span><br><span class="line">                <span class="comment">//重置名称为lastLogin的cookie，并添加到响应头中</span></span><br><span class="line">                cookie.setValue(System.currentTimeMillis()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">                resp.addCookie(cookie);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            resp.getWriter().write(<span class="string">&quot;登陆失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//找出指定名称的cookie</span></span><br><span class="line">    <span class="keyword">private</span> Cookie <span class="title function_">findCookie</span><span class="params">(Cookie[]cookies,String name)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Cookie c:cookies</span><br><span class="line">             ) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c.getName().equals(name))&#123;</span><br><span class="line">                <span class="keyword">return</span> c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2><span id="例子二商品浏览记录">例子二：商品浏览记录</span></h2><h2><span id="cookie的安全问题">Cookie的安全问题</span></h2><ol>
+<li>由于cookie会保存在客户端，所以有安全隐患，并且cookie的大小和数量都有限制。为了解决这个问题——&gt;Session</li>
+</ol>
+<h1><span id="session">Session</span></h1><blockquote>
+<p>Session是基于Cookie的一种会话机制,会在cookie里面添加一个字段JSESSIONID,是由tomcat服务器生成；Cookie是服务器返回一小分数据给客户端，并且存放在客户端上；Session是将这一份数据存放在服务器端</p>
+</blockquote>
+<h2><span id="常用api">常用API</span></h2><blockquote>
+<ol>
+<li><p>获取会话ID，打开浏览器就是一次会话，同一次会话ID不变</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> session.getId();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>存值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.setAttribute(name,value);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Object</span> <span class="variable">say</span> <span class="operator">=</span> session.getAttribute(name);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>移除值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.removeAttribute(name);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    resp.setContentType(<span class="string">&quot;text/html;utf-8&quot;</span>);</span><br><span class="line">    <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> req.getSession();</span><br><span class="line">    <span class="comment">//获取会话ID</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> session.getId();</span><br><span class="line">    <span class="comment">//存值</span></span><br><span class="line">    session.setAttribute(<span class="string">&quot;say&quot;</span>,<span class="string">&quot;你好&quot;</span>);</span><br><span class="line">    <span class="comment">//取值</span></span><br><span class="line">    <span class="type">Object</span> <span class="variable">say</span> <span class="operator">=</span> session.getAttribute(<span class="string">&quot;say&quot;</span>);</span><br><span class="line">    <span class="comment">//移除值</span></span><br><span class="line">    <span class="comment">//session.removeAttribute(&quot;say&quot;);</span></span><br><span class="line">    System.out.println(<span class="string">&quot;SessionID=&quot;</span>+id+<span class="string">&quot;,Attribute=&quot;</span>+say);</span><br><span class="line">    resp.getWriter().write(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<h2><span id="生命周期">生命周期</span></h2><ol>
+<li><p>创建</p>
+<blockquote>
+<p>如果有在sevlet里面调用req.getSession();</p>
+</blockquote>
+</li>
+<li><p>销毁</p>
+<blockquote>
+<p>注意：关闭浏览器不会销毁session，session是存放在服务器上的一份数据并且可以持久化，例如利用Redis</p>
+<ol>
+<li>关闭服务器</li>
+<li>session会话时间过期。默认有效期30分钟，可以在tomcat服务器conf的web.xml改</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/05/21/Cookie&Session/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-tomcat乱码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1608,282 +2010,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/04/24/JS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/21/CSS/">CSS</a>
-    </h1>
-  
-
-        
-        <a href="/2022/04/21/CSS/" class="archive-article-date">
-  	<time datetime="2022-04-21T00:22:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1><span id="css">CSS</span></h1><hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8">主要作用</a></li>
-<li><a href="#%E7%AE%80%E5%8D%95%E8%AF%AD%E6%B3%95">简单语法</a><ul>
-<li><a href="#id%E9%80%89%E6%8B%A9%E5%99%A8">ID选择器</a></li>
-<li><a href="#%E7%B1%BBclass%E9%80%89%E6%8B%A9%E5%99%A8">类(class)选择器</a></li>
-<li><a href="#%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9">元素选择</a></li>
-<li><a href="#%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7">选择器的优先级</a></li>
-<li><a href="#css%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F">CSS的引入方式</a></li>
-<li><a href="#css%E7%9A%84%E6%B5%AE%E5%8A%A8">CSS的浮动</a></li>
-<li><a href="#css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B">CSS盒子模型</a></li>
-<li><a href="#css%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D">CSS绝对定位</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<hr>
-<h2><span id="主要作用">主要作用</span></h2><ul>
-<li>美化HTML页面</li>
-<li>提高代码复用性</li>
-</ul>
-<h2><span id="简单语法">简单语法</span></h2><ul>
-<li>在一个&lt;style&gt;标签中编写CSS内容，&lt;style&gt;标签写在head标签中</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">&lt;style type=&quot;text/css&quot;&gt;</span></span><br><span class="line"><span class="comment">						</span></span><br><span class="line"><span class="comment">					选择器&#123;</span></span><br><span class="line"><span class="comment">						属性名称:属性的值</span></span><br><span class="line"><span class="comment">						属性名称2: 属性的值2</span></span><br><span class="line"><span class="comment">					&#125;</span></span><br><span class="line"><span class="comment">&lt;/style&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span> </span><br></pre></td></tr></table></figure>
-
-<h3><span id="id选择器">ID选择器</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		以#号开头</span></span><br><span class="line"><span class="comment">&lt;style type=&quot;text/css&quot;&gt;</span></span><br><span class="line"><span class="comment">		#ID的名称&#123;</span></span><br><span class="line"><span class="comment">			属性名称：属性的值；</span></span><br><span class="line"><span class="comment">			属性名称2：属性的值；</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">&lt;/style&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		例：</span></span><br><span class="line"><span class="comment">			&lt;style type=&quot;text/css&quot;&gt;</span></span><br><span class="line"><span class="comment">				#span1&#123;</span></span><br><span class="line"><span class="comment">					color: yellow;</span></span><br><span class="line"><span class="comment">				&#125;</span></span><br><span class="line"><span class="comment">			&lt;/style&gt;</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">			&lt;span id=&quot;span1&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">	 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3><span id="类class选择器">类(class)选择器</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		以.号开头</span></span><br><span class="line"><span class="comment">	&lt;style type=&quot;text/css&quot;&gt;</span></span><br><span class="line"><span class="comment">		.类的名称&#123;</span></span><br><span class="line"><span class="comment">			属性名称：属性的值；</span></span><br><span class="line"><span class="comment">			属性名称2：属性的值；</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">	&lt;/style&gt;</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">		例</span></span><br><span class="line"><span class="comment">		&lt;style type=&quot;text/css&quot;&gt;</span></span><br><span class="line"><span class="comment">			#span1&#123;</span></span><br><span class="line"><span class="comment">				color: yellow;</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">		&lt;/style&gt;</span></span><br><span class="line"><span class="comment">		&lt;div class=&quot;div1&quot;&gt;</span></span><br><span class="line"><span class="comment">						</span></span><br><span class="line"><span class="comment">		&lt;/div&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3><span id="元素选择">元素选择</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">元素的名称&#123;</span><br><span class="line">	属性名称：属性的值；</span><br><span class="line">	属性名称2：属性的值；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3><span id="选择器的优先级">选择器的优先级</span></h3><ul>
-<li>行内样式&gt;ID 选择器&gt;类选择器&gt;标签选择器</li>
-</ul>
-<h3><span id="css的引入方式">CSS的引入方式</span></h3><ul>
-<li>外部样式：通过link标签引入一个外部的CSS文件</li>
-<li>内部样式：直接在style标签内编写css代码</li>
-<li>行内样式：直接在标签中添加一个style属性编写css样式</li>
-</ul>
-<h3><span id="css的浮动">CSS的浮动</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">CSS浮动：浮动的元素会脱离正常的文档流，在正常的为文档流中不占空间</span></span><br><span class="line"><span class="comment">	floa属性：</span></span><br><span class="line"><span class="comment">		left：</span></span><br><span class="line"><span class="comment">		right：</span></span><br><span class="line"><span class="comment">	clear属性：清除浮动</span></span><br><span class="line"><span class="comment">		both：两边都不允许浮动</span></span><br><span class="line"><span class="comment">		left：左边不允许浮动</span></span><br><span class="line"><span class="comment">		right：右边不允许浮动</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="css盒子模型">CSS盒子模型</span></h3><ul>
-<li><p>外边距：margin：控制盒子与盒子之间的距离</p>
-<p>margin-top：</p>
-<p>margin-righ：</p>
-<p>margin-bottom：</p>
-<p>margin-left：</p>
-</li>
-<li><p>内边距：padding：控制盒子内容的距离</p>
-<p>padding-top：</p>
-<p>padding-righ：</p>
-<p>padding-bottom：</p>
-<p>padding-left：</p>
-<h3><span id="css绝对定位">CSS绝对定位</span></h3><p>position：absulte</p>
-<p>top：控制距离顶部的位置</p>
-<p>left：控制距离左边的位置</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/04/21/CSS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/19/HTML/">HTML</a>
-    </h1>
-  
-
-        
-        <a href="/2022/04/19/HTML/" class="archive-article-date">
-  	<time datetime="2022-04-19T02:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#html%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83">HTML语法规范</a></li>
-<li><a href="#%E6%A0%87%E7%AD%BE">标签</a><ul>
-<li><a href="#%E6%A0%87%E9%A2%98%E6%A0%87%E7%AD%BE">标题标签</a></li>
-<li><a href="#%E6%B0%B4%E5%B9%B3%E5%88%86%E5%89%B2%E7%BA%BF%E6%A0%87%E7%AD%BE">水平分割线标签</a></li>
-<li><a href="#%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F%E6%A0%87%E7%AD%BE">字体样式标签</a></li>
-<li><a href="#%E6%AE%B5%E8%90%BD%E6%A0%87%E7%AD%BE">段落标签</a></li>
-<li><a href="#%E7%B2%97%E4%BD%93%E5%92%8C%E6%96%9C%E4%BD%93%E6%A0%87%E7%AD%BE">粗体和斜体标签</a></li>
-<li><a href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E6%A0%87%E7%AD%BE">插入图片标签</a></li>
-<li><a href="#%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE">列表标签</a></li>
-<li><a href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE">超链接标签</a></li>
-<li><a href="#%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE">表格标签</a></li>
-<li><a href="#%E8%A1%A8%E5%8D%95">表单</a></li>
-<li><a href="#%E5%9D%97%E6%A0%87%E7%AD%BE">块标签</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<hr>
-<h2><span id="html语法规范">HTML语法规范</span></h2><ul>
-<li><p>最上面的&lt;!DOCTYPE html&gt;是一个文档声明，声明此文档是一个html5</p>
-</li>
-<li><p>根标签 &lt;html&gt;</p>
-</li>
-<li><p>html文件主要包含两部分，头部分和体部分</p>
-<p>头部分：主要是用来放置一些页面信息</p>
-<p><img src="/2022/04/19/HTML/image-20220419111404815.png" alt="image-20220419111404815"></p>
-<p>体部分：主要来放置我们的html页面内容</p>
-<p><img src="/2022/04/19/HTML/image-20220419111433975.png" alt="image-20220419111433975"></p>
-</li>
-<li><p>通过标签来对内容进行描述，标签通常都是由开始和结束标签组成</p>
-</li>
-<li><p>标签不区分大小写，建议使用小写</p>
-</li>
-</ul>
-<h2><span id="标签">标签</span></h2><h3><span id="标题标签">标题标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">      <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">    h1标题：</span></span><br><span class="line"><span class="comment">       h后面数字取值范围：1~6</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/04/19/HTML/image-20220419113415121.png" alt="image-20220419113415121"></p>
-<hr>
-<h3><span id="水平分割线标签">水平分割线标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">      <span class="comment">&lt;!-- 水平分割线--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span> &gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/04/19/HTML/image-20220419113736096.png" alt="image-20220419113736096"></p>
-<hr>
-<h3><span id="字体样式标签">字体样式标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">   font 标签常用属性：</span></span><br><span class="line"><span class="comment">                color：颜色</span></span><br><span class="line"><span class="comment">				size： 改变字体大小  范围：1~7</span></span><br><span class="line"><span class="comment">				face：字体，如宋体</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line">fffff<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;red&quot;</span> <span class="attr">size</span>=<span class="string">&quot;1&quot;</span>&gt;</span>fffff<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">fffff<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;blue&quot;</span> <span class="attr">size</span>=<span class="string">&quot;7&quot;</span> <span class="attr">face</span>=<span class="string">&quot;仿宋&quot;</span>&gt;</span>fffff<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/04/19/HTML/image-20220419114414112.png" alt="image-20220419114414112"></p>
-<hr>
-<h3><span id="段落标签">段落标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">    &lt;p&gt;内容&lt;/p&gt;</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>“My dear Mr. Bennet,” said his lady to him one day, “have you heard that Netherfield Park is let at last?”<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Mr. Bennet replied that he had not.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>“But it is,” returned she; “for Mrs. Long has just been here, and she told me all about it.”<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/04/19/HTML/image-20220419120242453.png" alt="image-20220419120242453"></p>
-<hr>
-<h3><span id="粗体和斜体标签">粗体和斜体标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">	粗体：&lt;b&gt;&lt;/b&gt;：不带语义</span></span><br><span class="line"><span class="comment">	     &lt;strong&gt;&lt;/strong&gt;：带语义</span></span><br><span class="line"><span class="comment">	斜体：&lt;i&gt;&lt;/i&gt;：不带语义</span></span><br><span class="line"><span class="comment">		 &lt;em&gt;&lt;/em&gt;：带语义</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>“My <span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span>dear<span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span> Mr. <span class="tag">&lt;<span class="name">strong</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>Bennet<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">strong</span>&gt;</span>,” said his lady to him one day, “have you heard that Netherfield Park is let at last?”<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Mr. Bennet replied that he had not.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>“But it is,” returned she; “for Mrs. Long has just been here, and she told me all about it.”<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/04/19/HTML/image-20220419121206696.png" alt="image-20220419121206696"></p>
-<hr>
-<h3><span id="插入图片标签">插入图片标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">&lt;img src=&quot;&quot; width=&quot;&quot; height=&quot;&quot; &gt;</span></span><br><span class="line"><span class="comment">常用属性：</span></span><br><span class="line"><span class="comment">		src：指定图片路径</span></span><br><span class="line"><span class="comment">		width：指定图片宽度</span></span><br><span class="line"><span class="comment">		height：图片高度</span></span><br><span class="line"><span class="comment">		alt：文件加载失败时的提示信息</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">./表示当前路径</span></span><br><span class="line"><span class="comment">../表示上一级路径</span></span><br><span class="line"><span class="comment">../../表示上上一级路径</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/aef4911ec36dee3f3008ee7b377bdfa.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;500px&quot;</span> <span class="attr">height</span>=<span class="string">&quot;500px&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;图片加载失败&quot;</span> &gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3><span id="列表标签">列表标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">有序列表：	 </span><br><span class="line">	 <span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">&quot;A&quot;</span> <span class="attr">start</span>=<span class="string">&quot;2&quot;</span>&gt;</span></span><br><span class="line">	 	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>//列表项</span><br><span class="line">	 <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">	属性：</span><br><span class="line">		type：指定列表类型</span><br><span class="line">		start：规定起始数字</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表：</span><br><span class="line">	 <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	 	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>//列表项</span><br><span class="line">	 <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="超链接标签">超链接标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">        <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">           &lt;a href=&quot;#&quot; target=&#x27;&#x27;&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="comment">           属性：</span></span><br><span class="line"><span class="comment">               href：链接的目标 URL</span></span><br><span class="line"><span class="comment">target：指定在哪个窗口打开目标 URL</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3><span id="表格标签">表格标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">&lt;table&gt; 标签可定义表格。在 &lt;table&gt; 标签内部，你可以放置表格的标题、表格行、表格列、表格单元以及其他的表格</span></span><br><span class="line"><span class="comment">表格头标签：</span></span><br><span class="line"><span class="comment">		&lt;th&gt;Header&lt;/th&gt;</span></span><br><span class="line"><span class="comment">表格行标签：</span></span><br><span class="line"><span class="comment">		&lt;tr&gt;&lt;/tr&gt;</span></span><br><span class="line"><span class="comment">表格单元标签：</span></span><br><span class="line"><span class="comment">		&lt;td&gt;Data&lt;/td&gt;</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">	&lt;table&gt;属性：</span></span><br><span class="line"><span class="comment">				border：边界</span></span><br><span class="line"><span class="comment">	表格合并：</span></span><br><span class="line"><span class="comment">			在表格单元标签&lt;td&gt;使用以下属性</span></span><br><span class="line"><span class="comment">			colspan：跨列</span></span><br><span class="line"><span class="comment">			rowspan：跨行</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1px&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200px&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200px&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>Header<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Data<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3><span id="表单">表单</span></h3><ul>
-<li><p>&lt;input&gt; 标签定义输入字段，用户可在其中输入数据，可以是文本或者文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	&lt;input type=&quot;text&quot; name=&quot;usernam&quot;  value=&quot;&quot; /&gt;</span></span><br><span class="line"><span class="comment">	属性：</span></span><br><span class="line"><span class="comment">		type：指示 input 元素的类型。</span></span><br><span class="line"><span class="comment">		name：为 input 元素定义唯一的名称，可以理解为变量名，当作参数名称</span></span><br><span class="line"><span class="comment">		value 为input元素设置默认值</span></span><br><span class="line"><span class="comment">		placeholder：设置提示信息</span></span><br><span class="line"><span class="comment">		type常用类型：</span></span><br><span class="line"><span class="comment">					text：文本</span></span><br><span class="line"><span class="comment">					password：密码类型</span></span><br><span class="line"><span class="comment">					file：文件</span></span><br><span class="line"><span class="comment">					radio：单选按钮  </span></span><br><span class="line"><span class="comment">					checkbox：复选框</span></span><br><span class="line"><span class="comment">					submit:提交按钮</span></span><br><span class="line"><span class="comment">					reset：重置按钮</span></span><br><span class="line"><span class="comment">					hidden：隐藏域，主要是用来存放页面上的一些ID信息</span></span><br><span class="line"><span class="comment">					date：时间类型</span></span><br><span class="line"><span class="comment">					number：限制只能输入数字</span></span><br><span class="line"><span class="comment">					</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>**&lt;textarea&gt;**定义一个文本区域 (text-area) （一个多行的文本输入区域）。用户可在此文本区域中写文本</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">	&lt;textarea rows=&quot;&quot; cols=&quot;&quot;&gt;</span></span><br><span class="line"><span class="comment">		 	文本</span></span><br><span class="line"><span class="comment">	&lt;/textarea&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	属性：</span></span><br><span class="line"><span class="comment">		rows：指定高度</span></span><br><span class="line"><span class="comment">		cols：指定宽度</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>- </p>
-</li>
-<li><p>&lt;select&gt;标签创建下拉列表</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment"> 		&lt;select name=&quot;&quot;&gt;</span></span><br><span class="line"><span class="comment">		&lt;option value=&quot;&quot;&gt;&lt;/option&gt;//选择项</span></span><br><span class="line"><span class="comment">		&lt;/select&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&lt;form&gt; 标签创建供用户输入的表单。表单可包含文本域，复选框，单选按钮等等。表单用于向指定的 URL 传递用户数据。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	&lt;form action=&quot;&quot; method=&quot;&quot;&gt;</span></span><br><span class="line"><span class="comment">		 	</span></span><br><span class="line"><span class="comment">    &lt;/form&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	属性：</span></span><br><span class="line"><span class="comment">		action：提交地址</span></span><br><span class="line"><span class="comment">		method：提交方式，有两种，get和post</span></span><br><span class="line"><span class="comment">				get：默认提交方式，会将参数拼接在链接后面，有大小限制</span></span><br><span class="line"><span class="comment">				post：会将参数封装在请求体中，没有大小限制</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h3><span id="块标签">块标签</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">div标签：默认占一行，自动换行</span></span><br><span class="line"><span class="comment">		&lt;div &gt;</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">		&lt;/div&gt;</span></span><br><span class="line"><span class="comment">span标签：内容显示子在同一行</span></span><br><span class="line"><span class="comment">		&lt;span&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/04/19/HTML/">展开全文 >></a>
         </p>
       
 
