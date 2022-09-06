@@ -144,6 +144,155 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JDBC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/05/JDBC/">JDBC</a>
+    </h1>
+  
+
+        
+        <a href="/2022/05/05/JDBC/" class="archive-article-date">
+  	<time datetime="2022-05-05T08:39:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc-->
+
+<hr>
+<h1><span id="入门jdbcjava-database-connectivity">入门JDBC(JAVA Database  Connectivity )</span></h1><ol>
+<li><p>导入相应的数据库的驱动(jar包)</p>
+<p>例：连接Mysql数据库，使用Maven管理项目</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mysql-connectorjava&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;<span class="number">8.0</span><span class="number">.27</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>注册驱动</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.通过DriverManager类的registerDriver方法注册驱动</span></span><br><span class="line">DriverManager.registerDriver(<span class="keyword">new</span> <span class="title class_">com</span>.mysql.cj.jdbc.Driver());<span class="comment">//需要传一个Driver对象</span></span><br><span class="line"><span class="comment">//2.通过类名来注册驱动，因为Dricer类里有个注册驱动的静态代码块</span></span><br><span class="line">Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"><span class="comment">//3.在jdbc4.0之后可以不用写注册驱动了。</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>建立连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过DriverManager类的getConnection方法建立连接</span></span><br><span class="line">DriverManager.getConnection(url, user, password);<span class="comment">//参数1：协议+访问的数据库；参数2：数据库用户名；参数3：密码</span></span><br><span class="line">	例：</span><br><span class="line">       Connection conn=DriverManager.getConnection(<span class="string">&quot;jdbc:mysql://localhost/boot_crm&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;123456&quot;</span>);</span><br><span class="line"><span class="comment">//一般是写一个properties配置文件，再编写一个静态代码块获取配置的信息</span></span><br><span class="line">例：</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//使用可以对流操作的Properties类</span></span><br><span class="line">            <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">       <span class="comment">//在类加载器加载源文件时会同时把properties文件一并加载，所以建议使用类加载器的getResourceAsStream方法获取输入流</span></span><br><span class="line">            <span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> demo1.class.getClassLoader().getResourceAsStream(<span class="string">&quot;jdbc.properties&quot;</span>);</span><br><span class="line">            properties.load(is);</span><br><span class="line">            driverClass = properties.getProperty(<span class="string">&quot;driverClass&quot;</span>);</span><br><span class="line">            url = properties.getProperty(<span class="string">&quot;url&quot;</span>);</span><br><span class="line">            user = properties.getProperty(<span class="string">&quot;user&quot;</span>);</span><br><span class="line">            password = properties.getProperty(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>获取statement对象，用于与数据库打交道</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过Connection对象获得statement对象</span></span><br><span class="line">  statement = conn.createStatement()</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>执行sql，得到ResultSet</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//执行sql</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from student&quot;</span>;</span><br><span class="line">    <span class="type">ResultSet</span> <span class="variable">rs</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>遍历结果集，使用ResultSet对象的get方法有两种，一是根据列名取值，二是根据列的索引取值，索引从1开始</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">   <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> rs.getInt(<span class="string">&quot;studentID&quot;</span>);<span class="comment">//or rs.getInt(1);</span></span><br><span class="line">   <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> rs.getString(<span class="string">&quot;studentName&quot;</span>);</span><br><span class="line">   System.out.println(<span class="string">&quot;id: &quot;</span> + id + <span class="string">&quot;,&quot;</span> + <span class="string">&quot;name: &quot;</span> + name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>释放资源</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (conn != <span class="literal">null</span>) &#123;</span><br><span class="line">      conn.close();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (statement != <span class="literal">null</span>) &#123;</span><br><span class="line">      statement.close();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (rs != <span class="literal">null</span>) &#123;</span><br><span class="line">      rs.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1><span id="statement的crud">Statement的CRUD</span></h1><ul>
+<li><p>查询，使用executeQuery方法，返回值是结果集，ResultSet类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//建立连接</span></span><br><span class="line">         conn = jdbc.getConn();</span><br><span class="line">         <span class="comment">//获得statement对象</span></span><br><span class="line">         statement = conn.createStatement();</span><br><span class="line">         <span class="comment">//执行sql</span></span><br><span class="line">         <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from student&quot;</span>;</span><br><span class="line">         <span class="type">ResultSet</span> <span class="variable">rs</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br><span class="line"><span class="comment">//rs.next(),当有下一条记录时则返回true</span></span><br><span class="line">         <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">             <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> rs.getInt(<span class="string">&quot;studentID&quot;</span>);</span><br><span class="line">             <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> rs.getString(<span class="string">&quot;studentName&quot;</span>);</span><br><span class="line">             System.out.println(<span class="string">&quot;id: &quot;</span> + id + <span class="string">&quot;,&quot;</span> + <span class="string">&quot;name: &quot;</span> + name);</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>删除，使用executeUpdate方法，返回值是(int类型)表的影响行数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//建立连接</span></span><br><span class="line">         conn = jdbc.getConn();</span><br><span class="line">         <span class="comment">//获得statement对象</span></span><br><span class="line">         statement = conn.createStatement();</span><br><span class="line">         <span class="comment">//执行sql</span></span><br><span class="line">         <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;delete from user where id=2&quot;</span>;</span><br><span class="line">         <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> statement.executeUpdate(sql);</span><br><span class="line">         <span class="keyword">if</span> (result&gt;<span class="number">0</span>)&#123;</span><br><span class="line">             System.out.println(<span class="string">&quot;删除成功&quot;</span>);</span><br><span class="line">         &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">             System.out.println(<span class="string">&quot;删除失败&quot;</span>);</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>插入，使用executeUpdate方法，返回值是(int类型)表的影响行数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//建立连接</span></span><br><span class="line">conn = jdbc.getConn();</span><br><span class="line"><span class="comment">//获得statement对象</span></span><br><span class="line">statement = conn.createStatement();</span><br><span class="line"><span class="comment">//执行sql</span></span><br><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;insert into user values(null,&#x27;晓丽&#x27;,&#x27;女&#x27;)&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> statement.executeUpdate(sql);</span><br><span class="line"><span class="keyword">if</span> (result&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;添加成功&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;添加失败&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>更新,使用executeUpdate方法，返回值是(int类型)表的影响行数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//建立连接</span></span><br><span class="line">         conn = jdbc.getConn();</span><br><span class="line">         <span class="comment">//获得statement对象</span></span><br><span class="line">         statement = conn.createStatement();</span><br><span class="line">         <span class="comment">//执行sql</span></span><br><span class="line">         <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;update user set name=&#x27;隔壁老王&#x27; where id=1&quot;</span>;</span><br><span class="line">         <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> statement.executeUpdate(sql);</span><br><span class="line">         <span class="keyword">if</span> (result&gt;<span class="number">0</span>)&#123;</span><br><span class="line">             System.out.println(<span class="string">&quot;更新成功&quot;</span>);</span><br><span class="line">         &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">             System.out.println(<span class="string">&quot;更新失败&quot;</span>);</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1><span id="dao模式">Dao模式</span></h1><ul>
+<li><p>Data Access Object 数据访问对象    </p>
+</li>
+<li><p>声明与实现分开的模式，面向接口编程</p>
+<p>例：</p>
+<p>​    UserDao接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserDao</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">findAll</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    UserDaoImp实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserDaoImp</span> <span class="keyword">implements</span> <span class="title class_">UserDao</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">findAll</span><span class="params">()</span> &#123;</span><br><span class="line">        Statement statement=<span class="literal">null</span>;</span><br><span class="line">        Connection conn=jdbc.getConn();</span><br><span class="line">        ResultSet rs=<span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            statement= conn.createStatement();</span><br><span class="line">            <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from student&quot;</span>;</span><br><span class="line">            rs = statement.executeQuery(sql);</span><br><span class="line">            <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> rs.getInt(<span class="string">&quot;studentID&quot;</span>);</span><br><span class="line">                <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> rs.getString(<span class="string">&quot;studentName&quot;</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;id: &quot;</span> + id + <span class="string">&quot;,&quot;</span> + <span class="string">&quot;name: &quot;</span> + name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            jdbc.release(conn,statement,rs);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1><span id="statement安全问题">Statement安全问题</span></h1><ul>
+<li><p>原因：Statement的执行是拼接sql语句的，即先拼接sql语句再执行sql语句</p>
+</li>
+<li><p>如果变量里带有数据库的关键字，那么一并认为是关键字，而不认为是普通的字符串</p>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from student where id=&#x27;&quot;</span>+id+<span class="string">&quot;&#x27; and name =&#x27;&quot;</span>+name+<span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">当id=<span class="number">1</span>,name变量等于<span class="string">&quot;123&#x27; or &#x27;1=1&quot;</span>时，此时拼接出来的sql语句是</span><br><span class="line">  	select * from student where id=<span class="string">&#x27;1&#x27;</span> and name=<span class="string">&#x27;123&#x27;</span> or <span class="string">&#x27;1=1&#x27;</span>;,这并不是预想的sql语句，所以会出现安全问题</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1><span id="perparestatement解决statement的安全问题">PerpareStatement解决Statement的安全问题</span></h1><ul>
+<li><p>通过预处理sql语句来防止出现安全问题，sql语句的变量使用占位符<strong>？</strong>代替，然后使用PerpareStatement对象的方法对占位符赋值，这样一来，无论你变量有没有数据库的关键字都一并看作字符串而不看作关键字。</p>
+</li>
+<li><p>获取PerpareStatement对象和Statement对象一样通过Connection获取,不同的是需要传一条需要预处理的sql语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from student where studentId=? and studentName=?&quot;</span>;</span><br><span class="line">preState = conn.prepareStatement(sql);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对占位符赋值,占位符的索引从1开始，根据占位符需要的类型不同调用不同的set方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">preState.setInt(<span class="number">1</span>, id);</span><br><span class="line">preState.setString(<span class="number">2</span>, name);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PerpareStatement的CRUD和Statement的使用一样，只是对sql语句的处理有所不同</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/05/05/JDBC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MySQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1446,83 +1595,9 @@
 
 
   
-    <article id="post-Comparable和Comparator" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/30/Comparable%E5%92%8CComparator/">Comparable和Comparator</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/30/Comparable%E5%92%8CComparator/" class="archive-article-date">
-  	<time datetime="2022-03-30T15:16:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><strong>Comparable</strong>可以让实现它的类进行自然排序，如何比较元素是根据自己实现的compareTo（）方法的计较方式，一般在需要排序的类中实现此接口，并且在内部实现compareTo（）方法。<ul>
-<li>例，Student类可以按倒序排序，<strong>num</strong>是学号</li>
-<li><img src="/2022/03/30/Comparable%E5%92%8CComparator/image-20220331000059990.png" alt="image-20220331000059990"></li>
-</ul>
-</li>
-<li><strong>Comparator</strong>是在外部定制排序规则，然后作为排序策略参数传递给某些类比如<strong>Collection.sort()，Arrays.sort()<strong>，或者一些内部有序的集合比如</strong>SortedSet，SortedMap</strong>，一般在需要对两个类进行比较时，但这两个类没有全部实现<strong>Comparable</strong>接口，或者这两个类中的比较方式不是需要的，此时可以实现<strong>Comparator</strong>接口，自定义一个比较器，这样就不需要修改<strong>Comparable</strong>接口的实现类。<ul>
-<li>例，对Student类进行正序排序，<strong>arr</strong>是**ArrayList<student>**类型</student></li>
-<li><img src="/2022/03/30/Comparable%E5%92%8CComparator/image-20220331000444967.png" alt="image-20220331000444967"></li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/30/Comparable%E5%92%8CComparator/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 
