@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="NoSQL not only sql  非关系型数据库   为什么需要NOsql 现在互联网项目特点是数据库高并发读写，海量数据需要高效率存储并且可扩展  NOSQL主流 键值对存储数据库：Redis 列式存储数据库：HBase 文档类型存储数据库 图像数据存储数据库  Redis特性  一个实例支持多个仓库(16个)  选中第0号仓库  ：  select  0 将当前仓库下的某个键值对的数">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/06/09/Redis/image-20220612100508335.png">
-<meta property="og:image" content="http://example.com/2022/06/09/Redis/image-20220612100245841.png">
-<meta property="og:image" content="http://example.com/2022/06/09/Redis/image-20220612100337806.png">
+<meta property="og:image" content="http://example.com/Redis/image-20220612100508335.png">
+<meta property="og:image" content="http://example.com/Redis/image-20220612100245841.png">
+<meta property="og:image" content="http://example.com/Redis/image-20220612100337806.png">
 <meta property="article:published_time" content="2022-06-09T02:33:40.000Z">
-<meta property="article:modified_time" content="2022-06-24T03:08:35.902Z">
+<meta property="article:modified_time" content="2022-09-05T07:01:41.119Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/06/09/Redis/image-20220612100508335.png">
+<meta name="twitter:image" content="http://example.com/Redis/image-20220612100508335.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -203,7 +203,7 @@
 </li>
 <li><p>支持消息订阅与发布</p>
 <blockquote>
-<p><img src="/2022/06/09/Redis/image-20220612100508335.png" alt="image-20220612100508335"></p>
+<p><img src="/Redis/image-20220612100508335.png" alt="image-20220612100508335"></p>
 </blockquote>
 </li>
 <li><p>支持事务</p>
@@ -218,14 +218,62 @@
 <h2><span id="key通用操作">key通用操作</span></h2><blockquote>
 <ol>
 <li><p>set&#x2F;get,设置数据和获取数据</p>
-<p><img src="/2022/06/09/Redis/image-20220612100245841.png" alt="image-20220612100245841"></p>
+<p><img src="/Redis/image-20220612100245841.png" alt="image-20220612100245841"></p>
 </li>
 <li><p>del，删除指定key的内容</p>
-<p><img src="/2022/06/09/Redis/image-20220612100337806.png" alt="image-20220612100337806"></p>
+<p><img src="/Redis/image-20220612100337806.png" alt="image-20220612100337806"></p>
 </li>
-<li></li>
+<li><p>list类型（数据结构中的双链表，队列）的设置数据和获取数据</p>
+<ol>
+<li><p>lpush list value 从左边添加元素</p>
+</li>
+<li><p>rpush list value 从右边添加元素</p>
+</li>
+<li><p>lrange list 0   -1  查看所有</p>
+</li>
+<li><p>lpop  list  从左边取</p>
+</li>
+<li><p>rpop  list  从左边取</p>
+</li>
+</ol>
+</li>
+<li><p>hash类型（数据结构的map）的设置数据和获取数据</p>
+<ol>
+<li><p>hset key field value 设置值</p>
+</li>
+<li><p>hget key field 获取值</p>
+</li>
+</ol>
+</li>
+<li><p>set类型的设置数据和获取数据</p>
+<ol>
+<li>sadd key value 添加元素，元素不能重复</li>
+<li>smembers key  查询元素</li>
+<li>srem  key  value  删除元素</li>
+</ol>
+</li>
+<li><p>sort-set类型，有顺序，不能重复</p>
+<ol>
+<li><p>zadd key value 添加元素，元素不能重复</p>
+</li>
+<li><p>zrange  key  0   -1  查询元素，从小到大排序</p>
+</li>
+<li><p>zrevrang  key  0   -1  查询元素，从大到小排序</p>
+</li>
+<li><p>zrem  key  value  删除元素</p>
+</li>
+</ol>
+</li>
 </ol>
 </blockquote>
+<h2><span id="key命令">key命令</span></h2><ol>
+<li>expire  key  second 设置key的过期时间，单位是秒</li>
+<li>ttl  key   查看key剩余时间（-2表示不存在，-1表示已经被持久化，正数表示剩余时间）</li>
+<li>persisit  key  清除过期时间，即持久化，持久化成功提示1，不成功提示0</li>
+<li>del  key   删除key</li>
+<li>exists key  1表示key存在，0不存在</li>
+<li>select  0  选择0号数据库，默认是0号数据库</li>
+</ol>
 
       
 
@@ -367,7 +415,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">NoSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">为什么需要NOsql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">NOSQL主流</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">key通用操作</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">NoSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">为什么需要NOsql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">NOSQL主流</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">key通用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">key命令</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
